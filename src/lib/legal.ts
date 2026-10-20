@@ -12,8 +12,8 @@ export const legal = {
     {
       title: b("Handling your request", "Traitement de votre demande"),
       text: b(
-        "Submitted information is transmitted to our inquiry email service. Information relevant to sourcing or fulfillment may be shared with providers involved in your request. Technical services used to operate the website and email may process data outside your province or Canada. Ask us about handling arrangements before sending information that requires specific restrictions.",
-        "Les renseignements soumis sont transmis à notre service de courriel. Les renseignements pertinents à l’approvisionnement ou à l’exécution peuvent être communiqués aux fournisseurs qui participent à votre demande. Les services techniques du site et du courriel peuvent traiter des données à l’extérieur de votre province ou du Canada. Communiquez avec nous avant d’envoyer des renseignements exigeant des restrictions particulières.",
+        "Submitted information is retained in our private inquiry store and an email notification is attempted. Information relevant to sourcing or fulfillment may be shared with providers involved in your request. Technical services used to operate the website and email may process data outside your province or Canada. Ask us about handling arrangements before sending information that requires specific restrictions.",
+        "Les renseignements soumis sont conservés dans notre registre privé de demandes, puis un avis par courriel est tenté. Les renseignements pertinents à l’approvisionnement ou à l’exécution peuvent être communiqués aux fournisseurs qui participent à votre demande. Les services techniques du site et du courriel peuvent traiter des données à l’extérieur de votre province ou du Canada. Communiquez avec nous avant d’envoyer des renseignements exigeant des restrictions particulières.",
       ),
     },
     {
@@ -22,8 +22,8 @@ export const legal = {
         "Données techniques et conservation",
       ),
       text: b(
-        "The website uses technical request data to operate the service and limit abuse. Quote details are not saved in browser storage by this application. This version does not add advertising cookies or analytics trackers. Hosting and email systems may maintain operational logs and messages. Contact us to discuss retention or deletion of information associated with your inquiry.",
-        "Le site utilise des données techniques de requête pour fonctionner et limiter les abus. Cette application ne conserve pas les détails des demandes dans le stockage du navigateur. Cette version n’ajoute pas de témoins publicitaires ni de traceurs analytiques. Les systèmes d’hébergement et de courriel peuvent conserver des journaux et des messages. Communiquez avec nous au sujet de la conservation ou de la suppression des renseignements liés à votre demande.",
+        "The website uses technical request data to operate the service and limit abuse. A quote draft is stored in this browser tab for up to 30 minutes to preserve your entries during navigation. You can clear it in the form; it is removed after a confirmed submission. Optional interaction measurement runs only after you allow it and excludes form entries, inquiry IDs and campaign details. You can change that choice on this page when measurement is enabled. Hosting and email systems may maintain operational logs and messages. Contact us to discuss retention or deletion of information associated with your inquiry.",
+        "Le site utilise des données techniques de requête pour fonctionner et limiter les abus. Un brouillon est conservé dans cet onglet pendant au plus 30 minutes pour préserver vos données pendant la navigation. Vous pouvez l’effacer dans le formulaire; il est supprimé après une transmission confirmée. La mesure facultative des interactions exige votre autorisation et exclut les champs du formulaire, les identifiants de demande et les détails de campagne. Vous pouvez modifier ce choix sur cette page lorsque la mesure est activée. Les systèmes d’hébergement et de courriel peuvent conserver des journaux et des messages. Communiquez avec nous au sujet de la conservation ou de la suppression des renseignements liés à votre demande.",
       ),
     },
     {

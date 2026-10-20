@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-20T01:19:43.811Z",
+  "date": "2026-10-20T02:15:01.439Z",
   "currentImages": 18,
   "priorImagesInspected": 1346,
   "scope": "Accessible local images under configured prior root; remote-only inventories are not accessible.",
@@ -8,7 +8,7 @@
     {
       "a": "public/social-en.png",
       "b": "public/social-fr.png",
-      "distance": 4
+      "distance": 3
     }
   ],
   "skipped": []

@@ -1,10 +1,10 @@
-# National Rentals — Phases 1A, 1B and 1C
+# National Rentals — Phases 1A–1D
 
-Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md`, `PHASE_1B_CODEX_MASTER_PROMPT.md` and `PHASE_1C_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
+Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md`, `PHASE_1B_CODEX_MASTER_PROMPT.md`, `PHASE_1C_CODEX_MASTER_PROMPT.md` and `PHASE_1D_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
 
 ## Run locally
 
-Use Node.js 22+ and pnpm 11.25.0 (the version pinned in `package.json`).
+Use Node.js 22.16+ and pnpm 11.25.0 (the version pinned in `package.json`).
 
 ```sh
 corepack enable
@@ -14,7 +14,7 @@ cp .env.example .env.local
 pnpm dev
 ```
 
-Open `http://localhost:3000/en/` or `/fr/`. `/` redirects to English. For local form testing, set `NEXT_PUBLIC_SITE_URL=http://localhost:3000` in `.env.local`, matching the actual browser origin. Leave email credentials empty to exercise the honest failure state. Tests use mocked email responses and send no real messages.
+Open `http://localhost:3000/en/` or `/fr/`. `/` redirects to English. For local form testing, set `NEXT_PUBLIC_SITE_URL=http://localhost:3000` in `.env.local`, matching the actual browser origin. Without storage configuration the form returns an honest error; with private storage configured and email credentials empty it saves the inquiry with notification pending. Tests use mocked email responses and send no real messages.
 
 ```sh
 pnpm lint
@@ -39,8 +39,8 @@ Deploy as a Next.js Node application, not a static export: `/api/quote/` require
 - Configure an Upstash-compatible REST Redis service with `RATE_LIMIT_REDIS_URL` and `RATE_LIMIT_REDIS_TOKEN` for shared production rate limits.
 - Configure `TRUSTED_CLIENT_IP_HEADER` only if the ingress proxy strips/overwrites client-provided values. Without it, all clients share a conservative rate-limit bucket; this is secure but operationally restrictive.
 - `RATE_LIMIT_MODE=single-instance` deliberately opts into in-memory limiting for a single long-lived Node server. It resets on process restart and is unsuitable for serverless or multiple replicas. Production otherwise fails closed without a configured shared store.
-- A request is validated, rate-limited, then sent as plain text to Resend. The service reports success only after a provider message ID is returned. Provider acceptance is not a guarantee of inbox delivery; monitor provider delivery/bounce events and the recipient mailbox.
-- There is no local database, queue, customer account, or browser-storage persistence. Errors leave the form populated so the visitor can retry or contact the business directly. Missing configuration produces HTTP 503, never a false confirmation.
+- A request is validated, rate-limited and durably saved in the encrypted private inquiry store before a plain-text notification is attempted through Resend. Acceptance and notification status are reported separately. Provider acceptance is not a guarantee of inbox delivery; monitor the private queue, provider delivery/bounce events and recipient mailbox.
+- The encrypted local database retains accepted inquiries. Tab-local drafts expire after 30 minutes. Missing storage configuration produces HTTP 503; email failure after persistence preserves acceptance and reports notification separately.
 - A stable request UUID serves as an email idempotency key during retries; editing request fields generates a new UUID. The provider controls its idempotency retention window.
 - Logs intentionally exclude quote bodies and credentials. Align mailbox retention, provider retention and privacy procedures with the owner’s policies.
 
@@ -72,7 +72,7 @@ Adding a category or region does not automatically create thin city pages. Only 
 ASSET_AUDIT_PRIOR_ROOT=/absolute/path/to/projects pnpm check:assets
 ```
 
-The audit checks SHA-256 exact matches and 64-bit perceptual difference-hash candidates. Near matches require human visual review. Inaccessible, remote-only inventories cannot be certified. Original image-generation prompts and review scope are in `docs/ASSETS.md`. Original logo source is `public/logo.svg`; the header/footer use a CSS wordmark, and the favicon is `src/app/icon.svg`.
+The audit checks SHA-256 exact matches and 64-bit perceptual difference-hash candidates. Near matches require human visual review. Inaccessible, remote-only inventories cannot be certified. Original image-generation prompts and review scope are in `docs/ASSETS.md`. The shared logo source is `public/brand/national-rentals-logo.svg`; header/footer use that outlined SVG, with derived aliases and favicon.
 
 ## Reference documentation
 
@@ -91,10 +91,16 @@ Every equipment CTA prefills category, localized equipment and validated page co
 Authoring and imagery policy: `docs/CATALOG.md`. Product-specific image slots remain
 empty rather than repeating category pictures or implying a particular supplied model;
 existing industrial photography and original category illustrations are preserved.
-The red outlined logo is unchanged. Phase 1C geographic expansion is documented below; no analytics was added.
+Phase 1C geographic expansion and Phase 1D measurement/logo updates are documented below.
 
 ## Phase 1C geographic discovery
 
 The national hub links all 13 province/territory pages and searchable city/municipality entries. Twelve substantive metro guides are available in English and French; all previous 1A/1B paths remain stable. There are 218 content routes in total. Geographic and equipment selections carry into quote forms, including correct province selection for Ottawa–Gatineau municipalities.
 
 See `docs/GEOGRAPHY.md` for data ownership, publication rules, cross-border handling, reserved category/location architecture and coverage limits. No category/location combinations or discovery-only city pages are indexed. The approved wordmark is preserved; interface accents use red and charcoal.
+
+## Phase 1D inquiry operations
+
+Inquiries are accepted only after durable encrypted SQLite persistence. Email notification status is separate and recoverable. Hosting requires a private persistent volume on a long-lived Node host; an ephemeral serverless filesystem is unsupported. Configure `LEAD_DB_PATH` outside the repository and a unique `LEAD_ENCRYPTION_KEY`, then configure Resend and rate limiting. See [inquiry operations](docs/INQUIRY_OPERATIONS.md) for exact setup, private export/retry/deletion commands, backup/retention requirements, consent-based analytics and the live end-to-end blocker.
+
+The form preserves tab-local drafts for 30 minutes and accepts unknown rental dates. Measurement is opt-in and off by default. No public admin interface or customer accounts were added. The stacked wordmark now uses clean original outlined geometry with identical line bounds and cap heights; see `docs/logo-geometry.json`.

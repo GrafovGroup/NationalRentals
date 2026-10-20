@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@11.25.0",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.16"
   },
   "scripts": {
     "dev": "next dev",
@@ -15,7 +15,8 @@
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
     "check:assets": "tsx scripts/audit-assets.ts",
-    "format": "prettier --write src tests scripts/*.ts scripts/*.mjs"
+    "format": "prettier --write src tests scripts/*.ts scripts/*.mjs",
+    "leads": "tsx scripts/leads.ts"
   },
   "dependencies": {
     "next": "^16.0.0",

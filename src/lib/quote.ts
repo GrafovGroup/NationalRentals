@@ -2,8 +2,15 @@ import { z } from "zod";
 import { getEquipment } from "./equipment";
 import { categories } from "./catalog";
 import { regions } from "./locations";
+import { resolveRoute } from "./routes";
 import { b } from "./config";
-const short = z.string().trim().min(1).max(160);
+const short = z
+  .string()
+  .trim()
+  .min(1)
+  .max(160)
+  .refine((v) => !/[\u0000-\u001f\u007f]/.test(v));
+const optionalDate = z.union([z.iso.date(), z.literal("")]).default("");
 export const quoteSchema = z
   .object({
     locale: z.enum(["en", "fr"]),
@@ -26,8 +33,32 @@ export const quoteSchema = z
       .default("")
       .refine((v) => !v || !!getEquipment(v)),
     quantity: z.coerce.number().int().min(1).max(10000),
-    startDate: z.iso.date(),
-    endDate: z.iso.date(),
+    startDate: optionalDate,
+    endDate: optionalDate,
+    sourcePath: z
+      .string()
+      .max(300)
+      .default("")
+      .refine(
+        (v) =>
+          !v ||
+          (/^(\/en\/|\/fr\/)/.test(v) &&
+            !!resolveRoute(
+              v.startsWith("/fr/") ? "fr" : "en",
+              v.split("/").filter(Boolean).slice(1),
+            )),
+      ),
+    attribution: z
+      .object({
+        utm_source: z.string().max(200).optional(),
+        utm_medium: z.string().max(200).optional(),
+        utm_campaign: z.string().max(200).optional(),
+        utm_term: z.string().max(200).optional(),
+        utm_content: z.string().max(200).optional(),
+        referrer: z.string().max(300).optional(),
+      })
+      .strict()
+      .default({}),
     city: short,
     province: z.string().refine((v) => regions.some((r) => r.code === v)),
     delivery: z.enum(["delivery", "pickup", "discuss"]),
@@ -45,7 +76,7 @@ export const quoteSchema = z
         path: ["sourceEquipment"],
         message: "invalid",
       });
-    if (v.endDate < v.startDate)
+    if (v.startDate && v.endDate && v.endDate < v.startDate)
       ctx.addIssue({ code: "custom", path: ["endDate"], message: "dateOrder" });
     // Business dates use the configured Canadian operating timezone, not UTC midnight.
     const today = new Intl.DateTimeFormat("en-CA", {
@@ -54,7 +85,7 @@ export const quoteSchema = z
       month: "2-digit",
       day: "2-digit",
     }).format(new Date());
-    if (v.startDate < today)
+    if (v.startDate && v.startDate < today)
       ctx.addIssue({
         code: "custom",
         path: ["startDate"],
@@ -114,9 +145,23 @@ export const formCopy = {
     "Trop de tentatives. Veuillez attendre 15 minutes ou écrire à info@nationalrentals.ca.",
   ),
   success: b(
-    "Thank you. Your request has been sent for review. This is not a booking confirmation.",
-    "Merci. Votre demande a été envoyée pour évaluation. Ceci n’est pas une confirmation de réservation.",
+    "Thank you. Your request has been saved for review. This is not a booking confirmation.",
+    "Merci. Votre demande a été enregistrée pour évaluation. Ceci n’est pas une confirmation de réservation.",
   ),
+  notificationSent: b(
+    "The inquiry team has been notified.",
+    "L’équipe responsable des demandes a été avisée.",
+  ),
+  notificationPending: b(
+    "Your request is retained. The email notification has not yet been confirmed.",
+    "Votre demande est conservée. L’avis par courriel n’a pas encore été confirmé.",
+  ),
+  draft: b(
+    "Your draft stays in this browser tab for up to 30 minutes. Clear it on a shared device.",
+    "Votre brouillon reste dans cet onglet pendant au plus 30 minutes. Effacez-le sur un appareil partagé.",
+  ),
+  clearDraft: b("Clear draft", "Effacer le brouillon"),
+  optional: b("optional", "facultatif"),
   reference: b("Request reference", "Référence de la demande"),
   privacyLink: b("Read the privacy notice", "Lire l’avis de confidentialité"),
 };

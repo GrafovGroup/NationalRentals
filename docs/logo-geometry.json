@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "word": "NATIONAL",
+      "left": 60,
+      "right": 1140.0,
+      "top": 48,
+      "bottom": 172,
+      "capHeight": 124,
+      "tracking": 16.78106
+    },
+    {
+      "word": "RENTALS",
+      "left": 60,
+      "right": 1140.0,
+      "top": 194,
+      "bottom": 318,
+      "capHeight": 124,
+      "tracking": 26.10709
+    }
+  ],
+  "speedLine": {
+    "left": 60,
+    "right": 1140
+  },
+  "description": "Original outlined geometry; shared cap height, visible line bounds and stroke scale. No font substitution."
+}

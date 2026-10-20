@@ -1,8 +1,12 @@
 import { createHash } from "node:crypto";
 const windowMs = 15 * 60 * 1000;
 const memory = new Map<string, { count: number; expires: number }>();
-export async function allowRequest(ip: string): Promise<boolean> {
-  const key = `nr:quote:${createHash("sha256").update(ip).digest("hex")}`;
+export async function allowRequest(
+  ip: string,
+  scope = "quote",
+  limit = 5,
+): Promise<boolean> {
+  const key = `nr:${scope}:${createHash("sha256").update(ip).digest("hex")}`;
   const url = process.env.RATE_LIMIT_REDIS_URL,
     token = process.env.RATE_LIMIT_REDIS_TOKEN;
   if (url && token) {
@@ -25,7 +29,7 @@ export async function allowRequest(ip: string): Promise<boolean> {
     const data = await response.json();
     if (typeof data.result !== "number")
       throw new Error("Invalid rate limit response");
-    return data.result <= 5;
+    return data.result <= limit;
   }
   if (
     process.env.NODE_ENV === "production" &&
@@ -38,5 +42,5 @@ export async function allowRequest(ip: string): Promise<boolean> {
   if (!memory.has(key) && memory.size >= 10000) return false;
   entry.count++;
   memory.set(key, entry);
-  return entry.count <= 5;
+  return entry.count <= limit;
 }

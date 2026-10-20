@@ -13,7 +13,7 @@ Owner selected the **red two-line NATIONAL / RENTALS wordmark**, latest approved
 - No maple leaves, badges, emblems, gradients or shadows.
 
 ## Assets
-- `public/brand/national-rentals-logo.svg` is an **outlined SVG reconstruction** of this direction, with matched line bounds and consistent letter scale; it is not an exact vector trace of the approved raster image. Replace with a faithful trace of the approved image before final production brand signoff.
+- `public/brand/national-rentals-logo.svg` is an **original geometric outlined wordmark** corrected in Phase 1D at the owner’s request for clean, aligned lettering. Both rows and the speed line span x=60 to x=1140; both letter rows are 124 units high. `scripts/align-logo.py` generates the paths and `docs/logo-geometry.json` records the geometry. It is not represented as an exact trace of the earlier raster concept.
 - The approved image was generated in the conversation on October 19, 2026 (final selected red wordmark, after correcting the N).
 - Keep logo in a single source-of-truth component and generate appropriate responsive and inverted variants once faithful vector asset is available.
 

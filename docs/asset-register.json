@@ -150,8 +150,8 @@
       "placement": "homepage social card only",
       "source": "Original bilingual social card; scripts/prepare-images.mjs",
       "website": "nationalrentals.ca",
-      "sha256": "0ba40c9df37c1f13f65d17917dc2d2cfd77c5fc69c21c868d15b8f27794314df",
-      "dhash": "7131314666585252"
+      "sha256": "1dc654fd11c3384c03ba8f69a0079278c90059f3124fe3bdf8c2f37de6f07ebe",
+      "dhash": "3131314662585252"
     },
     {
       "file": "public/social-fr.png",
@@ -159,8 +159,8 @@
       "placement": "homepage social card only",
       "source": "Original bilingual social card; scripts/prepare-images.mjs",
       "website": "nationalrentals.ca",
-      "sha256": "928f7b7b04bdfc289bb88565a0eb300ad916258aaadde3b567b4da77beb10417",
-      "dhash": "7131310272585252"
+      "sha256": "385e2b1f9d6d0ca104258a85108ca13455d6a5305eb562d4114d6273e5e144ac",
+      "dhash": "3131310272585252"
     }
   ],
   "identity": "Approved red wordmark: public/brand/national-rentals-logo.svg; shared Logo component in all EN/FR headers and footers, generated logo/favicon aliases and homepage social cards. Identity UI is not content imagery."

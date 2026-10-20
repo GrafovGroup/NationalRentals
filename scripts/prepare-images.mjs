@@ -8,7 +8,7 @@ async function main() {
   // Generated aliases prevent the old icon from surviving in bookmarks or integrations.
   await writeFile("public/logo.svg", logo);
   await writeFile("src/app/icon.svg", logo);
-  // Browser rendering preserves SVG textLength, which librsvg does not support.
+  // Render the same outlined source used by the website; no system font dependency.
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH,
   });
@@ -42,7 +42,7 @@ async function main() {
       "LOCATION COMMERCIALE PARTOUT AU CANADA",
     ],
   ]) {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#10243a"/><path d="M900 0h300v630H700z" fill="#19334d"/><rect x="70" y="55" width="390" height="130" fill="white"/><text x="70" y="320" font-family="Arial" font-weight="bold" font-size="51" fill="white">${heading}</text><path d="M70 370h120" stroke="#f58220" stroke-width="8"/><text x="70" y="445" font-family="Arial" font-size="21" letter-spacing="2" fill="#c3d0dc">${sub}</text><text x="70" y="565" font-family="Arial" font-size="22" fill="#f58220">nationalrentals.ca</text></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#232323"/><path d="M900 0h300v630H700z" fill="#333333"/><rect x="70" y="55" width="390" height="130" fill="white"/><text x="70" y="320" font-family="Arial" font-weight="bold" font-size="51" fill="white">${heading}</text><path d="M70 370h120" stroke="#E30613" stroke-width="8"/><text x="70" y="445" font-family="Arial" font-size="21" letter-spacing="2" fill="#c3d0dc">${sub}</text><text x="70" y="565" font-family="Arial" font-size="22" fill="#E30613">nationalrentals.ca</text></svg>`;
     await sharp(Buffer.from(svg))
       .composite([{ input: logoPng, left: 85, top: 67 }])
       .png()

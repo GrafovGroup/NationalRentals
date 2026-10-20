@@ -1,6 +1,6 @@
 import { quoteSchema } from "@/lib/quote";
 import { allowRequest } from "@/lib/rate-limit";
-import { deliverQuote } from "@/lib/delivery";
+import { acceptLead, SubmissionConflict } from "@/lib/leads";
 export const runtime = "nodejs";
 const response = (
   body: unknown,
@@ -15,7 +15,11 @@ export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const expected =
     process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
-  if (origin && origin !== new URL(expected).origin)
+  if (
+    !origin ||
+    origin !== new URL(expected).origin ||
+    request.headers.get("sec-fetch-site") === "cross-site"
+  )
     return response({ error: "origin" }, 403);
   if (!request.headers.get("content-type")?.includes("application/json"))
     return response({ error: "contentType" }, 415);
@@ -63,9 +67,10 @@ export async function POST(request: Request) {
         },
         400,
       );
-    await deliverQuote(result.data);
-    return response({ ok: true, reference: result.data.requestId }, 200);
-  } catch {
+    return response(await acceptLead(result.data), 200);
+  } catch (error) {
+    if (error instanceof SubmissionConflict)
+      return response({ error: "conflict" }, 409);
     // Never log the request body or provider credentials. No false success or silent discard.
     console.error("Quote service unavailable; request was not confirmed.");
     return response({ error: "unavailable" }, 503);

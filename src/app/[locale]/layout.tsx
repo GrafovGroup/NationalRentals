@@ -1,3 +1,4 @@
+import { Journey } from "@/components/Journey";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/config";
 import { Header } from "@/components/Header";
@@ -18,6 +19,7 @@ export default async function Layout({
         <Header locale={locale} />
         <main id="main">{children}</main>
         <Footer locale={locale} />
+        <Journey locale={locale} />
       </body>
     </html>
   );

@@ -1,8 +1,31 @@
 # NationalRentals.ca — Implementation report
 
-Latest status: Phase 1C geographic discovery is implemented on the active Codex branch. Phase 1B product imagery, verified phone configuration, production email configuration and public deployment remain owner-dependent items.
+Latest status: Phase 1D inquiry operations and the aligned outlined logo are implemented on `codex/phase-1`. Live end-to-end acceptance/email reception is **BLOCKED** by owner configuration; no public deployment is claimed.
 
-Scope: Phase 1A, 1B and 1C master prompts, with the user’s current website instructions taking precedence. Implementation date: October 19, 2026 (America/Toronto). Earlier phase sections below are historical; current additions and validation are in the Phase 1C section.
+Scope: Phases 1A–1D, with the user's current website instructions taking precedence. Implementation date: October 19, 2026 (America/Toronto). Earlier phase sections are historical; the Phase 1D section supersedes their inquiry-storage and logo descriptions.
+
+## Phase 1D delivered
+
+- Encrypted SQLite persistence precedes notification. Accepted records retain their ID, timestamp, bilingual request context, canonical source, private attribution and notification status. Requires Node 22.16+ and a private persistent volume outside the project on one host.
+- Resend notification remains addressed to **info@nationalrentals.ca**. Failure after persistence yields a truthful saved-but-not-notified confirmation. UUID/fingerprint checks, provider idempotency and database leases protect retries; uncertain attempts older than 23 hours require operator reconciliation.
+- Private OS-authenticated CLI supports status listing, export, retry, reconciliation, deletion and explicit retention purge. No public administration endpoint or CRM was added. There is no automatic retry scheduler; operators must monitor/recover pending notifications.
+- Tab-scoped drafts preserve contact/project fields and equipment/location context across navigation and language changes, expire after 30 minutes and clear after acceptance or an explicit clear action. Dates are optional when unknown. Consent must be checked anew.
+- Optional consent-gated measurement uses a strict event/canonical-path allowlist. No contact data, inquiry IDs, free text, campaign attributes or visitor headers are forwarded. UTM attribution remains private with the inquiry. Measurement is disabled by default.
+- Origin checks, bounded request streams, validated schemas, honeypot and existing rate limits protect the APIs. Payloads are AES-256-GCM encrypted; SQL is parameterized, logs are generic, exports are restricted and storage is excluded from source/build paths.
+- Rebuilt the wordmark with clean geometric outlines, equal cap heights and exactly matching visible left/right edges for both rows and the speed line. Shared SVG, favicon and localized social cards were regenerated. Geometry is recorded in `docs/logo-geometry.json`; there is no font dependency.
+- Preserved all 218 bilingual content routes, equipment search/filter, geography, metadata and contextual links. Phase 2A has not started.
+
+### Phase 1D verification
+
+Lint, TypeScript, all **33 unit/API tests**, and the production build passed. Tests cover actual encrypted temporary SQLite records, provider outage/recovery, duplicate/concurrent attempts, operator-review gating, origin rejection, deletion and analytics payload/consent restrictions. Provider responses are mocked; no real email is sent.
+
+All **16 production-browser tests passed**, including all 218 routes, EN/FR context, mobile drafts/expiry/clear, saved-but-not-notified messaging, exact logo bounds, navigation and automated WCAG A/AA checks on tested layouts. Nine refreshed screenshots reported no page errors; desktop English and mobile French homepages and both social cards were visually reviewed. Asset audit compared 18 registered assets with 1,346 accessible prior images: no exact duplicates or unreadable files. The localized social cards remain a shared identity/template candidate; inaccessible prior-site inventories are outside verification.
+
+### Owner configuration and deployment
+
+**Live end-to-end verification: BLOCKED.** Follow `docs/INQUIRY_OPERATIONS.md`: provision a private persistent host volume, generate the encryption secret, configure the verified Resend sender/domain DNS and key, set the production origin and rate-limit settings, then submit an authorized inquiry in each language and verify both retained IDs and mailbox reception. Configure a verified phone only when its routing is confirmed. Analytics is optional and requires an HTTPS receiver plus privacy/consent review. Approve retention/access policy and backup handling. Exact variables are listed in `.env.example`.
+
+Local production preview is available at `http://127.0.0.1:3000/en/`. No public deployment, live mailbox delivery or unobserved remote CI success is claimed.
 
 ## Phase 1A delivered
 

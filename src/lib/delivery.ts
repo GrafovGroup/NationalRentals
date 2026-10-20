@@ -24,11 +24,15 @@ export async function deliverQuote(quote: Quote): Promise<string> {
               site.url +
               pathFor(locale, String(v), "equipment")
           : "Equipment page: General inquiry";
+      if (k === "attribution")
+        return "Private attribution: " + JSON.stringify(v);
+      if (k === "sourcePath")
+        return "Source page: " + site.url + (v || `/${locale}/contact/`);
       const label = formCopy[k as keyof typeof formCopy]?.en || k;
       if (k === "category")
         v = categories.find((c) => c.id === v)?.name.en || v;
       if (k === "province") v = regions.find((r) => r.code === v)?.name.en || v;
-      return `${label}: ${v}`;
+      return `${label}: ${v === "" ? "Not specified" : v}`;
     })
     .join("\n");
   const response = await fetch("https://api.resend.com/emails", {

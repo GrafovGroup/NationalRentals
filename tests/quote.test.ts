@@ -104,7 +104,7 @@ test("API returns field errors without attempting delivery", async () => {
   assert.equal(response.status, 400);
   assert.equal((await response.json()).fields.privacy, "invalid");
 });
-test("API never confirms success without configured provider", async () => {
+test("API never accepts an inquiry without durable storage", async () => {
   delete process.env.RESEND_API_KEY;
   delete process.env.QUOTE_FROM_EMAIL;
   const response = await POST(request());
@@ -125,11 +125,13 @@ test("provider acceptance is required and recipient is central contact", async (
       return Response.json({ id: "provider-id" });
     },
   );
-  const response = await POST(
-    request({ ...quote, details: "Literal text: <script>alert(1)</script>" }),
+  const providerId = await deliverQuote(
+    quoteSchema.parse({
+      ...quote,
+      details: "Literal text: <script>alert(1)</script>",
+    }),
   );
-  assert.equal(response.status, 200);
-  assert.equal((await response.json()).reference, quote.requestId);
+  assert.equal(providerId, "provider-id");
   assert.deepEqual(payload.to, ["info@nationalrentals.ca"]);
   assert.equal(payload.reply_to, quote.email);
   assert.equal(payload.html, undefined);

@@ -1909,3 +1909,5 @@ textarea[aria-invalid="true"] {
   display: inline-flex;
   margin: 18px 20px 0 0;
 }
+.measurement-choice { padding-block: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.measurement-choice button, .form-note button { background: transparent; border: 1px solid currentColor; padding: 10px; color: inherit; text-transform: uppercase; }

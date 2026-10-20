@@ -1,12 +1,21 @@
 "use client";
-import { useRef, useState, type FormEvent } from "react";
+import { measure } from "@/lib/measurement";
+import {
+  readDraft,
+  saveDraft,
+  clearDraft,
+  privateAttribution,
+} from "@/lib/draft";
+
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
+import { getEquipment } from "@/lib/equipment";
 import { categories } from "@/lib/catalog";
 import { regions } from "@/lib/locations";
 import { type Locale } from "@/lib/config";
 import { copy } from "@/lib/copy";
 import { formCopy as t, quoteSchema } from "@/lib/quote";
-import { pathFor } from "@/lib/routes";
+import { pathFor, resolveRoute } from "@/lib/routes";
 export function QuoteForm({
   locale,
   initialCategory = "",
@@ -22,6 +31,11 @@ export function QuoteForm({
   city?: string;
   province?: string;
 }) {
+  const form = useRef<HTMLFormElement>(null);
+  const started = useRef(false);
+  const sourcePath = useRef("");
+  const [notification, setNotification] = useState("");
+  const [source, setSource] = useState(sourceEquipment);
   const [category, setCategory] = useState(initialCategory);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<
@@ -32,6 +46,69 @@ export function QuoteForm({
   const previousPayload = useRef("");
   const summary = useRef<HTMLDivElement>(null);
   const f = locale;
+  useEffect(() => {
+    const draft = readDraft(locale);
+    if (!draft || !form.current) return;
+    const fields = { ...draft.fields };
+    // Explicit equipment/location choices override only their own fields; entered contact/project details survive.
+    if (initialCategory) fields.category = initialCategory;
+    if (initialEquipment) fields.equipment = initialEquipment;
+    if (city) fields.city = city;
+    if (province) fields.province = province;
+    queueMicrotask(() => {
+      setCategory(fields.category || "");
+      setSource(sourceEquipment || fields.sourceEquipment || "");
+      for (const [name, value] of Object.entries(fields)) {
+        const input = form.current?.elements.namedItem(name);
+        if (
+          input instanceof HTMLInputElement ||
+          input instanceof HTMLTextAreaElement ||
+          input instanceof HTMLSelectElement
+        )
+          if (input.type !== "hidden" && input.type !== "checkbox")
+            input.value = String(value);
+      }
+    });
+    requestId.current = draft.requestId || "";
+    previousPayload.current = draft.payload || "";
+    sourcePath.current = draft.sourcePath || "";
+  }, [
+    locale,
+    initialCategory,
+    initialEquipment,
+    city,
+    province,
+    sourceEquipment,
+  ]);
+  function remember() {
+    if (form.current)
+      saveDraft(
+        form.current,
+        requestId.current,
+        previousPayload.current,
+        sourcePath.current,
+      );
+  }
+  function begin() {
+    if (!started.current) {
+      started.current = true;
+      measure("quote_start");
+    }
+    if (!sourcePath.current) {
+      try {
+        const candidate = sessionStorage.getItem("nr:previous-path") || "";
+        const [language, ...slug] = candidate.split("/").filter(Boolean);
+        sourcePath.current =
+          (language === "en" || language === "fr") &&
+          resolveRoute(language, slug)
+            ? candidate
+            : window.location.pathname;
+      } catch {
+        sourcePath.current = window.location.pathname;
+      }
+    }
+  }
+
   function show(next: typeof status) {
     setStatus(next);
     setTimeout(() => summary.current?.focus(), 0);
@@ -44,12 +121,15 @@ export function QuoteForm({
       ...Object.fromEntries(data),
       privacy: data.get("privacy") === "on",
       locale,
+      sourcePath: sourcePath.current || window.location.pathname,
+      attribution: privateAttribution(),
     };
     const payload = JSON.stringify(fields);
     if (payload !== previousPayload.current) {
       requestId.current = crypto.randomUUID();
       previousPayload.current = payload;
     }
+    remember();
     const result = quoteSchema.safeParse({
       ...fields,
       requestId: requestId.current,
@@ -65,6 +145,7 @@ export function QuoteForm({
           ]),
         ),
       );
+      measure("quote_submit_error");
       show("error");
       return;
     }
@@ -80,12 +161,20 @@ export function QuoteForm({
       const body = await response.json();
       if (response.ok && body.ok) {
         setReference(body.reference);
+        setNotification(body.notification || "pending");
+        clearDraft();
+        measure("quote_submit_success");
         show("success");
       } else if (response.status === 400 && body.fields) {
+        measure("quote_submit_error");
         setErrors(body.fields);
         show("error");
-      } else show(response.status === 429 ? "rate" : "failed");
+      } else {
+        measure("quote_submit_error");
+        show(response.status === 429 ? "rate" : "failed");
+      }
     } catch {
+      measure("quote_submit_error");
       show("failed");
     }
   }
@@ -112,13 +201,16 @@ export function QuoteForm({
   ) {
     return (
       <label className="field">
-        {t[name][f]} *
+        {t[name][f]}{" "}
+        {name === "startDate" || name === "endDate"
+          ? `(${t.optional[f]})`
+          : "*"}
         <input
           name={name}
           id={name}
           type={type}
           autoComplete={autoComplete}
-          required
+          required={name !== "startDate" && name !== "endDate"}
           maxLength={type === "text" ? 160 : undefined}
           min={type === "number" ? 1 : undefined}
           max={type === "number" ? 10000 : undefined}
@@ -133,13 +225,42 @@ export function QuoteForm({
     );
   }
   return (
-    <form onSubmit={submit} noValidate className="quote-form">
+    <form
+      ref={form}
+      onSubmit={submit}
+      onFocus={begin}
+      onChange={remember}
+      noValidate
+      className="quote-form"
+    >
       <input
         type="hidden"
         name="sourceEquipment"
-        value={category === initialCategory ? sourceEquipment : ""}
+        value={getEquipment(source)?.categoryId === category ? source : ""}
       />
       <p className="form-note">{copy.required[f]}</p>
+      {status !== "success" && (
+        <p className="form-note">
+          {t.draft[f]}{" "}
+          <button
+            type="button"
+            className="text-link"
+            onClick={() => {
+              clearDraft();
+              form.current?.reset();
+              setCategory(initialCategory);
+              setSource(sourceEquipment);
+              setErrors({});
+              setStatus("idle");
+              requestId.current = "";
+              previousPayload.current = "";
+              sourcePath.current = "";
+            }}
+          >
+            {t.clearDraft[f]}
+          </button>
+        </p>
+      )}
       <div
         ref={summary}
         tabIndex={-1}
@@ -166,6 +287,12 @@ export function QuoteForm({
         {status === "success" && (
           <p>
             {t.reference[f]}: {reference}
+            <br />
+            {
+              (notification === "sent"
+                ? t.notificationSent
+                : t.notificationPending)[f]
+            }
           </p>
         )}
       </div>
@@ -183,7 +310,10 @@ export function QuoteForm({
                 id="category"
                 required
                 value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                  setSource("");
+                }}
                 aria-invalid={!!errors.category}
                 aria-describedby={
                   errors.category ? "category-error" : undefined
@@ -201,7 +331,6 @@ export function QuoteForm({
             <label className="field">
               {t.equipment[f]} *
               <input
-                key={category}
                 name="equipment"
                 id="equipment"
                 list="equipment-options"
