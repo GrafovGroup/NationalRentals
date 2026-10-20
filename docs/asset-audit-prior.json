@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-20T00:55:30.882Z",
+  "currentImages": 18,
+  "priorImagesInspected": 1346,
+  "scope": "Accessible local images under configured prior root; remote-only inventories are not accessible.",
+  "exactDuplicates": [],
+  "visualCandidates": [],
+  "skipped": []
+}

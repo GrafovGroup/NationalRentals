@@ -1,0 +1,167 @@
+{
+  "assets": [
+    {
+      "file": "public/images/home-hero.webp",
+      "page": "/en/",
+      "placement": "hero",
+      "source": "Built-in imagegen; original exec-b1a688ce-b4ce-46fc-a470-7e702d5fd8b8.png",
+      "website": "nationalrentals.ca",
+      "sha256": "d98488e2d5a4f36c5c88ac6308c0b4e3b4e5864b2b93662f7b8676ed9ae3ccaf",
+      "dhash": "9a061d0d6918cbe7"
+    },
+    {
+      "file": "public/images/home-hero-fr.webp",
+      "page": "/fr/",
+      "placement": "hero",
+      "source": "Built-in imagegen; original exec-23626bc3-925d-468c-95e9-c81ffe61e478.png",
+      "website": "nationalrentals.ca",
+      "sha256": "c9c0d1bd557174f25e1c3712583896193f4e23a5de3b748f52c4cc4778b52fa5",
+      "dhash": "ff58df7e3ebefeff"
+    },
+    {
+      "file": "public/images/featured-skid-steer.svg",
+      "page": "/en/",
+      "placement": "featured equipment featured-skid-steer",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "04bcb5968c5f51d8320522fa5ebc2bca8260a75fbab75dc7db1a130024c8e762",
+      "dhash": "0000006062606040"
+    },
+    {
+      "file": "public/images/featured-lift.svg",
+      "page": "/en/",
+      "placement": "featured equipment featured-lift",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "906be1197fc18b8773d24fc2ea708bd9e72911ec995a56a4c8f5b8de1d9c6393",
+      "dhash": "0061607272684940"
+    },
+    {
+      "file": "public/images/featured-power.svg",
+      "page": "/en/",
+      "placement": "featured equipment featured-power",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "e0729e9dcb183f352c84443d30aa262868facdb6374390d0edbcfe23277e6204",
+      "dhash": "0000696161694d40"
+    },
+    {
+      "file": "public/images/construction.svg",
+      "page": "/en/rentals/construction-earthmoving/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "b190f5bda44163ee08289440014b20929d16e0c9b0e30aacc3ac96660657a840",
+      "dhash": "0012196564647040"
+    },
+    {
+      "file": "public/images/aerial.svg",
+      "page": "/en/rentals/aerial-access-handling/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "bcdae7c99cd85432dbc2f24f03d4d1fcbc1f53a2e98127131dee126a6a429cb9",
+      "dhash": "0069323232716940"
+    },
+    {
+      "file": "public/images/power.svg",
+      "page": "/en/rentals/industrial-power/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "351833ab2cfa4bb700ee7c4f967e9981dd9d4b4979091bb3c71e590941e1da7c",
+      "dhash": "0000796971f1d240"
+    },
+    {
+      "file": "public/images/infrastructure.svg",
+      "page": "/en/rentals/temporary-infrastructure/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "04946d74651d241f0f92a52ae2fd0d2caf7d531b0d6adf93c55452413f880696",
+      "dhash": "000064d4d8d0d840"
+    },
+    {
+      "file": "public/images/vehicles.svg",
+      "page": "/en/rentals/commercial-vehicles-trailers/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "c2ee1dee540035f5f7ca3d9fc354d06760a91fddc6cd891c4437b9eb787c524f",
+      "dhash": "0000c0e2eccc4c40"
+    },
+    {
+      "file": "public/images/technology.svg",
+      "page": "/en/rentals/technology-av/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "5d011471d6fc613259f8bce328329aff5d421792e41a29cd51084a61c847b513",
+      "dhash": "00006c6cf8e8d040"
+    },
+    {
+      "file": "public/images/cleaning.svg",
+      "page": "/en/rentals/cleaning-restoration/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "78ed8a06897491e187e1e802f61ec129a542af5dd032f123c338eae9dfc37065",
+      "dhash": "0000393072727040"
+    },
+    {
+      "file": "public/images/landscaping.svg",
+      "page": "/en/rentals/landscaping-grounds/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "e9a3f5d8b6cfc9af619eeaee75adbbb830a377da3a378ee362f07c2e133b279a",
+      "dhash": "000929326049c840"
+    },
+    {
+      "file": "public/images/safety.svg",
+      "page": "/en/rentals/safety-traffic-control/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "aba971232819ba5f83d68be34cd7381e26846df1af72f13240721c433ed4b2eb",
+      "dhash": "000000696d656440"
+    },
+    {
+      "file": "public/images/specialty.svg",
+      "page": "/en/rentals/specialty-rentals/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "04f3813646371d47531b6e459b173b2105041d379f5bef5f50edca1a15c8e16f",
+      "dhash": "0030b2717979d240"
+    },
+    {
+      "file": "public/images/events.svg",
+      "page": "/en/rentals/events-crowd-control/",
+      "placement": "category illustration",
+      "source": "Original editable vector; scripts/create-vectors.py",
+      "website": "nationalrentals.ca",
+      "sha256": "7d8fb82989a95d5d042b42e14d436fea8b28ddbb137c2b973be373da9955efc1",
+      "dhash": "0030b2f096c8cc40"
+    },
+    {
+      "file": "public/social-en.png",
+      "page": "/en/",
+      "placement": "homepage social card only",
+      "source": "Original bilingual social card; scripts/prepare-images.mjs",
+      "website": "nationalrentals.ca",
+      "sha256": "599a75b94bb13925631a1a081a442aef278784aae769c7ff3a34cc110921dce4",
+      "dhash": "5979896646585252"
+    },
+    {
+      "file": "public/social-fr.png",
+      "page": "/fr/",
+      "placement": "homepage social card only",
+      "source": "Original bilingual social card; scripts/prepare-images.mjs",
+      "website": "nationalrentals.ca",
+      "sha256": "3a888934ca4870557e41c0f0221efa200ab6b5e498a567b567f15354eb717418",
+      "dhash": "59f9c93272585252"
+    }
+  ],
+  "identity": "Logo/favicon and CSS wordmark are identity UI, not reused content imagery."
+}
