@@ -1,6 +1,6 @@
-# National Rentals — Phases 1A and 1B
+# National Rentals — Phases 1A, 1B and 1C
 
-Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md` and `PHASE_1B_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
+Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md`, `PHASE_1B_CODEX_MASTER_PROMPT.md` and `PHASE_1C_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
 
 ## Run locally
 
@@ -26,7 +26,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests cover all 174 pages, desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
+Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests cover all 218 pages, desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
 
 ## Production operation
 
@@ -76,7 +76,7 @@ The audit checks SHA-256 exact matches and 64-bit perceptual difference-hash can
 
 ## Reference documentation
 
-Implementation follows [Next.js App Router documentation](https://nextjs.org/docs/app/getting-started) and [Resend idempotency documentation](https://resend.com/changelog/idempotency-keys). Package versions are locked in `pnpm-lock.yaml`. No Phase 1B functionality is included.
+Implementation follows [Next.js App Router documentation](https://nextjs.org/docs/app/getting-started) and [Resend idempotency documentation](https://resend.com/changelog/idempotency-keys). Package versions are locked in `pnpm-lock.yaml`. Phase 1B catalog and Phase 1C geographic functionality are described below.
 
 
 ## Phase 1B equipment catalog
@@ -91,4 +91,10 @@ Every equipment CTA prefills category, localized equipment and validated page co
 Authoring and imagery policy: `docs/CATALOG.md`. Product-specific image slots remain
 empty rather than repeating category pictures or implying a particular supplied model;
 existing industrial photography and original category illustrations are preserved.
-The red outlined logo is unchanged. No Phase 1C city expansion or new analytics was added.
+The red outlined logo is unchanged. Phase 1C geographic expansion is documented below; no analytics was added.
+
+## Phase 1C geographic discovery
+
+The national hub links all 13 province/territory pages and searchable city/municipality entries. Twelve substantive metro guides are available in English and French; all previous 1A/1B paths remain stable. There are 218 content routes in total. Geographic and equipment selections carry into quote forms, including correct province selection for Ottawa–Gatineau municipalities.
+
+See `docs/GEOGRAPHY.md` for data ownership, publication rules, cross-border handling, reserved category/location architecture and coverage limits. No category/location combinations or discovery-only city pages are indexed. The approved wordmark is preserved; interface accents use red and charcoal.

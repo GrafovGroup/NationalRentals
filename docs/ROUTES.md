@@ -1,176 +1,222 @@
-# Published bilingual routes
+# Published route inventory
 
-- /en/
-- /en/rentals/
-- /en/about/
-- /en/contact/
-- /en/industries/
-- /en/locations/
-- /en/corporate-rentals/
-- /en/privacy/
-- /en/terms/
-- /en/rentals/construction-earthmoving/
-- /en/rentals/aerial-access-handling/
-- /en/rentals/industrial-power/
-- /en/rentals/temporary-infrastructure/
-- /en/rentals/commercial-vehicles-trailers/
-- /en/rentals/technology-av/
-- /en/rentals/cleaning-restoration/
-- /en/rentals/landscaping-grounds/
-- /en/rentals/safety-traffic-control/
-- /en/rentals/specialty-rentals/
-- /en/rentals/events-crowd-control/
-- /en/rentals/construction-earthmoving/excavator/
-- /en/rentals/construction-earthmoving/skid-steer/
-- /en/rentals/construction-earthmoving/compactor/
-- /en/rentals/construction-earthmoving/loader/
-- /en/rentals/construction-earthmoving/trencher/
-- /en/rentals/construction-earthmoving/concrete/
-- /en/rentals/construction-earthmoving/mini-excavator/
-- /en/rentals/construction-earthmoving/concrete-saw/
-- /en/rentals/construction-earthmoving/plate-compactor/
-- /en/rentals/aerial-access-handling/scissor/
-- /en/rentals/aerial-access-handling/boom/
-- /en/rentals/aerial-access-handling/telehandler/
-- /en/rentals/aerial-access-handling/forklift/
-- /en/rentals/aerial-access-handling/material-lift/
-- /en/rentals/aerial-access-handling/mast-lift/
-- /en/rentals/industrial-power/generator/
-- /en/rentals/industrial-power/compressor/
-- /en/rentals/industrial-power/pump/
-- /en/rentals/industrial-power/light-tower/
-- /en/rentals/industrial-power/air-mover/
-- /en/rentals/industrial-power/electric-heater/
-- /en/rentals/industrial-power/climate/
-- /en/rentals/temporary-infrastructure/office/
-- /en/rentals/temporary-infrastructure/container/
-- /en/rentals/temporary-infrastructure/toilet/
-- /en/rentals/temporary-infrastructure/wash/
-- /en/rentals/temporary-infrastructure/fence/
-- /en/rentals/temporary-infrastructure/shelter/
-- /en/rentals/commercial-vehicles-trailers/box-truck/
-- /en/rentals/commercial-vehicles-trailers/van/
-- /en/rentals/commercial-vehicles-trailers/reefer/
-- /en/rentals/commercial-vehicles-trailers/flatbed/
-- /en/rentals/commercial-vehicles-trailers/trailer/
-- /en/rentals/technology-av/tablet/
-- /en/rentals/technology-av/laptop/
-- /en/rentals/technology-av/kiosk/
-- /en/rentals/technology-av/signage/
-- /en/rentals/technology-av/screen/
-- /en/rentals/technology-av/event-tech/
-- /en/rentals/cleaning-restoration/scrubber/
-- /en/rentals/cleaning-restoration/sweeper/
-- /en/rentals/cleaning-restoration/extractor/
-- /en/rentals/cleaning-restoration/vacuum/
-- /en/rentals/cleaning-restoration/dehumidifier/
-- /en/rentals/landscaping-grounds/mower/
-- /en/rentals/landscaping-grounds/aerator/
-- /en/rentals/landscaping-grounds/chipper/
-- /en/rentals/landscaping-grounds/stump/
-- /en/rentals/safety-traffic-control/barricade/
-- /en/rentals/safety-traffic-control/cone/
-- /en/rentals/safety-traffic-control/sign/
-- /en/rentals/safety-traffic-control/message/
-- /en/rentals/safety-traffic-control/plate/
-- /en/rentals/specialty-rentals/floor-grinder/
-- /en/rentals/specialty-rentals/core-drill/
-- /en/rentals/specialty-rentals/pipe-threader/
-- /en/rentals/specialty-rentals/hydraulic-jack/
-- /en/rentals/specialty-rentals/inspection-camera/
-- /en/rentals/events-crowd-control/stanchion/
-- /en/rentals/events-crowd-control/barrier/
-- /en/rentals/events-crowd-control/turf/
-- /en/rentals/events-crowd-control/tent/
-- /en/rentals/events-crowd-control/furniture/
-- /en/rentals/events-crowd-control/flooring/
-- /en/locations/toronto-gta/
-- /en/locations/montreal/
-- /en/locations/vancouver-lower-mainland/
-- /fr/
-- /fr/locations-equipement/
-- /fr/a-propos/
-- /fr/contact/
-- /fr/secteurs/
-- /fr/regions/
-- /fr/location-entreprises/
-- /fr/confidentialite/
-- /fr/conditions/
-- /fr/locations-equipement/construction-terrassement/
-- /fr/locations-equipement/elevation-manutention/
-- /fr/locations-equipement/industrie-energie/
-- /fr/locations-equipement/infrastructures-temporaires/
-- /fr/locations-equipement/vehicules-remorques/
-- /fr/locations-equipement/technologie-audiovisuel/
-- /fr/locations-equipement/nettoyage-remise-en-etat/
-- /fr/locations-equipement/amenagement-paysager/
-- /fr/locations-equipement/securite-signalisation/
-- /fr/locations-equipement/locations-specialisees/
-- /fr/locations-equipement/evenements-gestion-foules/
-- /fr/locations-equipement/construction-terrassement/excavatrices/
-- /fr/locations-equipement/construction-terrassement/chargeuses-compactes/
-- /fr/locations-equipement/construction-terrassement/compacteurs/
-- /fr/locations-equipement/construction-terrassement/chargeuses/
-- /fr/locations-equipement/construction-terrassement/trancheuses/
-- /fr/locations-equipement/construction-terrassement/equipement-betonnage/
-- /fr/locations-equipement/construction-terrassement/mini-excavatrices/
-- /fr/locations-equipement/construction-terrassement/scies-beton/
-- /fr/locations-equipement/construction-terrassement/plaques-vibrantes/
-- /fr/locations-equipement/elevation-manutention/plateformes-ciseaux/
-- /fr/locations-equipement/elevation-manutention/nacelles-articulees/
-- /fr/locations-equipement/elevation-manutention/chariots-telescopiques/
-- /fr/locations-equipement/elevation-manutention/chariots-elevateurs/
-- /fr/locations-equipement/elevation-manutention/monte-materiaux/
-- /fr/locations-equipement/elevation-manutention/nacelles-mat-vertical/
-- /fr/locations-equipement/industrie-energie/generatrices/
-- /fr/locations-equipement/industrie-energie/compresseurs/
-- /fr/locations-equipement/industrie-energie/pompes/
-- /fr/locations-equipement/industrie-energie/tours-eclairage/
-- /fr/locations-equipement/industrie-energie/ventilateurs-sechage/
-- /fr/locations-equipement/industrie-energie/chauffages-electriques/
-- /fr/locations-equipement/industrie-energie/chauffage-climatisation/
-- /fr/locations-equipement/infrastructures-temporaires/roulottes-chantier/
-- /fr/locations-equipement/infrastructures-temporaires/conteneurs-entreposage/
-- /fr/locations-equipement/infrastructures-temporaires/toilettes-mobiles/
-- /fr/locations-equipement/infrastructures-temporaires/stations-lavage-mains/
-- /fr/locations-equipement/infrastructures-temporaires/clotures-temporaires/
-- /fr/locations-equipement/infrastructures-temporaires/abris/
-- /fr/locations-equipement/vehicules-remorques/camions-fourgons/
-- /fr/locations-equipement/vehicules-remorques/fourgonnettes-utilitaires/
-- /fr/locations-equipement/vehicules-remorques/vehicules-refrigeres/
-- /fr/locations-equipement/vehicules-remorques/camions-plateau/
-- /fr/locations-equipement/vehicules-remorques/remorques/
-- /fr/locations-equipement/technologie-audiovisuel/tablettes/
-- /fr/locations-equipement/technologie-audiovisuel/ordinateurs-portables/
-- /fr/locations-equipement/technologie-audiovisuel/bornes-interactives/
-- /fr/locations-equipement/technologie-audiovisuel/affichage-numerique/
-- /fr/locations-equipement/technologie-audiovisuel/ecrans/
-- /fr/locations-equipement/technologie-audiovisuel/technologie-evenementielle/
-- /fr/locations-equipement/nettoyage-remise-en-etat/autorecureuses/
-- /fr/locations-equipement/nettoyage-remise-en-etat/balayeuses/
-- /fr/locations-equipement/nettoyage-remise-en-etat/extracteurs/
-- /fr/locations-equipement/nettoyage-remise-en-etat/aspirateurs-commerciaux/
-- /fr/locations-equipement/nettoyage-remise-en-etat/deshumidificateurs/
-- /fr/locations-equipement/amenagement-paysager/tondeuses/
-- /fr/locations-equipement/amenagement-paysager/aerateurs/
-- /fr/locations-equipement/amenagement-paysager/dechiqueteuses-bois/
-- /fr/locations-equipement/amenagement-paysager/dessoucheuses/
-- /fr/locations-equipement/securite-signalisation/barricades/
-- /fr/locations-equipement/securite-signalisation/cones-signalisation/
-- /fr/locations-equipement/securite-signalisation/panneaux-signalisation/
-- /fr/locations-equipement/securite-signalisation/panneaux-messages-variables/
-- /fr/locations-equipement/securite-signalisation/plaques-chaussee/
-- /fr/locations-equipement/locations-specialisees/rectifieuses-plancher/
-- /fr/locations-equipement/locations-specialisees/carotteuses/
-- /fr/locations-equipement/locations-specialisees/fileteuses-tuyaux/
-- /fr/locations-equipement/locations-specialisees/verins-hydrauliques/
-- /fr/locations-equipement/locations-specialisees/cameras-inspection/
-- /fr/locations-equipement/evenements-gestion-foules/poteaux-guidage/
-- /fr/locations-equipement/evenements-gestion-foules/barrieres-foule/
-- /fr/locations-equipement/evenements-gestion-foules/gazon-synthetique/
-- /fr/locations-equipement/evenements-gestion-foules/tentes/
-- /fr/locations-equipement/evenements-gestion-foules/mobilier/
-- /fr/locations-equipement/evenements-gestion-foules/revetements-sol/
-- /fr/regions/toronto-grand-toronto/
-- /fr/regions/montreal/
-- /fr/regions/vancouver-basses-terres-continentales/
+218 content routes after Phase 1C. All have reciprocal EN/FR equivalents. Query variants and unpublished city/category combinations are excluded from the sitemap.
+
+- `/en/` — page
+- `/en/rentals/` — page
+- `/en/about/` — page
+- `/en/contact/` — page
+- `/en/industries/` — page
+- `/en/locations/` — page
+- `/en/corporate-rentals/` — page
+- `/en/privacy/` — page
+- `/en/terms/` — page
+- `/en/rentals/construction-earthmoving/` — category
+- `/en/rentals/aerial-access-handling/` — category
+- `/en/rentals/industrial-power/` — category
+- `/en/rentals/temporary-infrastructure/` — category
+- `/en/rentals/commercial-vehicles-trailers/` — category
+- `/en/rentals/technology-av/` — category
+- `/en/rentals/cleaning-restoration/` — category
+- `/en/rentals/landscaping-grounds/` — category
+- `/en/rentals/safety-traffic-control/` — category
+- `/en/rentals/specialty-rentals/` — category
+- `/en/rentals/events-crowd-control/` — category
+- `/en/rentals/construction-earthmoving/excavator/` — equipment
+- `/en/rentals/construction-earthmoving/skid-steer/` — equipment
+- `/en/rentals/construction-earthmoving/compactor/` — equipment
+- `/en/rentals/construction-earthmoving/loader/` — equipment
+- `/en/rentals/construction-earthmoving/trencher/` — equipment
+- `/en/rentals/construction-earthmoving/concrete/` — equipment
+- `/en/rentals/construction-earthmoving/mini-excavator/` — equipment
+- `/en/rentals/construction-earthmoving/concrete-saw/` — equipment
+- `/en/rentals/construction-earthmoving/plate-compactor/` — equipment
+- `/en/rentals/aerial-access-handling/scissor/` — equipment
+- `/en/rentals/aerial-access-handling/boom/` — equipment
+- `/en/rentals/aerial-access-handling/telehandler/` — equipment
+- `/en/rentals/aerial-access-handling/forklift/` — equipment
+- `/en/rentals/aerial-access-handling/material-lift/` — equipment
+- `/en/rentals/aerial-access-handling/mast-lift/` — equipment
+- `/en/rentals/industrial-power/generator/` — equipment
+- `/en/rentals/industrial-power/compressor/` — equipment
+- `/en/rentals/industrial-power/pump/` — equipment
+- `/en/rentals/industrial-power/light-tower/` — equipment
+- `/en/rentals/industrial-power/air-mover/` — equipment
+- `/en/rentals/industrial-power/electric-heater/` — equipment
+- `/en/rentals/industrial-power/climate/` — equipment
+- `/en/rentals/temporary-infrastructure/office/` — equipment
+- `/en/rentals/temporary-infrastructure/container/` — equipment
+- `/en/rentals/temporary-infrastructure/toilet/` — equipment
+- `/en/rentals/temporary-infrastructure/wash/` — equipment
+- `/en/rentals/temporary-infrastructure/fence/` — equipment
+- `/en/rentals/temporary-infrastructure/shelter/` — equipment
+- `/en/rentals/commercial-vehicles-trailers/box-truck/` — equipment
+- `/en/rentals/commercial-vehicles-trailers/van/` — equipment
+- `/en/rentals/commercial-vehicles-trailers/reefer/` — equipment
+- `/en/rentals/commercial-vehicles-trailers/flatbed/` — equipment
+- `/en/rentals/commercial-vehicles-trailers/trailer/` — equipment
+- `/en/rentals/technology-av/tablet/` — equipment
+- `/en/rentals/technology-av/laptop/` — equipment
+- `/en/rentals/technology-av/kiosk/` — equipment
+- `/en/rentals/technology-av/signage/` — equipment
+- `/en/rentals/technology-av/screen/` — equipment
+- `/en/rentals/technology-av/event-tech/` — equipment
+- `/en/rentals/cleaning-restoration/scrubber/` — equipment
+- `/en/rentals/cleaning-restoration/sweeper/` — equipment
+- `/en/rentals/cleaning-restoration/extractor/` — equipment
+- `/en/rentals/cleaning-restoration/vacuum/` — equipment
+- `/en/rentals/cleaning-restoration/dehumidifier/` — equipment
+- `/en/rentals/landscaping-grounds/mower/` — equipment
+- `/en/rentals/landscaping-grounds/aerator/` — equipment
+- `/en/rentals/landscaping-grounds/chipper/` — equipment
+- `/en/rentals/landscaping-grounds/stump/` — equipment
+- `/en/rentals/safety-traffic-control/barricade/` — equipment
+- `/en/rentals/safety-traffic-control/cone/` — equipment
+- `/en/rentals/safety-traffic-control/sign/` — equipment
+- `/en/rentals/safety-traffic-control/message/` — equipment
+- `/en/rentals/safety-traffic-control/plate/` — equipment
+- `/en/rentals/specialty-rentals/floor-grinder/` — equipment
+- `/en/rentals/specialty-rentals/core-drill/` — equipment
+- `/en/rentals/specialty-rentals/pipe-threader/` — equipment
+- `/en/rentals/specialty-rentals/hydraulic-jack/` — equipment
+- `/en/rentals/specialty-rentals/inspection-camera/` — equipment
+- `/en/rentals/events-crowd-control/stanchion/` — equipment
+- `/en/rentals/events-crowd-control/barrier/` — equipment
+- `/en/rentals/events-crowd-control/turf/` — equipment
+- `/en/rentals/events-crowd-control/tent/` — equipment
+- `/en/rentals/events-crowd-control/furniture/` — equipment
+- `/en/rentals/events-crowd-control/flooring/` — equipment
+- `/en/locations/alberta/` — region
+- `/en/locations/british-columbia/` — region
+- `/en/locations/manitoba/` — region
+- `/en/locations/new-brunswick/` — region
+- `/en/locations/newfoundland-labrador/` — region
+- `/en/locations/nova-scotia/` — region
+- `/en/locations/ontario/` — region
+- `/en/locations/prince-edward-island/` — region
+- `/en/locations/quebec/` — region
+- `/en/locations/saskatchewan/` — region
+- `/en/locations/northwest-territories/` — region
+- `/en/locations/nunavut/` — region
+- `/en/locations/yukon/` — region
+- `/en/locations/toronto-gta/` — location
+- `/en/locations/montreal/` — location
+- `/en/locations/vancouver-lower-mainland/` — location
+- `/en/locations/calgary/` — location
+- `/en/locations/edmonton/` — location
+- `/en/locations/ottawa-gatineau/` — location
+- `/en/locations/quebec-city/` — location
+- `/en/locations/winnipeg/` — location
+- `/en/locations/halifax/` — location
+- `/en/locations/hamilton/` — location
+- `/en/locations/kitchener-waterloo-cambridge/` — location
+- `/en/locations/victoria/` — location
+- `/fr/` — page
+- `/fr/locations-equipement/` — page
+- `/fr/a-propos/` — page
+- `/fr/contact/` — page
+- `/fr/secteurs/` — page
+- `/fr/regions/` — page
+- `/fr/location-entreprises/` — page
+- `/fr/confidentialite/` — page
+- `/fr/conditions/` — page
+- `/fr/locations-equipement/construction-terrassement/` — category
+- `/fr/locations-equipement/elevation-manutention/` — category
+- `/fr/locations-equipement/industrie-energie/` — category
+- `/fr/locations-equipement/infrastructures-temporaires/` — category
+- `/fr/locations-equipement/vehicules-remorques/` — category
+- `/fr/locations-equipement/technologie-audiovisuel/` — category
+- `/fr/locations-equipement/nettoyage-remise-en-etat/` — category
+- `/fr/locations-equipement/amenagement-paysager/` — category
+- `/fr/locations-equipement/securite-signalisation/` — category
+- `/fr/locations-equipement/locations-specialisees/` — category
+- `/fr/locations-equipement/evenements-gestion-foules/` — category
+- `/fr/locations-equipement/construction-terrassement/excavatrices/` — equipment
+- `/fr/locations-equipement/construction-terrassement/chargeuses-compactes/` — equipment
+- `/fr/locations-equipement/construction-terrassement/compacteurs/` — equipment
+- `/fr/locations-equipement/construction-terrassement/chargeuses/` — equipment
+- `/fr/locations-equipement/construction-terrassement/trancheuses/` — equipment
+- `/fr/locations-equipement/construction-terrassement/equipement-betonnage/` — equipment
+- `/fr/locations-equipement/construction-terrassement/mini-excavatrices/` — equipment
+- `/fr/locations-equipement/construction-terrassement/scies-beton/` — equipment
+- `/fr/locations-equipement/construction-terrassement/plaques-vibrantes/` — equipment
+- `/fr/locations-equipement/elevation-manutention/plateformes-ciseaux/` — equipment
+- `/fr/locations-equipement/elevation-manutention/nacelles-articulees/` — equipment
+- `/fr/locations-equipement/elevation-manutention/chariots-telescopiques/` — equipment
+- `/fr/locations-equipement/elevation-manutention/chariots-elevateurs/` — equipment
+- `/fr/locations-equipement/elevation-manutention/monte-materiaux/` — equipment
+- `/fr/locations-equipement/elevation-manutention/nacelles-mat-vertical/` — equipment
+- `/fr/locations-equipement/industrie-energie/generatrices/` — equipment
+- `/fr/locations-equipement/industrie-energie/compresseurs/` — equipment
+- `/fr/locations-equipement/industrie-energie/pompes/` — equipment
+- `/fr/locations-equipement/industrie-energie/tours-eclairage/` — equipment
+- `/fr/locations-equipement/industrie-energie/ventilateurs-sechage/` — equipment
+- `/fr/locations-equipement/industrie-energie/chauffages-electriques/` — equipment
+- `/fr/locations-equipement/industrie-energie/chauffage-climatisation/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/roulottes-chantier/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/conteneurs-entreposage/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/toilettes-mobiles/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/stations-lavage-mains/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/clotures-temporaires/` — equipment
+- `/fr/locations-equipement/infrastructures-temporaires/abris/` — equipment
+- `/fr/locations-equipement/vehicules-remorques/camions-fourgons/` — equipment
+- `/fr/locations-equipement/vehicules-remorques/fourgonnettes-utilitaires/` — equipment
+- `/fr/locations-equipement/vehicules-remorques/vehicules-refrigeres/` — equipment
+- `/fr/locations-equipement/vehicules-remorques/camions-plateau/` — equipment
+- `/fr/locations-equipement/vehicules-remorques/remorques/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/tablettes/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/ordinateurs-portables/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/bornes-interactives/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/affichage-numerique/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/ecrans/` — equipment
+- `/fr/locations-equipement/technologie-audiovisuel/technologie-evenementielle/` — equipment
+- `/fr/locations-equipement/nettoyage-remise-en-etat/autorecureuses/` — equipment
+- `/fr/locations-equipement/nettoyage-remise-en-etat/balayeuses/` — equipment
+- `/fr/locations-equipement/nettoyage-remise-en-etat/extracteurs/` — equipment
+- `/fr/locations-equipement/nettoyage-remise-en-etat/aspirateurs-commerciaux/` — equipment
+- `/fr/locations-equipement/nettoyage-remise-en-etat/deshumidificateurs/` — equipment
+- `/fr/locations-equipement/amenagement-paysager/tondeuses/` — equipment
+- `/fr/locations-equipement/amenagement-paysager/aerateurs/` — equipment
+- `/fr/locations-equipement/amenagement-paysager/dechiqueteuses-bois/` — equipment
+- `/fr/locations-equipement/amenagement-paysager/dessoucheuses/` — equipment
+- `/fr/locations-equipement/securite-signalisation/barricades/` — equipment
+- `/fr/locations-equipement/securite-signalisation/cones-signalisation/` — equipment
+- `/fr/locations-equipement/securite-signalisation/panneaux-signalisation/` — equipment
+- `/fr/locations-equipement/securite-signalisation/panneaux-messages-variables/` — equipment
+- `/fr/locations-equipement/securite-signalisation/plaques-chaussee/` — equipment
+- `/fr/locations-equipement/locations-specialisees/rectifieuses-plancher/` — equipment
+- `/fr/locations-equipement/locations-specialisees/carotteuses/` — equipment
+- `/fr/locations-equipement/locations-specialisees/fileteuses-tuyaux/` — equipment
+- `/fr/locations-equipement/locations-specialisees/verins-hydrauliques/` — equipment
+- `/fr/locations-equipement/locations-specialisees/cameras-inspection/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/poteaux-guidage/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/barrieres-foule/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/gazon-synthetique/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/tentes/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/mobilier/` — equipment
+- `/fr/locations-equipement/evenements-gestion-foules/revetements-sol/` — equipment
+- `/fr/regions/alberta/` — region
+- `/fr/regions/colombie-britannique/` — region
+- `/fr/regions/manitoba/` — region
+- `/fr/regions/nouveau-brunswick/` — region
+- `/fr/regions/terre-neuve-labrador/` — region
+- `/fr/regions/nouvelle-ecosse/` — region
+- `/fr/regions/ontario/` — region
+- `/fr/regions/ile-du-prince-edouard/` — region
+- `/fr/regions/quebec/` — region
+- `/fr/regions/saskatchewan/` — region
+- `/fr/regions/territoires-du-nord-ouest/` — region
+- `/fr/regions/nunavut/` — region
+- `/fr/regions/yukon/` — region
+- `/fr/regions/toronto-grand-toronto/` — location
+- `/fr/regions/montreal/` — location
+- `/fr/regions/vancouver-basses-terres-continentales/` — location
+- `/fr/regions/calgary/` — location
+- `/fr/regions/edmonton/` — location
+- `/fr/regions/ottawa-gatineau/` — location
+- `/fr/regions/ville-de-quebec/` — location
+- `/fr/regions/winnipeg/` — location
+- `/fr/regions/halifax/` — location
+- `/fr/regions/hamilton/` — location
+- `/fr/regions/kitchener-waterloo-cambridge/` — location
+- `/fr/regions/victoria/` — location

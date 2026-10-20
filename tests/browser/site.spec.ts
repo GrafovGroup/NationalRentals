@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { allRoutes, pathFor } from "../../src/lib/routes";
-test("all 174 pages respond, identify their language, and expose canonical metadata", async ({
+test("all 218 pages respond, identify their language, and expose canonical metadata", async ({
   page,
 }) => {
   test.setTimeout(480000);

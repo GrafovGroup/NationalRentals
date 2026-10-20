@@ -8,6 +8,9 @@ await mkdir("docs/qa", { recursive: true });
 const errors = [];
 page.on("pageerror", (error) => errors.push(error.message));
 for (const [name, path, width, height] of [
+  ["locations-en-desktop", "/en/locations/", 1440, 1000],
+  ["region-fr-mobile", "/fr/regions/quebec/", 390, 844],
+  ["metro-en-desktop", "/en/locations/ottawa-gatineau/", 1440, 1000],
   ["home-en-desktop", "/en/", 1440, 1000],
   ["home-fr-mobile", "/fr/", 390, 844],
   ["catalog-en-desktop", "/en/rentals/", 1440, 1000],

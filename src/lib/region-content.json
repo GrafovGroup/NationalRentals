@@ -1,0 +1,531 @@
+{
+  "AB": {
+    "slug": {
+      "en": "alberta",
+      "fr": "alberta"
+    },
+    "categoryIds": ["construction", "aerial", "power"],
+    "description": {
+      "en": "Alberta projects can range from warehouse fit-outs and municipal works to maintenance at industrial sites. Separate lifting, earthmoving and temporary power requirements in the request so each work area can be assessed.",
+      "fr": "En Alberta, les projets peuvent comprendre l’aménagement d’entrepôts, les travaux municipaux et l’entretien de sites industriels. Distinguez les besoins de levage, de terrassement et d’alimentation temporaire pour permettre l’évaluation de chaque zone de travail."
+    },
+    "planning": {
+      "en": "For rural or industrial destinations, provide the access-road surface, gate coordinates and unloading arrangements. Include the expected operating temperature and fuel or charging arrangements for outdoor work.",
+      "fr": "Pour les destinations rurales ou industrielles, précisez le revêtement du chemin d’accès, les coordonnées de la barrière et les moyens de déchargement. Indiquez la température d’utilisation prévue et les dispositions de ravitaillement ou de recharge."
+    },
+    "cities": [
+      {
+        "en": "Calgary",
+        "fr": "Calgary"
+      },
+      {
+        "en": "Edmonton",
+        "fr": "Edmonton"
+      },
+      {
+        "en": "Red Deer",
+        "fr": "Red Deer"
+      },
+      {
+        "en": "Lethbridge",
+        "fr": "Lethbridge"
+      },
+      {
+        "en": "Medicine Hat",
+        "fr": "Medicine Hat"
+      },
+      {
+        "en": "Grande Prairie",
+        "fr": "Grande Prairie"
+      },
+      {
+        "en": "Fort McMurray",
+        "fr": "Fort McMurray"
+      }
+    ]
+  },
+  "BC": {
+    "slug": {
+      "en": "british-columbia",
+      "fr": "colombie-britannique"
+    },
+    "categoryIds": ["aerial", "construction", "power"],
+    "description": {
+      "en": "British Columbia inquiries need to distinguish Lower Mainland projects, Vancouver Island destinations and Interior worksites. Building maintenance, commercial construction and outdoor site work call for different access and transport plans.",
+      "fr": "En Colombie-Britannique, distinguez les projets des basses-terres continentales, de l’île de Vancouver et de l’intérieur de la province. L’entretien de bâtiments, la construction commerciale et les travaux extérieurs demandent des plans d’accès et de transport différents."
+    },
+    "planning": {
+      "en": "Identify ferry-dependent access, steep approaches and any restricted unloading area. For exposed sites, describe drainage and ground conditions; confirm the transport route and weather contingency before fixing the work sequence.",
+      "fr": "Précisez les accès par traversier, les approches en pente et les espaces de déchargement restreints. Pour les sites exposés, décrivez le drainage et l’état du sol; confirmez le trajet et le plan de rechange en cas d’intempéries avant d’arrêter la séquence des travaux."
+    },
+    "cities": [
+      {
+        "en": "Vancouver",
+        "fr": "Vancouver"
+      },
+      {
+        "en": "Victoria",
+        "fr": "Victoria"
+      },
+      {
+        "en": "Kelowna",
+        "fr": "Kelowna"
+      },
+      {
+        "en": "Kamloops",
+        "fr": "Kamloops"
+      },
+      {
+        "en": "Prince George",
+        "fr": "Prince George"
+      },
+      {
+        "en": "Nanaimo",
+        "fr": "Nanaimo"
+      },
+      {
+        "en": "Abbotsford",
+        "fr": "Abbotsford"
+      }
+    ]
+  },
+  "MB": {
+    "slug": {
+      "en": "manitoba",
+      "fr": "manitoba"
+    },
+    "categoryIds": ["construction", "power", "cleaning"],
+    "description": {
+      "en": "Manitoba rental planning may involve distribution facilities around Winnipeg, commercial property maintenance or projects farther north. List each destination separately when one request spans urban buildings and remote worksites.",
+      "fr": "Au Manitoba, la planification peut viser des centres de distribution près de Winnipeg, l’entretien d’immeubles commerciaux ou des chantiers plus au nord. Détaillez chaque destination lorsqu’une demande touche à la fois des bâtiments urbains et des sites éloignés."
+    },
+    "planning": {
+      "en": "For outdoor work, specify cold-weather operating needs and ground support. Northern destinations require an access and transport review; include a site contact, storage arrangements and flexibility in the requested schedule.",
+      "fr": "Pour les travaux extérieurs, précisez les besoins d’utilisation par temps froid et la portance du sol. Les destinations nordiques exigent une évaluation de l’accès et du transport; indiquez une personne-ressource, les possibilités d’entreposage et la souplesse de l’échéancier."
+    },
+    "cities": [
+      {
+        "en": "Winnipeg",
+        "fr": "Winnipeg"
+      },
+      {
+        "en": "Brandon",
+        "fr": "Brandon"
+      },
+      {
+        "en": "Steinbach",
+        "fr": "Steinbach"
+      },
+      {
+        "en": "Thompson",
+        "fr": "Thompson"
+      }
+    ]
+  },
+  "NB": {
+    "slug": {
+      "en": "new-brunswick",
+      "fr": "nouveau-brunswick"
+    },
+    "categoryIds": ["construction", "aerial", "power"],
+    "description": {
+      "en": "New Brunswick requests can include commercial fit-outs in Moncton, institutional maintenance in Fredericton and industrial-site work near Saint John. Identify the task and municipality rather than treating the province as one delivery zone.",
+      "fr": "Au Nouveau-Brunswick, les demandes peuvent viser des aménagements commerciaux à Moncton, l’entretien institutionnel à Fredericton et des travaux industriels près de Saint John. Précisez la tâche et la municipalité plutôt que de traiter la province comme une seule zone de livraison."
+    },
+    "planning": {
+      "en": "For occupied facilities, give the working language, access hours and isolation requirements. Coastal exposure, rural road access and the distance between sites should be included in transport planning.",
+      "fr": "Pour les installations occupées, indiquez la langue de travail, les heures d’accès et les besoins d’isolement. Intégrez l’exposition côtière, l’accès par route rurale et la distance entre les sites à la planification du transport."
+    },
+    "cities": [
+      {
+        "en": "Moncton",
+        "fr": "Moncton"
+      },
+      {
+        "en": "Fredericton",
+        "fr": "Fredericton"
+      },
+      {
+        "en": "Saint John",
+        "fr": "Saint John"
+      },
+      {
+        "en": "Dieppe",
+        "fr": "Dieppe"
+      },
+      {
+        "en": "Edmundston",
+        "fr": "Edmundston"
+      },
+      {
+        "en": "Bathurst",
+        "fr": "Bathurst"
+      }
+    ]
+  },
+  "NL": {
+    "slug": {
+      "en": "newfoundland-labrador",
+      "fr": "terre-neuve-labrador"
+    },
+    "categoryIds": ["power", "aerial", "infrastructure"],
+    "description": {
+      "en": "Newfoundland and Labrador requires a clear distinction between island and Labrador destinations. Commercial building work, facilities maintenance and temporary site infrastructure need a transport plan tied to the actual project address.",
+      "fr": "À Terre-Neuve-et-Labrador, il faut distinguer les destinations insulaires de celles du Labrador. Les travaux dans les bâtiments commerciaux, l’entretien et les installations temporaires nécessitent un plan de transport fondé sur l’adresse réelle du projet."
+    },
+    "planning": {
+      "en": "Identify marine or air transport dependencies and local unloading capacity early. For exposed sites, describe wind protection, storage and weather-related schedule flexibility; equipment and transport remain subject to feasibility review.",
+      "fr": "Précisez tôt les besoins de transport maritime ou aérien et la capacité de déchargement sur place. Pour les sites exposés, décrivez la protection contre le vent, l’entreposage et la souplesse prévue en cas d’intempéries; l’équipement et le transport restent soumis à une évaluation de faisabilité."
+    },
+    "cities": [
+      {
+        "en": "St. John’s",
+        "fr": "St. John’s"
+      },
+      {
+        "en": "Corner Brook",
+        "fr": "Corner Brook"
+      },
+      {
+        "en": "Mount Pearl",
+        "fr": "Mount Pearl"
+      },
+      {
+        "en": "Gander",
+        "fr": "Gander"
+      },
+      {
+        "en": "Happy Valley-Goose Bay",
+        "fr": "Happy Valley-Goose Bay"
+      },
+      {
+        "en": "Labrador City",
+        "fr": "Labrador City"
+      }
+    ]
+  },
+  "NS": {
+    "slug": {
+      "en": "nova-scotia",
+      "fr": "nouvelle-ecosse"
+    },
+    "categoryIds": ["aerial", "cleaning", "events"],
+    "description": {
+      "en": "Nova Scotia projects can combine commercial property maintenance, hospitality fit-outs and temporary event infrastructure. A Halifax loading dock, a coastal property and a Cape Breton worksite should each have their own access instructions.",
+      "fr": "En Nouvelle-Écosse, les projets peuvent combiner l’entretien d’immeubles, l’aménagement d’établissements d’accueil et les installations événementielles temporaires. Un quai à Halifax, une propriété côtière et un chantier au Cap-Breton nécessitent chacun leurs propres consignes d’accès."
+    },
+    "planning": {
+      "en": "Provide overhead clearance, pedestrian separation and wet-weather protection needs. For event or visitor-facing sites, separate setup, operating and removal windows so transport can be assessed against public access.",
+      "fr": "Indiquez les dégagements en hauteur, la séparation des piétons et les besoins de protection contre la pluie. Pour les événements ou les sites ouverts au public, distinguez les plages de montage, d’utilisation et de démontage afin d’évaluer le transport selon l’accès du public."
+    },
+    "cities": [
+      {
+        "en": "Halifax",
+        "fr": "Halifax"
+      },
+      {
+        "en": "Sydney",
+        "fr": "Sydney"
+      },
+      {
+        "en": "Dartmouth",
+        "fr": "Dartmouth"
+      },
+      {
+        "en": "Truro",
+        "fr": "Truro"
+      },
+      {
+        "en": "New Glasgow",
+        "fr": "New Glasgow"
+      }
+    ]
+  },
+  "ON": {
+    "slug": {
+      "en": "ontario",
+      "fr": "ontario"
+    },
+    "categoryIds": ["construction", "aerial", "technology"],
+    "description": {
+      "en": "Ontario projects span dense commercial buildings, manufacturing facilities and widely separated construction sites. Group requests by actual destination and work environment, especially when a program combines the GTA, eastern Ontario and northern communities.",
+      "fr": "En Ontario, les projets touchent des immeubles urbains denses, des installations manufacturières et des chantiers très éloignés les uns des autres. Regroupez les demandes selon la destination et le milieu de travail, surtout lorsqu’un programme couvre le Grand Toronto, l’est ontarien et les collectivités du Nord."
+    },
+    "planning": {
+      "en": "For city centres, list dock booking rules, floor loading limits and permitted work hours. For northern projects, add road access, servicing needs and transport flexibility rather than assuming the same arrangements as a southern urban site.",
+      "fr": "Dans les centres-villes, précisez les règles de réservation des quais, les limites de charge des planchers et les heures de travail permises. Pour les projets nordiques, ajoutez l’accès routier, les besoins d’entretien et la souplesse du transport plutôt que de présumer des modalités d’un site urbain du Sud."
+    },
+    "cities": [
+      {
+        "en": "Toronto",
+        "fr": "Toronto"
+      },
+      {
+        "en": "Ottawa",
+        "fr": "Ottawa"
+      },
+      {
+        "en": "Hamilton",
+        "fr": "Hamilton"
+      },
+      {
+        "en": "Kitchener",
+        "fr": "Kitchener"
+      },
+      {
+        "en": "Waterloo",
+        "fr": "Waterloo"
+      },
+      {
+        "en": "Cambridge",
+        "fr": "Cambridge"
+      },
+      {
+        "en": "London",
+        "fr": "London"
+      },
+      {
+        "en": "Niagara Falls",
+        "fr": "Niagara Falls"
+      },
+      {
+        "en": "St. Catharines",
+        "fr": "St. Catharines"
+      },
+      {
+        "en": "Barrie",
+        "fr": "Barrie"
+      },
+      {
+        "en": "Kingston",
+        "fr": "Kingston"
+      },
+      {
+        "en": "Windsor",
+        "fr": "Windsor"
+      },
+      {
+        "en": "Sudbury",
+        "fr": "Sudbury"
+      },
+      {
+        "en": "Thunder Bay",
+        "fr": "Thunder Bay"
+      }
+    ]
+  },
+  "PE": {
+    "slug": {
+      "en": "prince-edward-island",
+      "fr": "ile-du-prince-edouard"
+    },
+    "categoryIds": ["landscaping", "events", "cleaning"],
+    "description": {
+      "en": "Prince Edward Island requests may involve commercial grounds, hospitality properties and temporary event sites. Define the work area and operating dates so equipment selection can account for public access and seasonal site use.",
+      "fr": "À l’Île-du-Prince-Édouard, les demandes peuvent concerner des terrains commerciaux, des établissements d’accueil et des sites événementiels temporaires. Définissez la zone de travail et les dates pour tenir compte de l’accès du public et de l’utilisation saisonnière des lieux."
+    },
+    "planning": {
+      "en": "Include island transport requirements, unloading space and surface protection for lawns or finished areas. Separate setup and collection dates from event dates, and identify an alternative plan for weather-exposed activities.",
+      "fr": "Précisez les besoins de transport vers l’île, l’espace de déchargement et la protection des pelouses ou des surfaces finies. Distinguez les dates de montage et de reprise de celles de l’événement, et prévoyez une solution de rechange pour les activités exposées aux intempéries."
+    },
+    "cities": [
+      {
+        "en": "Charlottetown",
+        "fr": "Charlottetown"
+      },
+      {
+        "en": "Summerside",
+        "fr": "Summerside"
+      },
+      {
+        "en": "Stratford",
+        "fr": "Stratford"
+      },
+      {
+        "en": "Cornwall",
+        "fr": "Cornwall"
+      }
+    ]
+  },
+  "QC": {
+    "slug": {
+      "en": "quebec",
+      "fr": "quebec"
+    },
+    "categoryIds": ["construction", "aerial", "power"],
+    "description": {
+      "en": "Québec inquiries may cover Montréal building renovations, institutional work in Québec City and industrial or remote projects elsewhere in the province. Specify the working language, site municipality and the exact stage of work when requesting equipment.",
+      "fr": "Au Québec, les demandes peuvent viser la rénovation d’immeubles à Montréal, les travaux institutionnels à Québec et des projets industriels ou éloignés ailleurs dans la province. Précisez la langue de travail, la municipalité et l’étape exacte des travaux dans votre demande."
+    },
+    "planning": {
+      "en": "Confirm access instructions with the site contact, including bridge crossings for multi-site work. Outdoor winter requirements, temporary enclosures and electrical capacity should be assessed together rather than as separate last-minute additions.",
+      "fr": "Confirmez les consignes d’accès avec la personne-ressource, y compris les traversées de ponts pour les projets multisites. Évaluez ensemble les besoins hivernaux, les abris temporaires et la capacité électrique plutôt que de les ajouter séparément à la dernière minute."
+    },
+    "cities": [
+      {
+        "en": "Montréal",
+        "fr": "Montréal"
+      },
+      {
+        "en": "Québec City",
+        "fr": "Québec"
+      },
+      {
+        "en": "Gatineau",
+        "fr": "Gatineau"
+      },
+      {
+        "en": "Sherbrooke",
+        "fr": "Sherbrooke"
+      },
+      {
+        "en": "Trois-Rivières",
+        "fr": "Trois-Rivières"
+      },
+      {
+        "en": "Saguenay",
+        "fr": "Saguenay"
+      },
+      {
+        "en": "Drummondville",
+        "fr": "Drummondville"
+      },
+      {
+        "en": "Rimouski",
+        "fr": "Rimouski"
+      },
+      {
+        "en": "Rouyn-Noranda",
+        "fr": "Rouyn-Noranda"
+      }
+    ]
+  },
+  "SK": {
+    "slug": {
+      "en": "saskatchewan",
+      "fr": "saskatchewan"
+    },
+    "categoryIds": ["construction", "power", "landscaping"],
+    "description": {
+      "en": "Saskatchewan requests can involve commercial construction in Regina or Saskatoon, grounds maintenance and work at rural industrial facilities. State whether the equipment will operate on pavement, a prepared yard or an unfinished site.",
+      "fr": "En Saskatchewan, les demandes peuvent viser la construction commerciale à Regina ou à Saskatoon, l’entretien de terrains et des travaux dans des installations industrielles rurales. Indiquez si l’équipement sera utilisé sur chaussée, dans une cour aménagée ou sur un terrain non fini."
+    },
+    "planning": {
+      "en": "Rural delivery planning needs clear directions, turning space and a receiving contact. Include wind exposure, cold-weather requirements and fuel arrangements when sizing power or outdoor equipment.",
+      "fr": "La livraison en milieu rural demande des indications claires, un espace de manœuvre et une personne sur place. Précisez l’exposition au vent, les besoins par temps froid et le ravitaillement pour dimensionner l’alimentation ou l’équipement extérieur."
+    },
+    "cities": [
+      {
+        "en": "Regina",
+        "fr": "Regina"
+      },
+      {
+        "en": "Saskatoon",
+        "fr": "Saskatoon"
+      },
+      {
+        "en": "Moose Jaw",
+        "fr": "Moose Jaw"
+      },
+      {
+        "en": "Prince Albert",
+        "fr": "Prince Albert"
+      },
+      {
+        "en": "Swift Current",
+        "fr": "Swift Current"
+      },
+      {
+        "en": "Yorkton",
+        "fr": "Yorkton"
+      }
+    ]
+  },
+  "NT": {
+    "slug": {
+      "en": "northwest-territories",
+      "fr": "territoires-du-nord-ouest"
+    },
+    "categoryIds": ["power", "infrastructure", "safety"],
+    "description": {
+      "en": "Northwest Territories projects require equipment planning alongside logistics. For building maintenance, temporary facilities or field worksites, identify the destination community and the operating conditions before selecting a configuration.",
+      "fr": "Aux Territoires du Nord-Ouest, la planification de l’équipement doit aller de pair avec la logistique. Pour l’entretien de bâtiments, les installations temporaires ou les sites de terrain, précisez la collectivité et les conditions d’utilisation avant de choisir une configuration."
+    },
+    "planning": {
+      "en": "Do not assume all communities have the same road access. Confirm the proposed transport mode, seasonal constraints, receiving equipment and return arrangements. Include heated storage and servicing requirements where the task calls for them.",
+      "fr": "Ne présumez pas que toutes les collectivités ont le même accès routier. Confirmez le mode de transport envisagé, les contraintes saisonnières, les moyens de réception et les modalités de retour. Ajoutez l’entreposage chauffé et les besoins d’entretien lorsque le travail l’exige."
+    },
+    "cities": [
+      {
+        "en": "Yellowknife",
+        "fr": "Yellowknife"
+      },
+      {
+        "en": "Hay River",
+        "fr": "Hay River"
+      },
+      {
+        "en": "Inuvik",
+        "fr": "Inuvik"
+      }
+    ]
+  },
+  "NU": {
+    "slug": {
+      "en": "nunavut",
+      "fr": "nunavut"
+    },
+    "categoryIds": ["power", "infrastructure", "technology"],
+    "description": {
+      "en": "Nunavut requests should begin with the destination community, cargo constraints and the full project schedule. Building work, temporary workspaces and communications requirements need coordinated equipment and transport specifications.",
+      "fr": "Au Nunavut, commencez par préciser la collectivité, les contraintes de fret et l’échéancier complet. Les travaux de bâtiment, les espaces temporaires et les communications demandent des spécifications coordonnées pour l’équipement et le transport."
+    },
+    "planning": {
+      "en": "Assess marine or air freight, packaging dimensions, lifting points and local handling capacity before confirming equipment. Plan consumables, storage and return transport together; a request for a particular date is subject to logistics feasibility.",
+      "fr": "Évaluez le fret maritime ou aérien, les dimensions d’emballage, les points de levage et la capacité de manutention locale avant de confirmer l’équipement. Planifiez ensemble les consommables, l’entreposage et le retour; les dates demandées sont soumises à la faisabilité logistique."
+    },
+    "cities": [
+      {
+        "en": "Iqaluit",
+        "fr": "Iqaluit"
+      },
+      {
+        "en": "Rankin Inlet",
+        "fr": "Rankin Inlet"
+      },
+      {
+        "en": "Cambridge Bay",
+        "fr": "Cambridge Bay"
+      }
+    ]
+  },
+  "YT": {
+    "slug": {
+      "en": "yukon",
+      "fr": "yukon"
+    },
+    "categoryIds": ["construction", "power", "safety"],
+    "description": {
+      "en": "Yukon inquiries can include Whitehorse commercial renovations and work at distant project sites. Distinguish equipment needed inside occupied buildings from equipment intended for outdoor construction or temporary site support.",
+      "fr": "Au Yukon, les demandes peuvent viser la rénovation commerciale à Whitehorse et des travaux sur des sites éloignés. Distinguez l’équipement destiné aux bâtiments occupés de celui prévu pour la construction extérieure ou le soutien temporaire de chantier."
+    },
+    "planning": {
+      "en": "Provide the final access route and road condition, not only the nearest community. Cold-weather operation, secure storage, fuel supply and service access should be included in the request before transport and equipment can be confirmed.",
+      "fr": "Indiquez le trajet final et l’état de la route, et non seulement la collectivité la plus proche. L’utilisation par temps froid, l’entreposage sécurisé, le carburant et l’accès pour l’entretien doivent figurer dans la demande avant la confirmation du transport et de l’équipement."
+    },
+    "cities": [
+      {
+        "en": "Whitehorse",
+        "fr": "Whitehorse"
+      },
+      {
+        "en": "Dawson City",
+        "fr": "Dawson"
+      },
+      {
+        "en": "Watson Lake",
+        "fr": "Watson Lake"
+      }
+    ]
+  }
+}

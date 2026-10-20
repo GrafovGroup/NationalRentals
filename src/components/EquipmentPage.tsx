@@ -137,12 +137,20 @@ export function EquipmentPage({
                 </Link>
               ))}
           </div>
+          <Link
+            className="text-link"
+            href={pathFor(locale, "locations") + "?equipment=" + item.id}
+          >
+            {fr ? "CHOISIR UNE VILLE" : "CHOOSE A CITY"} →
+          </Link>
           <div className="related">
-            {locations.map((l) => (
+            {locations.slice(0, 3).map((l) => (
               <Link
                 key={l.id}
                 className="text-link"
-                href={pathFor(locale, l.id, "location")}
+                href={
+                  pathFor(locale, l.id, "location") + "?equipment=" + item.id
+                }
               >
                 {l.name[locale]} ↗
               </Link>

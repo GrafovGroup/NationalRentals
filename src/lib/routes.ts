@@ -1,7 +1,7 @@
 import { b, locales, type Locale, type Localized } from "./config";
 import { categories } from "./catalog";
 import { publishedEquipment, getEquipment } from "./equipment";
-import { locations } from "./locations";
+import { locations, regions, geographicPrefill } from "./locations";
 export const pages = {
   home: { slug: b("", ""), name: b("Home", "Accueil") },
   rentals: {
@@ -30,7 +30,7 @@ export const pages = {
 };
 export type PageKey = keyof typeof pages;
 export type Route = {
-  kind: "page" | "category" | "location" | "equipment";
+  kind: "page" | "category" | "location" | "equipment" | "region";
   id: string;
   path: string;
   name: Localized;
@@ -58,6 +58,12 @@ export function routes(locale: Locale): Route[] {
         name: item.name,
       };
     }),
+    ...regions.map((r) => ({
+      kind: "region" as const,
+      id: r.code,
+      path: `${pages.locations.slug[locale]}/${r.slug[locale]}`,
+      name: r.name,
+    })),
     ...locations.map((l) => ({
       kind: "location" as const,
       id: l.id,
@@ -99,6 +105,7 @@ export function inquiryPrefill(
   const source =
     typeof query.source === "string" ? getEquipment(query.source) : undefined;
   return {
+    ...geographicPrefill(locale, query),
     category: category?.id,
     equipment: equipment?.name[locale],
     sourceEquipment:
@@ -114,10 +121,21 @@ export function breadcrumbItems(locale: Locale, route: Route) {
     { name: pages.home.name[locale], path: pathFor(locale, "home") },
   ];
   if (route.kind !== "page") {
-    const parent = route.kind === "location" ? "locations" : "rentals";
+    const parent =
+      route.kind === "location" || route.kind === "region"
+        ? "locations"
+        : "rentals";
     result.push({
       name: pages[parent].name[locale],
       path: pathFor(locale, parent),
+    });
+  }
+  if (route.kind === "location") {
+    const metro = locations.find((l) => l.id === route.id)!;
+    const region = regions.find((r) => r.code === metro.region)!;
+    result.push({
+      name: region.name[locale],
+      path: pathFor(locale, region.code, "region"),
     });
   }
   if (route.kind === "equipment") {

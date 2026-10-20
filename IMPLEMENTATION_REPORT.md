@@ -1,8 +1,8 @@
 # NationalRentals.ca — Implementation report
 
-Latest status: Phase 1B catalog functionality is implemented; product-specific imagery remains partial. Production email configuration and public deployment remain owner actions.
+Latest status: Phase 1C geographic discovery is implemented on the active Codex branch. Phase 1B product imagery, verified phone configuration, production email configuration and public deployment remain owner-dependent items.
 
-Scope: `PHASE_1A_CODEX_MASTER_PROMPT.md`, with the user's current website instructions taking precedence. Implementation date: October 19, 2026 (America/Toronto). Phase 1B is documented in the section below.
+Scope: Phase 1A, 1B and 1C master prompts, with the user’s current website instructions taking precedence. Implementation date: October 19, 2026 (America/Toronto). Earlier phase sections below are historical; current additions and validation are in the Phase 1C section.
 
 ## Phase 1A delivered
 
@@ -93,7 +93,7 @@ checks. Refreshed desktop/mobile captures have no page errors.
 ## Phase 1B — October 19, 2026
 
 Scope: PHASE_1B_CODEX_MASTER_PROMPT.md from GitHub main, extending the existing
-Phase 1A application on codex/phase-1. Phase 1C has not been started.
+Phase 1A application on codex/phase-1. Phase 1C was outside that implementation scope and is now documented separately below.
 
 ### Status and delivery
 
@@ -162,3 +162,42 @@ as they become available. Legal and operational review items from Phase 1A remai
 After the final catalog spacing and localized result-count polish, the production
 build and all three catalog browser checks passed again. Final screenshots were
 refreshed with zero page errors.
+
+
+## Phase 1C — national geographic discovery
+
+Implemented October 19, 2026 (America/Toronto), following `PHASE_1C_CODEX_MASTER_PROMPT.md` from GitHub main commit `2b22041`. Work builds on Phase 1B commit `21e473d` in `codex/phase-1`; the existing application was extended in place.
+
+### Published scope
+
+- All 13 province/territory hubs in English and French, with distinct regional project context, transport/access planning, relevant equipment categories and inquiry links.
+- Twelve metro guides: Toronto/GTA, Montréal, Vancouver/Lower Mainland, Calgary, Edmonton, Ottawa–Gatineau, Québec City, Winnipeg, Halifax, Hamilton, Kitchener–Waterloo–Cambridge and Victoria. The three existing metro URLs are preserved; the other nine add 18 bilingual routes.
+- 151 searchable cities/municipalities and 30 explicit commercial metro/area groupings, including every market requested in the Phase 1C prompt. These are planning areas, not claimed branch offices or exact census boundaries.
+- 218 total content routes: the previous 174 plus 26 province/territory routes and 18 new metro routes. Full inventory: `docs/ROUTES.md`; architecture and editorial rules: `docs/GEOGRAPHY.md`.
+- Server-rendered city and province filters, an empty-result path to the quote form, links from the homepage, categories and equipment pages, and contextual regional navigation.
+- Trusted market IDs prefill localized city names and province codes. Province inquiries leave the city editable and blank. Ottawa–Gatineau includes both provincial sides; Gatineau/Chelsea/Cantley use QC, while Ottawa uses ON. Equipment/category/source context survives the supported geographic inquiry journey and language switching.
+- Unique geographic titles/descriptions, canonical and reciprocal hreflang, breadcrumbs and sitemap entries. Filter/context variants are noindex/follow. Unknown city/category combinations return HTTP 404. No invented address or LocalBusiness markup.
+- Approved logo asset preserved without modification. Remaining navy/orange interface accents replaced with red/charcoal in accordance with the 1C prompt. No content images added or reassigned, and no new portfolio-wide image verification claim.
+
+### Deliberate publication limits
+
+Standalone guides are limited to the twelve substantive metros above. Other principal cities and surrounding communities are discoverable in the appropriate regional hub and can prefill an inquiry; they do not receive thin standalone pages. Category-by-location editorial types, reserved route architecture and publication requirements are documented, but **zero** combinations are enabled or included in the sitemap. Relevant category links and localized inquiry links provide the functional connection without mass-producing pages.
+
+Regional copy provides project examples and questions to resolve; it does not assert stock, delivery times, supplier contracts, fleet ownership, physical offices or guaranteed service. No actual customer inquiry was sent during testing. Phase 1D was not started.
+
+### Validation
+
+- Lint and TypeScript checks passed; all 25 unit/API/catalog/geography tests passed.
+- Production build passed with 218 content routes (224 generated framework entries including utility routes).
+- All 50 bilingual province/metro pages passed unique metadata, reciprocal hreflang, factual schema, breadcrumb and internal-link checks. Unsupported city/category combinations return 404.
+- Geographic search works without JavaScript; city/province and equipment prefill survive the tested bilingual journeys. Desktop/mobile geographic layouts passed automated WCAG AA checks and overflow checks.
+- Nine preview screenshots refreshed; screenshot capture reported zero page errors. National hub, French regional mobile layout and homepage branding were visually inspected.
+- Final complete browser suite: all 13 tests passed in 3.7 minutes, including the 218-route scan, catalog regressions, quote failure handling, bilingual context, mobile navigation and existing accessibility checks.
+- No remote CI result, public deployment or merge into main is claimed.
+
+### Owner-dependent actions and prior gaps
+
+- Configure a verified sender/provider for production quote delivery and production rate-limit storage as described in the existing setup documentation.
+- Verify the business phone and explicitly enable it; no unverified call CTA is displayed.
+- Source unique equipment imagery for the Phase 1B image gaps if desired. No additional images are necessary for these regional guides.
+- Public deployment/domain configuration and any merge into main remain separate actions. This report does not claim either deployment or a merge into main.

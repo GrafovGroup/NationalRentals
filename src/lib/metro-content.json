@@ -1,0 +1,623 @@
+[
+  {
+    "id": "calgary",
+    "slug": {
+      "en": "calgary",
+      "fr": "calgary"
+    },
+    "name": {
+      "en": "Calgary",
+      "fr": "Calgary"
+    },
+    "region": "AB",
+    "metro": {
+      "en": "Calgary",
+      "fr": "Calgary"
+    },
+    "municipalities": [
+      "Calgary",
+      "Airdrie",
+      "Cochrane",
+      "Chestermere",
+      "Okotoks"
+    ],
+    "description": {
+      "en": "Commercial renovations and warehouse work in Calgary need separate plans for interior access and outdoor staging. For a multi-site request extending to Airdrie or Okotoks, identify the receiving contact and unloading area at each address.",
+      "fr": "À Calgary, la rénovation commerciale et les travaux d’entrepôt demandent des plans distincts pour l’accès intérieur et les aires extérieures. Pour une demande multisite allant jusqu’à Airdrie ou Okotoks, indiquez le responsable de la réception et la zone de déchargement à chaque adresse."
+    },
+    "considerations": [
+      {
+        "en": "For occupied downtown buildings, specify freight-elevator dimensions and after-hours access. For outer-area yards, describe gravel surfaces, slopes and the location of power connections.",
+        "fr": "Dans les immeubles occupés du centre-ville, précisez les dimensions du monte-charge et l’accès hors des heures normales. Pour les cours en périphérie, décrivez les surfaces de gravier, les pentes et l’emplacement des branchements électriques."
+      }
+    ],
+    "members": [
+      {
+        "id": "ab-calgary",
+        "name": {
+          "en": "Calgary",
+          "fr": "Calgary"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-airdrie",
+        "name": {
+          "en": "Airdrie",
+          "fr": "Airdrie"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-cochrane",
+        "name": {
+          "en": "Cochrane",
+          "fr": "Cochrane"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-chestermere",
+        "name": {
+          "en": "Chestermere",
+          "fr": "Chestermere"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-okotoks",
+        "name": {
+          "en": "Okotoks",
+          "fr": "Okotoks"
+        },
+        "region": "AB"
+      }
+    ]
+  },
+  {
+    "id": "edmonton",
+    "slug": {
+      "en": "edmonton",
+      "fr": "edmonton"
+    },
+    "name": {
+      "en": "Edmonton",
+      "fr": "Edmonton"
+    },
+    "region": "AB",
+    "metro": {
+      "en": "Edmonton",
+      "fr": "Edmonton"
+    },
+    "municipalities": [
+      "Edmonton",
+      "St. Albert",
+      "Sherwood Park",
+      "Leduc",
+      "Fort Saskatchewan"
+    ],
+    "description": {
+      "en": "Edmonton-area requests may combine commercial buildings with industrial work in surrounding municipalities. Separate maintenance shutdown tasks from routine facilities work and provide any site orientation requirements before equipment selection.",
+      "fr": "Dans la région d’Edmonton, les demandes peuvent combiner des immeubles commerciaux et des travaux industriels dans les municipalités voisines. Distinguez les tâches d’arrêt d’entretien des travaux courants et précisez les exigences d’accueil au chantier avant de choisir l’équipement."
+    },
+    "considerations": [
+      {
+        "en": "For industrial yards, confirm gate access, ground bearing capacity and the receiving crew’s handling equipment. For cold-weather work, include the enclosure and electrical loads in the same request.",
+        "fr": "Pour les cours industrielles, confirmez l’accès à la barrière, la portance du sol et les moyens de manutention de l’équipe de réception. Pour les travaux par temps froid, regroupez les besoins d’abri et les charges électriques dans la même demande."
+      }
+    ],
+    "members": [
+      {
+        "id": "ab-edmonton",
+        "name": {
+          "en": "Edmonton",
+          "fr": "Edmonton"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-st-albert",
+        "name": {
+          "en": "St. Albert",
+          "fr": "St. Albert"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-sherwood-park",
+        "name": {
+          "en": "Sherwood Park",
+          "fr": "Sherwood Park"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-leduc",
+        "name": {
+          "en": "Leduc",
+          "fr": "Leduc"
+        },
+        "region": "AB"
+      },
+      {
+        "id": "ab-fort-saskatchewan",
+        "name": {
+          "en": "Fort Saskatchewan",
+          "fr": "Fort Saskatchewan"
+        },
+        "region": "AB"
+      }
+    ]
+  },
+  {
+    "id": "ottawa-gatineau",
+    "slug": {
+      "en": "ottawa-gatineau",
+      "fr": "ottawa-gatineau"
+    },
+    "name": {
+      "en": "Ottawa–Gatineau",
+      "fr": "Ottawa–Gatineau"
+    },
+    "region": "ON",
+    "metro": {
+      "en": "Ottawa–Gatineau",
+      "fr": "Ottawa–Gatineau"
+    },
+    "municipalities": [
+      "Ottawa",
+      "Gatineau",
+      "Chelsea",
+      "Cantley",
+      "Clarence-Rockland"
+    ],
+    "description": {
+      "en": "Commercial and institutional projects in Ottawa–Gatineau can span both Ontario and Québec. Identify the province for each site, the working language and the building contact; a single metropolitan project can still require distinct delivery instructions.",
+      "fr": "Les projets commerciaux et institutionnels d’Ottawa–Gatineau peuvent toucher l’Ontario et le Québec. Indiquez la province de chaque site, la langue de travail et le responsable de l’immeuble; un même projet métropolitain peut exiger des consignes de livraison distinctes."
+    },
+    "considerations": [
+      {
+        "en": "For occupied institutional buildings, provide security check-in, loading dock and elevator requirements. Plan bridge crossings and separate work windows when coordinating equipment between the two sides of the river.",
+        "fr": "Dans les bâtiments institutionnels occupés, précisez les contrôles d’accès, les quais et les exigences liées aux ascenseurs. Prévoyez les traversées de ponts et des plages de travail distinctes pour coordonner l’équipement des deux côtés de la rivière."
+      }
+    ],
+    "members": [
+      {
+        "id": "on-ottawa",
+        "name": {
+          "en": "Ottawa",
+          "fr": "Ottawa"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "qc-gatineau",
+        "name": {
+          "en": "Gatineau",
+          "fr": "Gatineau"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "qc-chelsea",
+        "name": {
+          "en": "Chelsea",
+          "fr": "Chelsea"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "qc-cantley",
+        "name": {
+          "en": "Cantley",
+          "fr": "Cantley"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "on-clarence-rockland",
+        "name": {
+          "en": "Clarence-Rockland",
+          "fr": "Clarence-Rockland"
+        },
+        "region": "ON"
+      }
+    ]
+  },
+  {
+    "id": "quebec-city",
+    "slug": {
+      "en": "quebec-city",
+      "fr": "ville-de-quebec"
+    },
+    "name": {
+      "en": "Québec City",
+      "fr": "Ville de Québec"
+    },
+    "region": "QC",
+    "metro": {
+      "en": "Québec City",
+      "fr": "Région de Québec"
+    },
+    "municipalities": [
+      "Québec",
+      "Lévis",
+      "L’Ancienne-Lorette",
+      "Saint-Augustin-de-Desmaures"
+    ],
+    "description": {
+      "en": "Québec City projects may involve institutional buildings, commercial interiors and sites on the Lévis side of the river. Describe whether work takes place in a constrained central district or a yard with direct vehicle access.",
+      "fr": "À Québec, les projets peuvent viser des bâtiments institutionnels, des locaux commerciaux et des sites du côté de Lévis. Précisez si les travaux se déroulent dans un secteur central à accès restreint ou dans une cour accessible directement aux véhicules."
+    },
+    "considerations": [
+      {
+        "en": "For constrained streets, confirm unloading space and pedestrian separation with the site contact. For work across the river, identify each address and bridge-dependent delivery sequence; include snow storage and heating needs for winter work.",
+        "fr": "Dans les rues à accès limité, confirmez l’espace de déchargement et la séparation des piétons avec le responsable du site. Pour les travaux de part et d’autre du fleuve, indiquez chaque adresse et la séquence de livraison selon les ponts; ajoutez les besoins d’entreposage de neige et de chauffage en hiver."
+      }
+    ],
+    "members": [
+      {
+        "id": "qc-quebec-city",
+        "name": {
+          "en": "Québec City",
+          "fr": "Québec"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "qc-levis",
+        "name": {
+          "en": "Lévis",
+          "fr": "Lévis"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "qc-l-ancienne-lorette",
+        "name": {
+          "en": "L’Ancienne-Lorette",
+          "fr": "L’Ancienne-Lorette"
+        },
+        "region": "QC"
+      },
+      {
+        "id": "qc-saint-augustin-de-desmaures",
+        "name": {
+          "en": "Saint-Augustin-de-Desmaures",
+          "fr": "Saint-Augustin-de-Desmaures"
+        },
+        "region": "QC"
+      }
+    ]
+  },
+  {
+    "id": "winnipeg",
+    "slug": {
+      "en": "winnipeg",
+      "fr": "winnipeg"
+    },
+    "name": {
+      "en": "Winnipeg",
+      "fr": "Winnipeg"
+    },
+    "region": "MB",
+    "metro": {
+      "en": "Winnipeg",
+      "fr": "Winnipeg"
+    },
+    "municipalities": [
+      "Winnipeg",
+      "Headingley",
+      "East St. Paul",
+      "West St. Paul"
+    ],
+    "description": {
+      "en": "Distribution facilities, commercial interiors and grounds projects in Winnipeg require different equipment access profiles. Separate indoor cleaning or lifting work from outdoor construction so floor protection and ground support can be assessed independently.",
+      "fr": "Les centres de distribution, les locaux commerciaux et les travaux de terrain à Winnipeg exigent des profils d’accès différents. Distinguez le nettoyage ou le levage intérieur de la construction extérieure pour évaluer séparément la protection des planchers et la portance du sol."
+    },
+    "considerations": [
+      {
+        "en": "Give loading dock height, warehouse aisle width and the times when vehicle traffic can be separated. For outdoor staging, include drainage conditions, cold-weather requirements and a secure overnight storage area.",
+        "fr": "Précisez la hauteur du quai, la largeur des allées d’entrepôt et les périodes permettant de séparer la circulation des véhicules. Pour les aires extérieures, indiquez le drainage, les besoins par temps froid et l’entreposage sécurisé la nuit."
+      }
+    ],
+    "members": [
+      {
+        "id": "mb-winnipeg",
+        "name": {
+          "en": "Winnipeg",
+          "fr": "Winnipeg"
+        },
+        "region": "MB"
+      },
+      {
+        "id": "mb-headingley",
+        "name": {
+          "en": "Headingley",
+          "fr": "Headingley"
+        },
+        "region": "MB"
+      },
+      {
+        "id": "mb-east-st-paul",
+        "name": {
+          "en": "East St. Paul",
+          "fr": "East St. Paul"
+        },
+        "region": "MB"
+      },
+      {
+        "id": "mb-west-st-paul",
+        "name": {
+          "en": "West St. Paul",
+          "fr": "West St. Paul"
+        },
+        "region": "MB"
+      }
+    ]
+  },
+  {
+    "id": "halifax",
+    "slug": {
+      "en": "halifax",
+      "fr": "halifax"
+    },
+    "name": {
+      "en": "Halifax",
+      "fr": "Halifax"
+    },
+    "region": "NS",
+    "metro": {
+      "en": "Halifax",
+      "fr": "Halifax"
+    },
+    "municipalities": [
+      "Halifax",
+      "Dartmouth",
+      "Bedford",
+      "Lower Sackville"
+    ],
+    "description": {
+      "en": "Halifax-area commercial requests may involve visitor-facing properties, occupied offices and work around restricted waterfront access. Specify the work zone and the public circulation plan, particularly when temporary equipment remains in place during operating hours.",
+      "fr": "Dans la région d’Halifax, les demandes commerciales peuvent viser des lieux accueillant des visiteurs, des bureaux occupés et des travaux près d’accès riverains restreints. Précisez la zone de travail et le plan de circulation du public, surtout si l’équipement reste en place pendant les heures d’ouverture."
+    },
+    "considerations": [
+      {
+        "en": "Identify whether delivery is on the Halifax or Dartmouth side and include dock reservations. For exposed outdoor work, document rain protection, wind-related operating limits to confirm and the collection window after completion.",
+        "fr": "Indiquez si la livraison se fait du côté d’Halifax ou de Dartmouth et précisez les réservations de quai. Pour les travaux extérieurs exposés, documentez la protection contre la pluie, les limites d’utilisation liées au vent à confirmer et la plage de reprise après les travaux."
+      }
+    ],
+    "members": [
+      {
+        "id": "ns-halifax",
+        "name": {
+          "en": "Halifax",
+          "fr": "Halifax"
+        },
+        "region": "NS"
+      },
+      {
+        "id": "ns-dartmouth",
+        "name": {
+          "en": "Dartmouth",
+          "fr": "Dartmouth"
+        },
+        "region": "NS"
+      },
+      {
+        "id": "ns-bedford",
+        "name": {
+          "en": "Bedford",
+          "fr": "Bedford"
+        },
+        "region": "NS"
+      },
+      {
+        "id": "ns-lower-sackville",
+        "name": {
+          "en": "Lower Sackville",
+          "fr": "Lower Sackville"
+        },
+        "region": "NS"
+      }
+    ]
+  },
+  {
+    "id": "hamilton",
+    "slug": {
+      "en": "hamilton",
+      "fr": "hamilton"
+    },
+    "name": {
+      "en": "Hamilton",
+      "fr": "Hamilton"
+    },
+    "region": "ON",
+    "metro": {
+      "en": "Hamilton",
+      "fr": "Hamilton"
+    },
+    "municipalities": [
+      "Hamilton",
+      "Stoney Creek",
+      "Ancaster",
+      "Dundas"
+    ],
+    "description": {
+      "en": "Hamilton-area projects can include industrial maintenance, commercial renovation and work on properties with varied grades. Explain whether the task needs indoor access, material handling in a yard or outdoor lifting before selecting a category.",
+      "fr": "Dans la région de Hamilton, les projets peuvent comprendre l’entretien industriel, la rénovation commerciale et des travaux sur des terrains en pente. Précisez si la tâche exige un accès intérieur, de la manutention dans une cour ou du levage extérieur avant de choisir une catégorie."
+    },
+    "considerations": [
+      {
+        "en": "Provide the approach grade, turning space and ground condition for the actual entrance. For industrial maintenance, identify isolation windows and restrictions on emissions or electrical connections inside the building.",
+        "fr": "Indiquez la pente d’approche, l’espace de manœuvre et l’état du sol à l’entrée prévue. Pour l’entretien industriel, précisez les périodes d’isolement et les restrictions d’émissions ou de branchement électrique à l’intérieur."
+      }
+    ],
+    "members": [
+      {
+        "id": "on-hamilton",
+        "name": {
+          "en": "Hamilton",
+          "fr": "Hamilton"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "on-stoney-creek",
+        "name": {
+          "en": "Stoney Creek",
+          "fr": "Stoney Creek"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "on-ancaster",
+        "name": {
+          "en": "Ancaster",
+          "fr": "Ancaster"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "on-dundas",
+        "name": {
+          "en": "Dundas",
+          "fr": "Dundas"
+        },
+        "region": "ON"
+      }
+    ]
+  },
+  {
+    "id": "kitchener-waterloo-cambridge",
+    "slug": {
+      "en": "kitchener-waterloo-cambridge",
+      "fr": "kitchener-waterloo-cambridge"
+    },
+    "name": {
+      "en": "Kitchener–Waterloo–Cambridge",
+      "fr": "Kitchener–Waterloo–Cambridge"
+    },
+    "region": "ON",
+    "metro": {
+      "en": "Kitchener–Waterloo–Cambridge",
+      "fr": "Kitchener–Waterloo–Cambridge"
+    },
+    "municipalities": [
+      "Kitchener",
+      "Waterloo",
+      "Cambridge"
+    ],
+    "description": {
+      "en": "Projects across Kitchener, Waterloo and Cambridge may combine office technology, institutional spaces and manufacturing facilities. Break a multi-building request into work areas with their own equipment needs rather than applying one configuration to every site.",
+      "fr": "Les projets à Kitchener, Waterloo et Cambridge peuvent combiner la technologie de bureau, les espaces institutionnels et les installations manufacturières. Détaillez les zones de travail et leurs besoins plutôt que d’appliquer la même configuration à tous les sites."
+    },
+    "considerations": [
+      {
+        "en": "For office and campus work, identify secure access, delivery contacts and protection for finished surfaces. For manufacturing spaces, include aisle clearances, production schedules and the permissible equipment footprint.",
+        "fr": "Pour les bureaux et les campus, indiquez les accès sécurisés, les responsables de livraison et la protection des surfaces finies. Dans les espaces manufacturiers, précisez le dégagement des allées, les horaires de production et l’encombrement permis."
+      }
+    ],
+    "members": [
+      {
+        "id": "on-kitchener",
+        "name": {
+          "en": "Kitchener",
+          "fr": "Kitchener"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "on-waterloo",
+        "name": {
+          "en": "Waterloo",
+          "fr": "Waterloo"
+        },
+        "region": "ON"
+      },
+      {
+        "id": "on-cambridge",
+        "name": {
+          "en": "Cambridge",
+          "fr": "Cambridge"
+        },
+        "region": "ON"
+      }
+    ]
+  },
+  {
+    "id": "victoria",
+    "slug": {
+      "en": "victoria",
+      "fr": "victoria"
+    },
+    "name": {
+      "en": "Victoria",
+      "fr": "Victoria"
+    },
+    "region": "BC",
+    "metro": {
+      "en": "Victoria",
+      "fr": "Victoria"
+    },
+    "municipalities": [
+      "Victoria",
+      "Saanich",
+      "Langford",
+      "Colwood",
+      "Esquimalt"
+    ],
+    "description": {
+      "en": "Victoria-area rental requests may cover hospitality renovations, institutional buildings and commercial grounds. Distinguish the final site’s access requirements from the transport arrangements needed to reach Vancouver Island.",
+      "fr": "Dans la région de Victoria, les demandes peuvent viser la rénovation d’établissements d’accueil, les bâtiments institutionnels et les terrains commerciaux. Distinguez les contraintes d’accès du site des modalités de transport nécessaires pour rejoindre l’île de Vancouver."
+    },
+    "considerations": [
+      {
+        "en": "Confirm the receiving address, unloading method and any ferry-dependent logistics before scheduling the work. For occupied properties, specify quiet working periods, pedestrian separation and protection for landscaping or finished floors.",
+        "fr": "Confirmez l’adresse de réception, le mode de déchargement et les besoins de transport par traversier avant de planifier les travaux. Pour les propriétés occupées, précisez les périodes de travail silencieux, la séparation des piétons et la protection des aménagements ou des planchers finis."
+      }
+    ],
+    "members": [
+      {
+        "id": "bc-victoria",
+        "name": {
+          "en": "Victoria",
+          "fr": "Victoria"
+        },
+        "region": "BC"
+      },
+      {
+        "id": "bc-saanich",
+        "name": {
+          "en": "Saanich",
+          "fr": "Saanich"
+        },
+        "region": "BC"
+      },
+      {
+        "id": "bc-langford",
+        "name": {
+          "en": "Langford",
+          "fr": "Langford"
+        },
+        "region": "BC"
+      },
+      {
+        "id": "bc-colwood",
+        "name": {
+          "en": "Colwood",
+          "fr": "Colwood"
+        },
+        "region": "BC"
+      },
+      {
+        "id": "bc-esquimalt",
+        "name": {
+          "en": "Esquimalt",
+          "fr": "Esquimalt"
+        },
+        "region": "BC"
+      }
+    ]
+  }
+]

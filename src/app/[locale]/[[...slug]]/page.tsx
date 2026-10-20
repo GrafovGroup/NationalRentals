@@ -1,3 +1,8 @@
+import {
+  GeographicPage,
+  LocationDiscovery,
+  geographicContext,
+} from "@/components/Geography";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,6 +44,8 @@ export function generateStaticParams() {
 }
 export const dynamicParams = true;
 function description(locale: Locale, route: Route) {
+  if (route.kind === "region")
+    return regions.find((r) => r.code === route.id)!.description[locale];
   if (route.kind === "equipment")
     return getEquipment(route.id)!.seo.description[locale];
   if (route.kind === "category")
@@ -80,15 +87,24 @@ export async function generateMetadata({
         ? locale === "en"
           ? "Commercial Equipment Rentals Across Canada | National Rentals"
           : "Location d’équipement commercial au Canada | National Rentals"
-        : `${route.name[locale]} | National Rentals`;
+        : `${route.kind === "location" || route.kind === "region" ? (locale === "fr" ? "Location d’équipement — " : "Equipment rentals — ") : ""}${route.name[locale]} | National Rentals`;
   const desc = description(locale, route).slice(0, 195);
   const query =
-    route.id === "rentals" || route.kind === "category"
+    route.id === "rentals" ||
+    route.id === "locations" ||
+    route.kind === "region" ||
+    route.kind === "location" ||
+    route.kind === "category"
       ? await searchParams
       : {};
-  const filtered = ["q", "category", "subcategory", "industry"].some(
-    (key) => !!query[key],
-  );
+  const filtered = [
+    "q",
+    "province",
+    "equipment",
+    "category",
+    "subcategory",
+    "industry",
+  ].some((key) => !!query[key]);
   return {
     ...(filtered ? { robots: { index: false, follow: true } } : {}),
     metadataBase: new URL(site.url),
@@ -166,7 +182,7 @@ function Coverage({ locale }: { locale: Locale }) {
           </div>
         </div>
         <div className="location-links">
-          {locations.map((l) => (
+          {locations.slice(0, 3).map((l) => (
             <Link href={pathFor(locale, l.id, "location")} key={l.id}>
               <span>{l.region}</span>
               <h3>{l.name[locale]}</h3>
@@ -411,6 +427,14 @@ export default async function Page({ params, searchParams }: Props) {
           filters={filters}
           categoryId={category.id}
         />
+        <section className="section container">
+          <Link
+            className="text-link"
+            href={pathFor(locale, "locations") + "?category=" + category.id}
+          >
+            {locale === "fr" ? "PLANIFIER PAR RÉGION" : "PLAN BY REGION"} →
+          </Link>
+        </section>
         <Process locale={locale} />
         <section className="section container">
           <h2>{copy.related[locale]}</h2>
@@ -431,43 +455,13 @@ export default async function Page({ params, searchParams }: Props) {
         </section>
       </>
     );
-  } else if (route.kind === "location") {
-    const location = locations.find((l) => l.id === route.id)!;
+  } else if (route.kind === "location" || route.kind === "region") {
     content = (
-      <>
-        <PageIntro
-          locale={locale}
-          route={route}
-          text={location.description[locale]}
-        />
-        <section className="section container two-column">
-          <div>
-            <h2>{copy.localPlanning[locale]}</h2>
-            <ul className="planning-list">
-              {location.considerations.map((c, i) => (
-                <li key={i}>{c[locale]}</li>
-              ))}
-            </ul>
-            <Button locale={locale} />
-          </div>
-          <aside className="municipalities">
-            <p className="eyebrow">{location.metro[locale]}</p>
-            <h2>{copy.municipalities[locale]}</h2>
-            <div className="tags">
-              {location.municipalities.map((m) => (
-                <span key={m}>{m}</span>
-              ))}
-            </div>
-            <p className="fine-print">{copy.coverageNote[locale]}</p>
-          </aside>
-        </section>
-        <section className="section subtle">
-          <div className="container">
-            <h2>{copy.categoryTitle[locale]}</h2>
-            <CategoryGrid locale={locale} />
-          </div>
-        </section>
-      </>
+      <GeographicPage
+        locale={locale}
+        route={route}
+        query={await searchParams}
+      />
     );
   } else
     switch (route.id) {
@@ -531,6 +525,8 @@ export default async function Page({ params, searchParams }: Props) {
               category={prefill.category}
               equipment={prefill.equipment}
               sourceEquipment={prefill.sourceEquipment}
+              city={prefill.city}
+              province={prefill.province}
             />
           </>
         );
@@ -552,7 +548,8 @@ export default async function Page({ params, searchParams }: Props) {
           </>
         );
         break;
-      case "locations":
+      case "locations": {
+        const geographyQuery = await searchParams;
         content = (
           <>
             <PageIntro
@@ -560,8 +557,11 @@ export default async function Page({ params, searchParams }: Props) {
               route={route}
               title={copy.nationalTitle[locale]}
               text={copy.nationalText[locale]}
-            />
-            <Coverage locale={locale} />
+            >
+              <a className="button" href="#markets">
+                {locale === "fr" ? "CHERCHER UNE VILLE" : "FIND A CITY"} ↓
+              </a>
+            </PageIntro>
             <section className="section container">
               <h2>
                 {locale === "en"
@@ -573,12 +573,23 @@ export default async function Page({ params, searchParams }: Props) {
                 {regions.map((r) => (
                   <article key={r.code}>
                     <span className="eyebrow">{r.code}</span>
-                    <h3>{r.name[locale]}</h3>
+                    <h3>
+                      <Link
+                        href={
+                          pathFor(locale, r.code, "region") +
+                          "?" +
+                          geographicContext(geographyQuery)
+                        }
+                      >
+                        {r.name[locale]} ↗
+                      </Link>
+                    </h3>
                     <p>{r.cities.map((c) => c[locale]).join(" · ")}</p>
                   </article>
                 ))}
               </div>
             </section>
+            <LocationDiscovery locale={locale} query={geographyQuery} />
             <section className="section subtle">
               <div className="container">
                 <h2>
@@ -597,6 +608,7 @@ export default async function Page({ params, searchParams }: Props) {
           </>
         );
         break;
+      }
       case "corporate":
         content = (
           <>

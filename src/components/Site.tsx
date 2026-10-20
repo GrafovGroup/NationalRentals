@@ -55,11 +55,13 @@ export function PageIntro({
   route,
   title,
   text,
+  children,
 }: {
   locale: Locale;
   route: Route;
   title?: string;
   text?: string;
+  children?: React.ReactNode;
 }) {
   return (
     <section className="page-intro">
@@ -68,6 +70,7 @@ export function PageIntro({
         <p className="eyebrow">NATIONAL RENTALS / {route.name[locale]}</p>
         <h1>{title || route.name[locale]}</h1>
         {text && <p className="lead">{text}</p>}
+        {children && <div className="button-row">{children}</div>}
       </div>
     </section>
   );
@@ -104,11 +107,15 @@ export function QuoteSection({
   category = "",
   equipment = "",
   sourceEquipment = "",
+  city = "",
+  province = "",
 }: {
   locale: Locale;
   category?: string;
   equipment?: string;
   sourceEquipment?: string;
+  city?: string;
+  province?: string;
 }) {
   return (
     <section id="quote" className="section quote-section">
@@ -135,6 +142,8 @@ export function QuoteSection({
           initialCategory={category}
           initialEquipment={equipment}
           sourceEquipment={sourceEquipment}
+          city={city}
+          province={province}
         />
       </div>
     </section>

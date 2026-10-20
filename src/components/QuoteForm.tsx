@@ -12,11 +12,15 @@ export function QuoteForm({
   initialCategory = "",
   initialEquipment = "",
   sourceEquipment = "",
+  city = "",
+  province = "",
 }: {
   locale: Locale;
   initialCategory?: string;
   initialEquipment?: string;
   sourceEquipment?: string;
+  city?: string;
+  province?: string;
 }) {
   const [category, setCategory] = useState(initialCategory);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -118,7 +122,9 @@ export function QuoteForm({
           maxLength={type === "text" ? 160 : undefined}
           min={type === "number" ? 1 : undefined}
           max={type === "number" ? 10000 : undefined}
-          defaultValue={name === "quantity" ? 1 : undefined}
+          defaultValue={
+            name === "quantity" ? 1 : name === "city" ? city : undefined
+          }
           aria-invalid={!!errors[name]}
           aria-describedby={errors[name] ? `${name}-error` : undefined}
         />
@@ -244,6 +250,7 @@ export function QuoteForm({
               <select
                 name="province"
                 id="province"
+                defaultValue={province}
                 required
                 autoComplete="address-level1"
                 aria-invalid={!!errors.province}

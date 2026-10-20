@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
+import { getEquipment } from "@/lib/equipment";
 import { categories } from "@/lib/catalog";
 import { type Locale, site } from "@/lib/config";
 import { copy } from "@/lib/copy";
@@ -133,6 +134,9 @@ export function Header({ locale }: { locale: Locale }) {
                 "q",
                 "subcategory",
                 "industry",
+                "province",
+                "market",
+                "location",
               ]) {
                 const value = source.get(key);
                 if (value) query.set(key, value);
@@ -155,10 +159,50 @@ export function Header({ locale }: { locale: Locale }) {
               route?.kind === "equipment"
                 ? equipmentInquiryHref(locale, route.id)
                 : pathFor(locale, "contact") +
-                  (route?.kind === "category" ? "?category=" + route.id : "") +
+                  (route?.kind === "category"
+                    ? "?category=" + route.id
+                    : route?.kind === "region"
+                      ? "?province=" + route.id
+                      : route?.kind === "location"
+                        ? "?location=" + route.id
+                        : "") +
                   "#quote"
             }
-            onClick={close}
+            onClick={(event) => {
+              const context = new URLSearchParams(window.location.search);
+              if (
+                route?.kind !== "equipment" &&
+                [
+                  "equipment",
+                  "category",
+                  "market",
+                  "location",
+                  "province",
+                ].some((key) => context.has(key))
+              ) {
+                event.preventDefault();
+                const target = new URL(event.currentTarget.href);
+                for (const key of [
+                  "equipment",
+                  "category",
+                  "source",
+                  "market",
+                  "location",
+                  "province",
+                ]) {
+                  const value = context.get(key);
+                  if (value && !target.searchParams.has(key))
+                    target.searchParams.set(key, value);
+                }
+                const item = getEquipment(context.get("equipment") || "");
+                if (item) {
+                  target.searchParams.set("category", item.categoryId);
+                  target.searchParams.set("source", item.id);
+                }
+                window.location.assign(target.href);
+              }
+              close();
+            }}
           >
             {copy.quote[locale]} <span aria-hidden="true">↗</span>
           </Link>

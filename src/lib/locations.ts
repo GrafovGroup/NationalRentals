@@ -1,104 +1,25 @@
+import regionContent from "./region-content.json";
+import metroContent from "./metro-content.json";
 import { b, type Localized } from "./config";
-export const regions: { code: string; name: Localized; cities: Localized[] }[] =
-  [
-    {
-      code: "AB",
-      name: b("Alberta", "Alberta"),
-      cities: [
-        b("Calgary", "Calgary"),
-        b("Edmonton", "Edmonton"),
-        b("Red Deer", "Red Deer"),
-      ],
-    },
-    {
-      code: "BC",
-      name: b("British Columbia", "Colombie-Britannique"),
-      cities: [
-        b("Vancouver", "Vancouver"),
-        b("Victoria", "Victoria"),
-        b("Kelowna", "Kelowna"),
-      ],
-    },
-    {
-      code: "MB",
-      name: b("Manitoba", "Manitoba"),
-      cities: [b("Winnipeg", "Winnipeg"), b("Brandon", "Brandon")],
-    },
-    {
-      code: "NB",
-      name: b("New Brunswick", "Nouveau-Brunswick"),
-      cities: [
-        b("Moncton", "Moncton"),
-        b("Fredericton", "Fredericton"),
-        b("Saint John", "Saint John"),
-      ],
-    },
-    {
-      code: "NL",
-      name: b("Newfoundland and Labrador", "Terre-Neuve-et-Labrador"),
-      cities: [
-        b("St. John’s", "St. John’s"),
-        b("Corner Brook", "Corner Brook"),
-      ],
-    },
-    {
-      code: "NS",
-      name: b("Nova Scotia", "Nouvelle-Écosse"),
-      cities: [b("Halifax", "Halifax"), b("Sydney", "Sydney")],
-    },
-    {
-      code: "ON",
-      name: b("Ontario", "Ontario"),
-      cities: [
-        b("Toronto", "Toronto"),
-        b("Ottawa", "Ottawa"),
-        b("Hamilton", "Hamilton"),
-        b("London", "London"),
-        b("Kitchener", "Kitchener"),
-        b("Windsor", "Windsor"),
-      ],
-    },
-    {
-      code: "PE",
-      name: b("Prince Edward Island", "Île-du-Prince-Édouard"),
-      cities: [
-        b("Charlottetown", "Charlottetown"),
-        b("Summerside", "Summerside"),
-      ],
-    },
-    {
-      code: "QC",
-      name: b("Québec", "Québec"),
-      cities: [
-        b("Montréal", "Montréal"),
-        b("Québec City", "Québec"),
-        b("Gatineau", "Gatineau"),
-        b("Sherbrooke", "Sherbrooke"),
-        b("Trois-Rivières", "Trois-Rivières"),
-      ],
-    },
-    {
-      code: "SK",
-      name: b("Saskatchewan", "Saskatchewan"),
-      cities: [b("Saskatoon", "Saskatoon"), b("Regina", "Regina")],
-    },
-    {
-      code: "NT",
-      name: b("Northwest Territories", "Territoires du Nord-Ouest"),
-      cities: [b("Yellowknife", "Yellowknife")],
-    },
-    {
-      code: "NU",
-      name: b("Nunavut", "Nunavut"),
-      cities: [b("Iqaluit", "Iqaluit")],
-    },
-    {
-      code: "YT",
-      name: b("Yukon", "Yukon"),
-      cities: [b("Whitehorse", "Whitehorse")],
-    },
-  ];
-export const locations = [
+const baseRegions: { code: RegionCode; name: Localized }[] = [
+  { code: "AB", name: b("Alberta", "Alberta") },
+  { code: "BC", name: b("British Columbia", "Colombie-Britannique") },
+  { code: "MB", name: b("Manitoba", "Manitoba") },
+  { code: "NB", name: b("New Brunswick", "Nouveau-Brunswick") },
+  {
+    code: "NL",
+    name: b("Newfoundland and Labrador", "Terre-Neuve-et-Labrador"),
+  },
+  { code: "NS", name: b("Nova Scotia", "Nouvelle-Écosse") },
+  { code: "ON", name: b("Ontario", "Ontario") },
+  { code: "PE", name: b("Prince Edward Island", "Île-du-Prince-Édouard") },
+  { code: "QC", name: b("Québec", "Québec") },
+  { code: "SK", name: b("Saskatchewan", "Saskatchewan") },
+  { code: "NT", name: b("Northwest Territories", "Territoires du Nord-Ouest") },
+  { code: "NU", name: b("Nunavut", "Nunavut") },
+  { code: "YT", name: b("Yukon", "Yukon") },
+];
+const existingLocations = [
   {
     id: "toronto",
     slug: b("toronto-gta", "toronto-grand-toronto"),
@@ -219,3 +140,135 @@ export const locations = [
     ],
   },
 ];
+
+export type RegionCode = keyof typeof regionContent;
+export const regions = baseRegions.map((r) => ({
+  ...r,
+  code: r.code as RegionCode,
+  ...regionContent[r.code as RegionCode],
+}));
+const slugify = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+export const locations = [
+  ...existingLocations.map((l) => ({
+    ...l,
+    members: l.municipalities.map((name) => ({
+      id: l.region.toLowerCase() + "-" + slugify(name),
+      name: b(name, name),
+      region: l.region as RegionCode,
+    })),
+  })),
+  ...metroContent,
+];
+export type Market = {
+  id: string;
+  name: Localized;
+  region: RegionCode;
+  metroId?: string;
+};
+export const markets: Market[] = [];
+for (const region of regions) {
+  const names = [...region.cities];
+  for (const metro of locations) {
+    for (const member of metro.members) {
+      if (
+        member.region === region.code &&
+        !names.some((n) => n.en === member.name.en)
+      )
+        names.push(member.name);
+    }
+  }
+  for (const name of names) {
+    const marketId = region.code.toLowerCase() + "-" + slugify(name.en);
+    const metro = locations.find((m) =>
+      m.members.some((member) => member.id === marketId),
+    );
+    markets.push({
+      id: marketId,
+      name,
+      region: region.code,
+      metroId: metro?.id,
+    });
+  }
+}
+export function geographicPrefill(
+  locale: import("./config").Locale,
+  query: Record<string, string | string[] | undefined>,
+) {
+  const market = markets.find((m) => m.id === query.market);
+  const metro = locations.find((m) => m.id === query.location);
+  const region = regions.find((r) => r.code === query.province);
+  return {
+    city:
+      market?.name[locale] ||
+      (metro
+        ? markets.find((m) => m.metroId === metro.id)?.name[locale]
+        : "") ||
+      "",
+    province: market?.region || metro?.region || region?.code || "",
+  };
+}
+// Explicit publication registry: add only reviewed, distinct bilingual combinations.
+export type LocalizedCategoryPage = {
+  id: string;
+  locationId: string;
+  categoryId: string;
+  description: Localized;
+  planning: Localized;
+};
+export const localizedCategoryPages: LocalizedCategoryPage[] = [];
+
+// Commercial discovery groupings, not assertions of census boundaries or branches.
+export const metropolitanAreas = [
+  ...locations.map((l) => ({
+    id: l.id,
+    regionCodes: [...new Set(l.members.map((m) => m.region))],
+    municipalities: l.municipalities,
+    pageId: l.id,
+  })),
+  ...[
+    ["london", "ON", "London|St. Thomas"],
+    [
+      "niagara",
+      "ON",
+      "Niagara Falls|St. Catharines|Welland|Niagara-on-the-Lake",
+    ],
+    ["barrie", "ON", "Barrie|Innisfil|Orillia"],
+    ["kingston", "ON", "Kingston|Loyalist"],
+    ["windsor", "ON", "Windsor|Tecumseh|LaSalle"],
+    ["regina", "SK", "Regina|White City|Emerald Park"],
+    ["saskatoon", "SK", "Saskatoon|Warman|Martensville"],
+    ["moncton", "NB", "Moncton|Dieppe|Riverview"],
+    ["fredericton", "NB", "Fredericton|Oromocto"],
+    ["saint-john", "NB", "Saint John|Quispamsis|Rothesay"],
+    ["charlottetown", "PE", "Charlottetown|Stratford|Cornwall"],
+    ["st-johns", "NL", "St. John’s|Mount Pearl|Paradise"],
+    ["kelowna", "BC", "Kelowna|West Kelowna|Lake Country"],
+    ["kamloops", "BC", "Kamloops"],
+    ["prince-george", "BC", "Prince George"],
+    ["whitehorse", "YT", "Whitehorse"],
+    ["yellowknife", "NT", "Yellowknife"],
+    ["iqaluit", "NU", "Iqaluit"],
+  ].map(([id, region, names]) => ({
+    id,
+    regionCodes: [region],
+    municipalities: names.split("|"),
+    pageId: undefined,
+  })),
+];
+for (const area of metropolitanAreas.filter((a) => !a.pageId)) {
+  for (const name of area.municipalities) {
+    const region = area.regionCodes[0] as RegionCode;
+    if (!markets.some((m) => m.region === region && m.name.en === name))
+      markets.push({
+        id: region.toLowerCase() + "-" + slugify(name),
+        name: b(name, name),
+        region,
+      });
+  }
+}
