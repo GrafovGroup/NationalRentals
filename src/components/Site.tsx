@@ -3,7 +3,7 @@ import { Logo } from "@/components/Logo";
 import { site, type Locale } from "@/lib/config";
 import { copy } from "@/lib/copy";
 import { categories } from "@/lib/catalog";
-import { pages, pathFor, type Route } from "@/lib/routes";
+import { pages, pathFor, breadcrumbItems, type Route } from "@/lib/routes";
 import { QuoteForm } from "./QuoteForm";
 export function Button({
   locale,
@@ -37,26 +37,16 @@ export function Breadcrumbs({
       className="breadcrumbs"
       aria-label={locale === "en" ? "Breadcrumb" : "Fil d’Ariane"}
     >
-      <Link href={pathFor(locale, "home")}>{pages.home.name[locale]}</Link>
-      <span aria-hidden="true">/</span>
-      {route.kind !== "page" && (
-        <>
-          <Link
-            href={pathFor(
-              locale,
-              route.kind === "category" ? "rentals" : "locations",
-            )}
-          >
-            {
-              pages[route.kind === "category" ? "rentals" : "locations"].name[
-                locale
-              ]
-            }
-          </Link>
-          <span aria-hidden="true">/</span>
-        </>
-      )}
-      <span aria-current="page">{route.name[locale]}</span>
+      {breadcrumbItems(locale, route).map((item, index, items) => (
+        <span key={item.path}>
+          {index > 0 && <span aria-hidden="true"> / </span>}
+          {index === items.length - 1 ? (
+            <span aria-current="page">{item.name}</span>
+          ) : (
+            <Link href={item.path}>{item.name}</Link>
+          )}
+        </span>
+      ))}
     </nav>
   );
 }
@@ -113,10 +103,12 @@ export function QuoteSection({
   locale,
   category = "",
   equipment = "",
+  sourceEquipment = "",
 }: {
   locale: Locale;
   category?: string;
   equipment?: string;
+  sourceEquipment?: string;
 }) {
   return (
     <section id="quote" className="section quote-section">
@@ -132,14 +124,17 @@ export function QuoteSection({
           <a className="contact-line" href={`mailto:${site.email}`}>
             {site.email} ↗
           </a>
-          <a className="contact-line" href={site.phoneHref}>
-            {site.phone} ↗
-          </a>
+          {site.phoneVerified && (
+            <a className="contact-line" href={site.phoneHref}>
+              {site.phone} ↗
+            </a>
+          )}
         </div>
         <QuoteForm
           locale={locale}
           initialCategory={category}
           initialEquipment={equipment}
+          sourceEquipment={sourceEquipment}
         />
       </div>
     </section>
@@ -206,7 +201,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <div>
             <h2>{pages.contact.name[locale]}</h2>
             <a href={`mailto:${site.email}`}>{site.email}</a>
-            <a href={site.phoneHref}>{site.phone}</a>
+            {site.phoneVerified && <a href={site.phoneHref}>{site.phone}</a>}
             <p>
               {locale === "en"
                 ? "Commercial inquiries across Canada."

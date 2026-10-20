@@ -180,3 +180,40 @@ test("distributed limiter fails closed on malformed store response", async (t) =
   delete process.env.RATE_LIMIT_REDIS_URL;
   delete process.env.RATE_LIMIT_REDIS_TOKEN;
 });
+
+test("equipment source is validated and a canonical page is sent to the provider", async () => {
+  assert.equal(
+    quoteSchema.safeParse({ ...quote, sourceEquipment: "https://evil.test" })
+      .success,
+    false,
+  );
+  assert.equal(
+    quoteSchema.safeParse({ ...quote, sourceEquipment: "generator" }).success,
+    false,
+  );
+  const parsed = quoteSchema.parse({ ...quote, sourceEquipment: "excavator" });
+  const originalFetch = global.fetch,
+    originalKey = process.env.RESEND_API_KEY,
+    originalFrom = process.env.QUOTE_FROM_EMAIL;
+  let message = "";
+  try {
+    process.env.RESEND_API_KEY = "test-key";
+    process.env.QUOTE_FROM_EMAIL = "verified@example.com";
+    global.fetch = async (_input, init) => {
+      message = JSON.parse(String(init?.body)).text;
+      return Response.json({ id: "accepted-context" });
+    };
+    assert.equal(await deliverQuote(parsed), "accepted-context");
+    assert.ok(
+      message.includes(
+        "https://nationalrentals.ca/fr/locations-equipement/construction-terrassement/excavatrices/",
+      ),
+    );
+  } finally {
+    global.fetch = originalFetch;
+    if (originalKey === undefined) delete process.env.RESEND_API_KEY;
+    else process.env.RESEND_API_KEY = originalKey;
+    if (originalFrom === undefined) delete process.env.QUOTE_FROM_EMAIL;
+    else process.env.QUOTE_FROM_EMAIL = originalFrom;
+  }
+});

@@ -10,9 +10,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## National Rentals project requirements
 
-- Implement only the requested phase. Phase 1A scope is in PHASE_1A_CODEX_MASTER_PROMPT.md.
+- Implement only the requested phase. Phase 1A scope is in PHASE_1A_CODEX_MASTER_PROMPT.md; Phase 1B catalog scope is in PHASE_1B_CODEX_MASTER_PROMPT.md. Do not start Phase 1C without instruction.
 - English and Québec-appropriate French are required for all user-facing changes, validation, metadata and routes.
-- Keep contact details central in src/lib/config.ts. Use info@nationalrentals.ca. The user-instructed standard placeholder is (833) 696-9996, with tel:+18336969996; a supplied project-specific number takes precedence.
+- Keep contact details central in src/lib/config.ts. Use info@nationalrentals.ca. The user-instructed standard placeholder is (833) 696-9996, with tel:+18336969996; a supplied project-specific number takes precedence. Phase 1B call links require NEXT_PUBLIC_PHONE_VERIFIED=true after owner verification.
 - Treat any deployed business website as a live operation. Do not add coming-soon, demo, prototype, unconnected, pre-launch or legal-review-before-launch wording to customer-facing content.
 - Use uppercase navigation and button labels in both languages.
 - Never invent fleet ownership, availability, branches, supplier agreements, reviews, certifications, prices or service guarantees.

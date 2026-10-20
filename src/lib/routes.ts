@@ -1,5 +1,6 @@
 import { b, locales, type Locale, type Localized } from "./config";
 import { categories } from "./catalog";
+import { publishedEquipment, getEquipment } from "./equipment";
 import { locations } from "./locations";
 export const pages = {
   home: { slug: b("", ""), name: b("Home", "Accueil") },
@@ -29,7 +30,7 @@ export const pages = {
 };
 export type PageKey = keyof typeof pages;
 export type Route = {
-  kind: "page" | "category" | "location";
+  kind: "page" | "category" | "location" | "equipment";
   id: string;
   path: string;
   name: Localized;
@@ -48,6 +49,15 @@ export function routes(locale: Locale): Route[] {
       path: `${pages.rentals.slug[locale]}/${c.slug[locale]}`,
       name: c.name,
     })),
+    ...publishedEquipment.map((item) => {
+      const category = categories.find((c) => c.id === item.categoryId)!;
+      return {
+        kind: "equipment" as const,
+        id: item.id,
+        path: `${pages.rentals.slug[locale]}/${category.slug[locale]}/${item.slug[locale]}`,
+        name: item.name,
+      };
+    }),
     ...locations.map((l) => ({
       kind: "location" as const,
       id: l.id,
@@ -72,4 +82,56 @@ export function allRoutes() {
   return locales.flatMap((locale) =>
     routes(locale).map((route) => ({ locale, route })),
   );
+}
+
+export function equipmentInquiryHref(locale: Locale, id: string) {
+  const item = getEquipment(id);
+  if (!item) throw new Error("Unknown equipment " + id);
+  const query = new URLSearchParams({ ...item.inquiry, source: item.id });
+  return pathFor(locale, "contact") + "?" + query.toString() + "#quote";
+}
+export function inquiryPrefill(
+  locale: Locale,
+  query: Record<string, string | string[] | undefined>,
+) {
+  const category = categories.find((c) => c.id === query.category);
+  const equipment = category?.equipment.find((e) => e.id === query.equipment);
+  const source =
+    typeof query.source === "string" ? getEquipment(query.source) : undefined;
+  return {
+    category: category?.id,
+    equipment: equipment?.name[locale],
+    sourceEquipment:
+      source &&
+      source.id === equipment?.id &&
+      source.categoryId === category?.id
+        ? source.id
+        : "",
+  };
+}
+export function breadcrumbItems(locale: Locale, route: Route) {
+  const result = [
+    { name: pages.home.name[locale], path: pathFor(locale, "home") },
+  ];
+  if (route.kind !== "page") {
+    const parent = route.kind === "location" ? "locations" : "rentals";
+    result.push({
+      name: pages[parent].name[locale],
+      path: pathFor(locale, parent),
+    });
+  }
+  if (route.kind === "equipment") {
+    const item = getEquipment(route.id)!;
+    const category = categories.find((c) => c.id === item.categoryId)!;
+    result.push({
+      name: category.name[locale],
+      path: pathFor(locale, category.id, "category"),
+    });
+  }
+  if (route.id !== "home")
+    result.push({
+      name: route.name[locale],
+      path: pathFor(locale, route.id, route.kind),
+    });
+  return result;
 }

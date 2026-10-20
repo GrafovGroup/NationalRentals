@@ -11,10 +11,12 @@ export function QuoteForm({
   locale,
   initialCategory = "",
   initialEquipment = "",
+  sourceEquipment = "",
 }: {
   locale: Locale;
   initialCategory?: string;
   initialEquipment?: string;
+  sourceEquipment?: string;
 }) {
   const [category, setCategory] = useState(initialCategory);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -126,6 +128,11 @@ export function QuoteForm({
   }
   return (
     <form onSubmit={submit} noValidate className="quote-form">
+      <input
+        type="hidden"
+        name="sourceEquipment"
+        value={category === initialCategory ? sourceEquipment : ""}
+      />
       <p className="form-note">{copy.required[f]}</p>
       <div
         ref={summary}

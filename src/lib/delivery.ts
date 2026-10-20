@@ -1,3 +1,4 @@
+import { pathFor } from "./routes";
 import { site } from "./config";
 import { formCopy, type Quote } from "./quote";
 import { categories } from "./catalog";
@@ -17,6 +18,12 @@ export async function deliverQuote(quote: Quote): Promise<string> {
   void _privacy;
   const text = Object.entries(fields)
     .map(([k, v]) => {
+      if (k === "sourceEquipment")
+        return v
+          ? "Equipment page: " +
+              site.url +
+              pathFor(locale, String(v), "equipment")
+          : "Equipment page: General inquiry";
       const label = formCopy[k as keyof typeof formCopy]?.en || k;
       if (k === "category")
         v = categories.find((c) => c.id === v)?.name.en || v;

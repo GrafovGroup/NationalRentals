@@ -3,11 +3,27 @@ import { readFile, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { execFileSync } from "node:child_process";
 import { resolve, basename } from "node:path";
+import { publishedEquipment } from "../src/lib/equipment";
 import { categories } from "../src/lib/catalog";
 import { pathFor } from "../src/lib/routes";
 const require = createRequire(import.meta.url);
 const sharp = createRequire(require.resolve("next/package.json"))("sharp");
 const assets = [
+  ...publishedEquipment.flatMap((item) =>
+    (["en", "fr"] as const).flatMap((locale) => {
+      const image = item.images[locale];
+      return image
+        ? [
+            {
+              file: "public" + image.src,
+              page: pathFor(locale, item.id, "equipment"),
+              placement: "equipment detail image",
+              source: image.source,
+            },
+          ]
+        : [];
+    }),
+  ),
   {
     file: "public/images/home-hero.webp",
     page: "/en/",

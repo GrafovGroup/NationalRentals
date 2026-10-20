@@ -1,6 +1,6 @@
-# National Rentals — Phase 1A
+# National Rentals — Phases 1A and 1B
 
-Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scope in `PHASE_1A_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
+Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md` and `PHASE_1B_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
 
 ## Run locally
 
@@ -26,7 +26,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests cover all 46 pages, desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
+Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests cover all 174 pages, desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
 
 ## Production operation
 
@@ -46,7 +46,7 @@ Deploy as a Next.js Node application, not a static export: `/api/quote/` require
 
 ### Owner inputs
 
-See `IMPLEMENTATION_REPORT.md` and `docs/LEGAL_REVIEW.md`. The visible phone is the user’s instructed standard placeholder, `(833) 696-9996`. Confirm routing or replace it centrally when a project-specific number is provided. It is deliberately excluded from verified-fact organization schema.
+See `IMPLEMENTATION_REPORT.md` and `docs/LEGAL_REVIEW.md`. The standard number `(833) 696-9996` remains the configuration default. Phase 1B requires verified phone routing: call links are hidden until `NEXT_PUBLIC_PHONE_VERIFIED=true`. Set `NEXT_PUBLIC_PHONE_NUMBER` in E.164 format and `NEXT_PUBLIC_PHONE_DISPLAY` together if using a project-specific number, then rebuild. No phone ownership claim is made in structured data.
 
 ## Code map
 
@@ -77,3 +77,18 @@ The audit checks SHA-256 exact matches and 64-bit perceptual difference-hash can
 ## Reference documentation
 
 Implementation follows [Next.js App Router documentation](https://nextjs.org/docs/app/getting-started) and [Resend idempotency documentation](https://resend.com/changelog/idempotency-keys). Package versions are locked in `pnpm-lock.yaml`. No Phase 1B functionality is included.
+
+
+## Phase 1B equipment catalog
+
+64 equipment types across all 11 categories and 22 subcategories, with 128 localized
+product pages. The catalog and category pages offer keyword, category, subcategory
+and associated-industry search with server-rendered results, including without JavaScript.
+Equipment pages provide distinct applications, selection criteria, specification
+fields to define, delivery planning, related items and regional/industry links.
+Every equipment CTA prefills category, localized equipment and validated page context.
+
+Authoring and imagery policy: `docs/CATALOG.md`. Product-specific image slots remain
+empty rather than repeating category pictures or implying a particular supplied model;
+existing industrial photography and original category illustrations are preserved.
+The red outlined logo is unchanged. No Phase 1C city expansion or new analytics was added.

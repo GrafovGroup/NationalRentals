@@ -139,8 +139,8 @@ export const copy = {
     "Explorez les options d’équipement",
   ),
   equipmentNote: b(
-    "Select an item to begin a quote request. Specifications and availability are confirmed through the quote process.",
-    "Sélectionnez un article pour commencer une demande. Les caractéristiques et la disponibilité sont confirmées lors de la soumission.",
+    "Explore equipment profiles, common uses and selection criteria before preparing your quote request.",
+    "Explorez les fiches, les usages courants et les critères de sélection avant de préparer votre demande.",
   ),
   footerText: b(
     "Commercial equipment. Thoughtful coordination. Projects across Canada.",

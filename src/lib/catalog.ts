@@ -30,6 +30,9 @@ export const categories: Category[] = [
       ["loader", "Loaders", "Chargeuses"],
       ["trencher", "Trenchers", "Trancheuses"],
       ["concrete", "Concrete equipment", "Équipement de bétonnage"],
+      ["mini-excavator", "Mini excavators", "Mini-excavatrices"],
+      ["concrete-saw", "Concrete saws", "Scies à béton"],
+      ["plate-compactor", "Plate compactors", "Plaques vibrantes"],
     ]),
   },
   {
@@ -50,6 +53,7 @@ export const categories: Category[] = [
       ["telehandler", "Telehandlers", "Chariots télescopiques"],
       ["forklift", "Forklifts", "Chariots élévateurs"],
       ["material-lift", "Material lifts", "Monte-matériaux"],
+      ["mast-lift", "Vertical mast lifts", "Nacelles à mât vertical"],
     ]),
   },
   {
@@ -69,6 +73,8 @@ export const categories: Category[] = [
       ["compressor", "Compressors", "Compresseurs"],
       ["pump", "Pumps", "Pompes"],
       ["light-tower", "Light towers", "Tours d’éclairage"],
+      ["air-mover", "Air movers", "Ventilateurs de séchage"],
+      ["electric-heater", "Electric heaters", "Chauffages électriques"],
       [
         "climate",
         "Temporary heating & cooling",
@@ -218,6 +224,11 @@ export const categories: Category[] = [
         "Custom commercial requirements",
         "Besoins commerciaux particuliers",
       ],
+      ["floor-grinder", "Floor grinders", "Rectifieuses de plancher"],
+      ["core-drill", "Core drills", "Carotteuses"],
+      ["pipe-threader", "Pipe threaders", "Fileteuses de tuyaux"],
+      ["hydraulic-jack", "Hydraulic jacks", "Vérins hydrauliques"],
+      ["inspection-camera", "Inspection cameras", "Caméras d’inspection"],
     ]),
   },
   {

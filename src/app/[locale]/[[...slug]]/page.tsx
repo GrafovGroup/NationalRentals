@@ -4,11 +4,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   allRoutes,
+  breadcrumbItems,
+  inquiryPrefill,
   pathFor,
   pages,
   resolveRoute,
   type Route,
 } from "@/lib/routes";
+import { getEquipment, type CatalogFilters } from "@/lib/equipment";
+import { CatalogBrowser } from "@/components/CatalogBrowser";
+import { EquipmentPage } from "@/components/EquipmentPage";
 import { categories } from "@/lib/catalog";
 import { locations, regions } from "@/lib/locations";
 import { copy, industries } from "@/lib/copy";
@@ -34,6 +39,8 @@ export function generateStaticParams() {
 }
 export const dynamicParams = true;
 function description(locale: Locale, route: Route) {
+  if (route.kind === "equipment")
+    return getEquipment(route.id)!.seo.description[locale];
   if (route.kind === "category")
     return categories.find((c) => c.id === route.id)!.description[locale];
   if (route.kind === "location")
@@ -51,19 +58,39 @@ function description(locale: Locale, route: Route) {
   };
   return texts[route.id];
 }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isLocale(locale)) notFound();
   const route = resolveRoute(locale, slug);
-  if (!route) return { title: locale === "fr" ? "Page introuvable | National Rentals" : "Page not found | National Rentals", robots: { index: false, follow: false } };
+  if (!route)
+    return {
+      title:
+        locale === "fr"
+          ? "Page introuvable | National Rentals"
+          : "Page not found | National Rentals",
+      robots: { index: false, follow: false },
+    };
   const title =
-    route.id === "home"
-      ? locale === "en"
-        ? "Commercial Equipment Rentals Across Canada | National Rentals"
-        : "Location d’équipement commercial au Canada | National Rentals"
-      : `${route.name[locale]} | National Rentals`;
+    route.kind === "equipment"
+      ? getEquipment(route.id)!.seo.title[locale] + " | National Rentals"
+      : route.id === "home"
+        ? locale === "en"
+          ? "Commercial Equipment Rentals Across Canada | National Rentals"
+          : "Location d’équipement commercial au Canada | National Rentals"
+        : `${route.name[locale]} | National Rentals`;
   const desc = description(locale, route).slice(0, 195);
+  const query =
+    route.id === "rentals" || route.kind === "category"
+      ? await searchParams
+      : {};
+  const filtered = ["q", "category", "subcategory", "industry"].some(
+    (key) => !!query[key],
+  );
   return {
+    ...(filtered ? { robots: { index: false, follow: true } } : {}),
     metadataBase: new URL(site.url),
     title,
     description: desc,
@@ -110,6 +137,7 @@ function IndustryGrid({ locale }: { locale: Locale }) {
         <Link
           href={pathFor(locale, item.category, "category")}
           key={item.category}
+          id={item.category}
         >
           <span className="eyebrow">0{i + 1}</span>
           <h3>
@@ -197,9 +225,11 @@ function Home({ locale }: { locale: Locale }) {
           <p>{copy.heroText[locale]}</p>
           <div className="button-row">
             <Button locale={locale} />
-            <a className="button ghost" href={site.phoneHref}>
-              {copy.call[locale]} ↗
-            </a>
+            {site.phoneVerified && (
+              <a className="button ghost" href={site.phoneHref}>
+                {copy.call[locale]} ↗
+              </a>
+            )}
           </div>
           <div className="hero-foot">
             <span>
@@ -248,9 +278,10 @@ function Home({ locale }: { locale: Locale }) {
             ].map((item) => {
               const c = categories.find((c) => c.id === item.category)!;
               const featured = c.equipment[c.id === "construction" ? 1 : 0];
+              if (!getEquipment(featured.id)) return null;
               return (
                 <Link
-                  href={`${pathFor(locale, "contact")}?category=${c.id}&equipment=${featured.id}#quote`}
+                  href={pathFor(locale, featured.id, "equipment")}
                   className={`featured-card ${locale === "fr" ? "text-feature" : ""}`}
                   key={c.id}
                 >
@@ -296,7 +327,29 @@ export default async function Page({ params, searchParams }: Props) {
   const route = resolveRoute(locale, slug);
   if (!route) notFound();
   let content: React.ReactNode;
-  if (route.kind === "category") {
+  const catalogQuery =
+    route.kind === "category" || route.id === "rentals"
+      ? await searchParams
+      : {};
+  const scalar = (key: string) =>
+    typeof catalogQuery[key] === "string"
+      ? catalogQuery[key].slice(0, 120)
+      : "";
+  const filters: CatalogFilters = {
+    keyword: scalar("q"),
+    category: scalar("category"),
+    subcategory: scalar("subcategory"),
+    industry: scalar("industry"),
+  };
+  if (route.kind === "equipment") {
+    content = (
+      <EquipmentPage
+        locale={locale}
+        route={route}
+        item={getEquipment(route.id)!}
+      />
+    );
+  } else if (route.kind === "category") {
     const category = categories.find((c) => c.id === route.id)!;
     content = (
       <>
@@ -346,18 +399,6 @@ export default async function Page({ params, searchParams }: Props) {
               <h2>{copy.equipmentTitle[locale]}</h2>
               <p>{copy.equipmentNote[locale]}</p>
             </div>
-            <div className="equipment-list">
-              {category.equipment.map((e, i) => (
-                <Link
-                  key={e.id}
-                  href={`${pathFor(locale, "contact")}?category=${category.id}&equipment=${e.id}#quote`}
-                >
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  <h3>{e.name[locale]}</h3>
-                  <span aria-hidden="true">↗</span>
-                </Link>
-              ))}
-            </div>
             <div className="planning">
               <h2>{copy.planTitle[locale]}</h2>
               <p>{category.planning[locale]}</p>
@@ -365,6 +406,11 @@ export default async function Page({ params, searchParams }: Props) {
             </div>
           </div>
         </section>
+        <CatalogBrowser
+          locale={locale}
+          filters={filters}
+          categoryId={category.id}
+        />
         <Process locale={locale} />
         <section className="section container">
           <h2>{copy.related[locale]}</h2>
@@ -437,9 +483,7 @@ export default async function Page({ params, searchParams }: Props) {
               title={copy.categoryTitle[locale]}
               text={copy.categoryIntro[locale]}
             />
-            <section className="section container">
-              <CategoryGrid locale={locale} />
-            </section>
+            <CatalogBrowser locale={locale} filters={filters} />
             <Process locale={locale} />
           </>
         );
@@ -473,10 +517,7 @@ export default async function Page({ params, searchParams }: Props) {
         break;
       case "contact": {
         const query = await searchParams;
-        const category = categories.find((c) => c.id === query.category);
-        const equipment = category?.equipment.find(
-          (e) => e.id === query.equipment,
-        );
+        const prefill = inquiryPrefill(locale, query);
         content = (
           <>
             <PageIntro
@@ -487,8 +528,9 @@ export default async function Page({ params, searchParams }: Props) {
             />
             <QuoteSection
               locale={locale}
-              category={category?.id}
-              equipment={equipment?.name[locale]}
+              category={prefill.category}
+              equipment={prefill.equipment}
+              sourceEquipment={prefill.sourceEquipment}
             />
           </>
         );
@@ -628,31 +670,10 @@ export default async function Page({ params, searchParams }: Props) {
       default:
         notFound();
     }
-  const breadcrumbs = [
-    { name: pages.home.name[locale], item: site.url + pathFor(locale, "home") },
-    ...(route.kind !== "page"
-      ? [
-          {
-            name: pages[route.kind === "category" ? "rentals" : "locations"]
-              .name[locale],
-            item:
-              site.url +
-              pathFor(
-                locale,
-                route.kind === "category" ? "rentals" : "locations",
-              ),
-          },
-        ]
-      : []),
-    ...(route.id !== "home"
-      ? [
-          {
-            name: route.name[locale],
-            item: site.url + pathFor(locale, route.id, route.kind),
-          },
-        ]
-      : []),
-  ];
+  const breadcrumbs = breadcrumbItems(locale, route).map((item) => ({
+    name: item.name,
+    item: site.url + item.path,
+  }));
   const structured = {
     "@context": "https://schema.org",
     "@graph": [

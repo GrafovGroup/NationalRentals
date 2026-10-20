@@ -1,14 +1,14 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { allRoutes, pathFor } from "../../src/lib/routes";
-test("all 46 pages respond, identify their language, and expose canonical metadata", async ({
+test("all 174 pages respond, identify their language, and expose canonical metadata", async ({
   page,
 }) => {
-  test.setTimeout(120000);
+  test.setTimeout(480000);
   const imagePlacements = new Set<string>();
   for (const { locale, route } of allRoutes()) {
     const path = pathFor(locale, route.id, route.kind);
-    const response = await page.goto(path);
+    const response = await page.goto(path, { waitUntil: "domcontentloaded" });
     expect(response?.status(), path).toBe(200);
     await expect(page.locator("html")).toHaveAttribute("lang", `${locale}-CA`);
     await expect(page.locator("h1")).toHaveCount(1);
@@ -44,7 +44,16 @@ test("desktop navigation, language context and equipment prefill work", async ({
   await expect(page).toHaveURL(/construction-earthmoving/);
   await page.getByRole("link", { name: "Passer en français" }).click();
   await expect(page).toHaveURL(/construction-terrassement/);
-  await page.getByRole("link", { name: "01 Excavatrices" }).click();
+  await page
+    .getByRole("link", { name: "Excavatrices", exact: false })
+    .filter({ hasText: "Excavatrices" })
+    .first()
+    .click();
+  await expect(page).toHaveURL(/excavatrices/);
+  await page
+    .getByRole("link", { name: /Demander une soumission/i })
+    .first()
+    .click();
   await expect(page.locator("#category")).toHaveValue("construction");
   await expect(page.locator("#equipment")).toHaveValue("Excavatrices");
   await page.getByRole("link", { name: "Switch to English" }).click();

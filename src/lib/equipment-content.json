@@ -1,0 +1,2882 @@
+{
+  "excavator": {
+    "subcategoryId": "earthmoving",
+    "slug": {
+      "en": "excavator",
+      "fr": "excavatrices"
+    },
+    "overview": {
+      "en": "Digging and loading equipment for foundations, drainage and site preparation. Start with the excavation geometry and the room available for the machine to turn.",
+      "fr": "Équipement d’excavation et de chargement pour fondations, drainage et préparation de terrain. Le choix commence par la géométrie de l’excavation et l’espace de rotation."
+    },
+    "applications": [
+      {
+        "en": "Foundation excavations",
+        "fr": "Excavation de fondations"
+      },
+      {
+        "en": "Drainage channels",
+        "fr": "Fossés de drainage"
+      },
+      {
+        "en": "Bulk soil removal",
+        "fr": "Enlèvement de déblais"
+      }
+    ],
+    "selection": {
+      "en": "Share digging depth, reach and access width. Identify attachment needs and where excavated material will be placed; machine size alone does not determine suitability.",
+      "fr": "Précisez la profondeur, la portée et la largeur d’accès. Indiquez les accessoires requis et l’emplacement des déblais; le gabarit seul ne détermine pas le choix."
+    },
+    "specificationFields": [
+      {
+        "en": "Digging depth",
+        "fr": "Profondeur d’excavation"
+      },
+      {
+        "en": "Operating weight",
+        "fr": "Poids en ordre de marche"
+      },
+      {
+        "en": "Bucket and attachment compatibility",
+        "fr": "Compatibilité du godet et des accessoires"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "skid-steer": {
+    "subcategoryId": "earthmoving",
+    "slug": {
+      "en": "skid-steer",
+      "fr": "chargeuses-compactes"
+    },
+    "overview": {
+      "en": "Compact wheeled loaders support material handling and attachment work where manoeuvring space is limited. Their suitability depends on the surface and the attachment as much as on the load.",
+      "fr": "Les chargeuses compactes sur roues servent à la manutention et aux travaux avec accessoires dans les espaces restreints. Le sol et l’accessoire comptent autant que la charge."
+    },
+    "applications": [
+      {
+        "en": "Moving aggregate",
+        "fr": "Déplacement de granulats"
+      },
+      {
+        "en": "Site cleanup",
+        "fr": "Nettoyage de chantier"
+      },
+      {
+        "en": "Landscape preparation",
+        "fr": "Préparation paysagère"
+      }
+    ],
+    "selection": {
+      "en": "Describe the material, travel surface and clearance. Include attachment hydraulic requirements and whether the work involves loading over a truck side.",
+      "fr": "Décrivez le matériau, la surface de circulation et le dégagement. Précisez les besoins hydrauliques de l’accessoire et la hauteur de chargement du camion."
+    },
+    "specificationFields": [
+      {
+        "en": "Rated operating capacity",
+        "fr": "Capacité nominale de fonctionnement"
+      },
+      {
+        "en": "Machine width",
+        "fr": "Largeur de la machine"
+      },
+      {
+        "en": "Auxiliary hydraulic flow",
+        "fr": "Débit hydraulique auxiliaire"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "compactor": {
+    "subcategoryId": "concrete-ground",
+    "slug": {
+      "en": "compactor",
+      "fr": "compacteurs"
+    },
+    "overview": {
+      "en": "Compaction equipment helps prepare granular layers and paved surfaces. The required machine depends on the material, layer thickness and access rather than the total site area alone.",
+      "fr": "L’équipement de compactage prépare les couches granulaires et les surfaces pavées. Le choix dépend du matériau, de l’épaisseur des couches et des accès, pas seulement de la superficie."
+    },
+    "applications": [
+      {
+        "en": "Subbase preparation",
+        "fr": "Préparation de fondation granulaire"
+      },
+      {
+        "en": "Trench reinstatement",
+        "fr": "Remblayage de tranchées"
+      },
+      {
+        "en": "Paving support",
+        "fr": "Travaux de pavage"
+      }
+    ],
+    "selection": {
+      "en": "Identify the soil or aggregate and the compaction specification for the project. Distinguish narrow trench work from open-area rolling before requesting a machine.",
+      "fr": "Indiquez le sol ou le granulat et les exigences de compactage du projet. Distinguez les tranchées étroites des grandes surfaces à rouler."
+    },
+    "specificationFields": [
+      {
+        "en": "Compaction method",
+        "fr": "Méthode de compactage"
+      },
+      {
+        "en": "Working width",
+        "fr": "Largeur de travail"
+      },
+      {
+        "en": "Operating mass",
+        "fr": "Masse en service"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "loader": {
+    "subcategoryId": "earthmoving",
+    "slug": {
+      "en": "loader",
+      "fr": "chargeuses"
+    },
+    "overview": {
+      "en": "Loaders move loose material between stockpiles, work areas and trucks. Plan around the material density, loading height and space needed for repeated travel and turning.",
+      "fr": "Les chargeuses déplacent les matériaux en vrac entre les réserves, les zones de travail et les camions. Prévoyez la densité, la hauteur de chargement et les manœuvres répétées."
+    },
+    "applications": [
+      {
+        "en": "Aggregate stockpiles",
+        "fr": "Réserves de granulats"
+      },
+      {
+        "en": "Truck loading",
+        "fr": "Chargement de camions"
+      },
+      {
+        "en": "Snow handling",
+        "fr": "Manutention de neige"
+      }
+    ],
+    "selection": {
+      "en": "Provide the material and expected volume, truck loading height and ground conditions. Clarify bucket or fork requirements and the site’s traffic arrangements.",
+      "fr": "Précisez le matériau, le volume prévu, la hauteur de chargement et le sol. Indiquez le godet ou les fourches nécessaires et l’organisation de la circulation."
+    },
+    "specificationFields": [
+      {
+        "en": "Bucket configuration",
+        "fr": "Configuration du godet"
+      },
+      {
+        "en": "Dump clearance",
+        "fr": "Hauteur de déversement"
+      },
+      {
+        "en": "Machine dimensions",
+        "fr": "Dimensions de la machine"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "trencher": {
+    "subcategoryId": "earthmoving",
+    "slug": {
+      "en": "trencher",
+      "fr": "trancheuses"
+    },
+    "overview": {
+      "en": "Trenchers cut narrow channels for planned underground installations. Trench width, depth and ground composition guide selection, especially where access is restricted.",
+      "fr": "Les trancheuses creusent des saignées pour des installations souterraines planifiées. La largeur, la profondeur et la composition du sol orientent le choix, surtout dans les accès restreints."
+    },
+    "applications": [
+      {
+        "en": "Irrigation routes",
+        "fr": "Parcours d’irrigation"
+      },
+      {
+        "en": "Landscape drainage",
+        "fr": "Drainage paysager"
+      },
+      {
+        "en": "Utility installation preparation",
+        "fr": "Préparation d’installations de services"
+      }
+    ],
+    "selection": {
+      "en": "Provide trench dimensions, soil conditions and the planned route. Confirm utility-location arrangements and spoil handling before scheduling excavation.",
+      "fr": "Précisez les dimensions, le sol et le tracé. Confirmez le repérage des services souterrains et la gestion des déblais avant de planifier l’excavation."
+    },
+    "specificationFields": [
+      {
+        "en": "Cutting depth",
+        "fr": "Profondeur de coupe"
+      },
+      {
+        "en": "Trench width",
+        "fr": "Largeur de tranchée"
+      },
+      {
+        "en": "Ground suitability",
+        "fr": "Compatibilité avec le sol"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "concrete": {
+    "subcategoryId": "concrete-ground",
+    "slug": {
+      "en": "concrete",
+      "fr": "equipement-betonnage"
+    },
+    "overview": {
+      "en": "Concrete placement work can require mixing, consolidation and finishing equipment at different stages. Describe the operation so the request can be narrowed to the right tool rather than a generic package.",
+      "fr": "Le bétonnage peut nécessiter du matériel de mélange, de consolidation et de finition à différentes étapes. Décrivez l’opération pour cibler les bons outils plutôt qu’un ensemble générique."
+    },
+    "applications": [
+      {
+        "en": "Small pours",
+        "fr": "Petites coulées"
+      },
+      {
+        "en": "Concrete repairs",
+        "fr": "Réparations de béton"
+      },
+      {
+        "en": "Slab finishing",
+        "fr": "Finition de dalles"
+      }
+    ],
+    "selection": {
+      "en": "Include the pour volume, mix delivery method and finish sought. Tell us whether mixing, vibration or finishing is the immediate requirement and identify power access.",
+      "fr": "Indiquez le volume, le mode de livraison du mélange et le fini recherché. Précisez le besoin immédiat : mélange, vibration ou finition, ainsi que l’alimentation disponible."
+    },
+    "specificationFields": [
+      {
+        "en": "Process and tool type",
+        "fr": "Procédé et type d’outil"
+      },
+      {
+        "en": "Batch or work capacity",
+        "fr": "Capacité de travail"
+      },
+      {
+        "en": "Power connection",
+        "fr": "Raccordement électrique"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "mini-excavator": {
+    "subcategoryId": "earthmoving",
+    "slug": {
+      "en": "mini-excavator",
+      "fr": "mini-excavatrices"
+    },
+    "overview": {
+      "en": "Mini excavators suit digging tasks where gates, buildings or existing landscaping constrain access. Compact dimensions must still be assessed against required digging reach and material handling.",
+      "fr": "Les mini-excavatrices conviennent aux travaux limités par des portails, des bâtiments ou l’aménagement existant. Le gabarit doit aussi répondre aux besoins de portée et de manutention."
+    },
+    "applications": [
+      {
+        "en": "Courtyard excavation",
+        "fr": "Excavation de cours"
+      },
+      {
+        "en": "Service repairs",
+        "fr": "Réparation de services"
+      },
+      {
+        "en": "Landscape trenches",
+        "fr": "Tranchées paysagères"
+      }
+    ],
+    "selection": {
+      "en": "Measure the narrowest entrance and turning area. Provide digging depth, overhead obstructions and the ground protection needed along the travel route.",
+      "fr": "Mesurez l’entrée la plus étroite et l’aire de rotation. Indiquez la profondeur, les obstacles en hauteur et la protection requise sur le trajet."
+    },
+    "specificationFields": [
+      {
+        "en": "Overall width",
+        "fr": "Largeur hors tout"
+      },
+      {
+        "en": "Tail-swing clearance",
+        "fr": "Dégagement arrière"
+      },
+      {
+        "en": "Digging reach",
+        "fr": "Portée d’excavation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "concrete-saw": {
+    "subcategoryId": "concrete-ground",
+    "slug": {
+      "en": "concrete-saw",
+      "fr": "scies-beton"
+    },
+    "overview": {
+      "en": "Concrete saws create controlled cuts in slabs and paved surfaces. Blade choice and cutting depth depend on the material and the intended cut, including whether reinforcement may be present.",
+      "fr": "Les scies à béton réalisent des coupes dans les dalles et les surfaces pavées. La lame et la profondeur dépendent du matériau, du tracé et de la présence possible d’armature."
+    },
+    "applications": [
+      {
+        "en": "Slab openings",
+        "fr": "Ouvertures dans les dalles"
+      },
+      {
+        "en": "Pavement repair",
+        "fr": "Réparation de chaussée"
+      },
+      {
+        "en": "Joint cutting",
+        "fr": "Sciage de joints"
+      }
+    ],
+    "selection": {
+      "en": "Identify concrete or asphalt, thickness and cutting length. Specify indoor or outdoor work and the dust or slurry controls required by the project.",
+      "fr": "Précisez le béton ou l’asphalte, l’épaisseur et la longueur de coupe. Indiquez l’environnement et les mesures de gestion des poussières ou des boues."
+    },
+    "specificationFields": [
+      {
+        "en": "Cut depth",
+        "fr": "Profondeur de coupe"
+      },
+      {
+        "en": "Blade compatibility",
+        "fr": "Compatibilité de la lame"
+      },
+      {
+        "en": "Water and power requirements",
+        "fr": "Besoins en eau et en énergie"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "plate-compactor": {
+    "subcategoryId": "concrete-ground",
+    "slug": {
+      "en": "plate-compactor",
+      "fr": "plaques-vibrantes"
+    },
+    "overview": {
+      "en": "Plate compactors work on localized granular preparation and paving tasks. They are a practical consideration for areas where a larger roller cannot manoeuvre.",
+      "fr": "Les plaques vibrantes servent aux travaux localisés sur fondation granulaire et pavés. Elles sont utiles à considérer lorsque l’espace ne permet pas les manœuvres d’un rouleau."
+    },
+    "applications": [
+      {
+        "en": "Paver base preparation",
+        "fr": "Fondation de pavés"
+      },
+      {
+        "en": "Walkway repairs",
+        "fr": "Réparation d’allées"
+      },
+      {
+        "en": "Small-area backfill",
+        "fr": "Remblai de petites surfaces"
+      }
+    ],
+    "selection": {
+      "en": "Specify the material, layer thickness and finish. Mention whether a protective mat is required for pavers and how the machine will reach the work area.",
+      "fr": "Précisez le matériau, l’épaisseur des couches et le fini. Mentionnez la protection nécessaire pour les pavés et le moyen d’accès à la zone."
+    },
+    "specificationFields": [
+      {
+        "en": "Plate dimensions",
+        "fr": "Dimensions de la plaque"
+      },
+      {
+        "en": "Operating weight",
+        "fr": "Poids en service"
+      },
+      {
+        "en": "Forward or reversible travel",
+        "fr": "Avance simple ou réversible"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "scissor": {
+    "subcategoryId": "platforms",
+    "slug": {
+      "en": "scissor",
+      "fr": "plateformes-ciseaux"
+    },
+    "overview": {
+      "en": "Scissor lifts provide a vertically rising work platform for overhead tasks. The work surface, platform load and access route determine which configuration can be considered.",
+      "fr": "Les plateformes à ciseaux offrent une élévation verticale pour les travaux en hauteur. Le sol, la charge de plateforme et le trajet d’accès déterminent les configurations à considérer."
+    },
+    "applications": [
+      {
+        "en": "Ceiling work",
+        "fr": "Travaux de plafond"
+      },
+      {
+        "en": "Building maintenance",
+        "fr": "Entretien de bâtiments"
+      },
+      {
+        "en": "Overhead installation",
+        "fr": "Installation en hauteur"
+      }
+    ],
+    "selection": {
+      "en": "Separate working height from platform height. Include people, tools and materials in the load request, and provide door widths and floor-loading restrictions.",
+      "fr": "Distinguez hauteur de travail et hauteur de plateforme. Incluez personnes, outils et matériaux dans la charge, puis précisez les portes et les limites du plancher."
+    },
+    "specificationFields": [
+      {
+        "en": "Platform height",
+        "fr": "Hauteur de plateforme"
+      },
+      {
+        "en": "Platform capacity",
+        "fr": "Capacité de plateforme"
+      },
+      {
+        "en": "Stowed width",
+        "fr": "Largeur repliée"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "boom": {
+    "subcategoryId": "platforms",
+    "slug": {
+      "en": "boom",
+      "fr": "nacelles-articulees"
+    },
+    "overview": {
+      "en": "Articulated boom lifts can position a platform around obstacles that obstruct a straight vertical approach. Height and horizontal outreach must be considered together.",
+      "fr": "Les nacelles articulées permettent de contourner des obstacles qui empêchent une approche verticale. La hauteur et la portée horizontale doivent être évaluées ensemble."
+    },
+    "applications": [
+      {
+        "en": "Building façades",
+        "fr": "Façades de bâtiments"
+      },
+      {
+        "en": "Overhead services",
+        "fr": "Services en hauteur"
+      },
+      {
+        "en": "Maintenance around structures",
+        "fr": "Entretien autour de structures"
+      }
+    ],
+    "selection": {
+      "en": "Describe the obstacle and platform position, not just the maximum height. Provide terrain details, access dimensions and the combined platform load for review.",
+      "fr": "Décrivez l’obstacle et la position de travail, pas seulement la hauteur maximale. Précisez le terrain, les accès et la charge totale de plateforme."
+    },
+    "specificationFields": [
+      {
+        "en": "Working envelope",
+        "fr": "Enveloppe de travail"
+      },
+      {
+        "en": "Horizontal outreach",
+        "fr": "Portée horizontale"
+      },
+      {
+        "en": "Platform load",
+        "fr": "Charge de plateforme"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "telehandler": {
+    "subcategoryId": "handling",
+    "slug": {
+      "en": "telehandler",
+      "fr": "chariots-telescopiques"
+    },
+    "overview": {
+      "en": "Telehandlers place materials where both lifting height and forward reach matter. The load’s position and attachment are essential to reviewing suitability.",
+      "fr": "Les chariots télescopiques placent les matériaux lorsque la hauteur et la portée comptent. La position de la charge et l’accessoire sont essentiels à l’évaluation."
+    },
+    "applications": [
+      {
+        "en": "Pallet placement",
+        "fr": "Placement de palettes"
+      },
+      {
+        "en": "Construction deliveries",
+        "fr": "Livraisons de chantier"
+      },
+      {
+        "en": "Material staging",
+        "fr": "Préparation de matériaux"
+      }
+    ],
+    "selection": {
+      "en": "Supply load weight, dimensions and required reach. The applicable load chart and attachment must be checked for the proposed lifting position, not just nominal capacity.",
+      "fr": "Fournissez le poids, les dimensions et la portée requise. Le tableau de charge et l’accessoire doivent correspondre à la position prévue, pas seulement à la capacité nominale."
+    },
+    "specificationFields": [
+      {
+        "en": "Load at required reach",
+        "fr": "Charge à la portée requise"
+      },
+      {
+        "en": "Lift height",
+        "fr": "Hauteur de levage"
+      },
+      {
+        "en": "Attachment configuration",
+        "fr": "Configuration de l’accessoire"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "forklift": {
+    "subcategoryId": "handling",
+    "slug": {
+      "en": "forklift",
+      "fr": "chariots-elevateurs"
+    },
+    "overview": {
+      "en": "Forklifts support pallet and material movement in warehouses, loading areas and suitable outdoor settings. Floor conditions, aisle geometry and load dimensions shape the request.",
+      "fr": "Les chariots élévateurs déplacent palettes et matériaux dans les entrepôts, les quais et certains espaces extérieurs. Le plancher, les allées et les charges orientent la demande."
+    },
+    "applications": [
+      {
+        "en": "Warehouse handling",
+        "fr": "Manutention en entrepôt"
+      },
+      {
+        "en": "Truck unloading",
+        "fr": "Déchargement de camions"
+      },
+      {
+        "en": "Production support",
+        "fr": "Soutien à la production"
+      }
+    ],
+    "selection": {
+      "en": "Include load weight and load centre, lift height and aisle width. Identify ventilation constraints and whether dock plates or ramps form part of the route.",
+      "fr": "Indiquez le poids et le centre de charge, la hauteur et la largeur des allées. Précisez la ventilation et la présence de rampes ou de plaques de quai."
+    },
+    "specificationFields": [
+      {
+        "en": "Capacity at load centre",
+        "fr": "Capacité au centre de charge"
+      },
+      {
+        "en": "Mast height",
+        "fr": "Hauteur du mât"
+      },
+      {
+        "en": "Tyre and power configuration",
+        "fr": "Pneus et motorisation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "material-lift": {
+    "subcategoryId": "handling",
+    "slug": {
+      "en": "material-lift",
+      "fr": "monte-materiaux"
+    },
+    "overview": {
+      "en": "Portable material lifts raise components during installation work. They are for material positioning; selecting a platform for people is a separate requirement.",
+      "fr": "Les monte-matériaux portatifs servent au positionnement de composants pendant l’installation. Le levage de personnes nécessite un équipement distinct."
+    },
+    "applications": [
+      {
+        "en": "Duct positioning",
+        "fr": "Positionnement de conduits"
+      },
+      {
+        "en": "Beam installation support",
+        "fr": "Aide à la pose de poutres"
+      },
+      {
+        "en": "Mechanical fit-out",
+        "fr": "Aménagement mécanique"
+      }
+    ],
+    "selection": {
+      "en": "Describe the component, lifting height and support footprint. Check the load attachment and available floor area, including space needed to position stabilizers.",
+      "fr": "Décrivez le composant, la hauteur et l’emprise au sol. Vérifiez le support de charge et l’espace nécessaire, notamment pour les stabilisateurs."
+    },
+    "specificationFields": [
+      {
+        "en": "Lifting capacity",
+        "fr": "Capacité de levage"
+      },
+      {
+        "en": "Maximum fork height",
+        "fr": "Hauteur maximale des fourches"
+      },
+      {
+        "en": "Base footprint",
+        "fr": "Emprise de la base"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "mast-lift": {
+    "subcategoryId": "platforms",
+    "slug": {
+      "en": "mast-lift",
+      "fr": "nacelles-mat-vertical"
+    },
+    "overview": {
+      "en": "Vertical mast lifts provide compact access for localized overhead maintenance. Their dimensions can help with restricted interiors, but access and floor capacity still require review.",
+      "fr": "Les nacelles à mât vertical offrent un accès compact pour l’entretien localisé en hauteur. Les dimensions, les accès et la capacité du plancher doivent être vérifiés."
+    },
+    "applications": [
+      {
+        "en": "Lighting maintenance",
+        "fr": "Entretien de l’éclairage"
+      },
+      {
+        "en": "Retail fit-out",
+        "fr": "Aménagement commercial"
+      },
+      {
+        "en": "Interior inspections",
+        "fr": "Inspections intérieures"
+      }
+    ],
+    "selection": {
+      "en": "Provide door and elevator dimensions, work height and platform load. Identify floor transitions and the power supply available for charging where applicable.",
+      "fr": "Précisez les portes, l’ascenseur, la hauteur et la charge. Indiquez les transitions de plancher et l’alimentation disponible pour la recharge, s’il y a lieu."
+    },
+    "specificationFields": [
+      {
+        "en": "Stowed dimensions",
+        "fr": "Dimensions repliées"
+      },
+      {
+        "en": "Platform height",
+        "fr": "Hauteur de plateforme"
+      },
+      {
+        "en": "Platform capacity",
+        "fr": "Capacité de plateforme"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "generator": {
+    "subcategoryId": "power-air",
+    "slug": {
+      "en": "generator",
+      "fr": "generatrices"
+    },
+    "overview": {
+      "en": "Temporary generators supply electrical power where a suitable permanent connection is unavailable or additional capacity is needed. Load characteristics are central to sizing the request.",
+      "fr": "Les génératrices fournissent une alimentation temporaire en l’absence d’un raccordement adapté ou lorsqu’une capacité supplémentaire est requise. Les caractéristiques des charges orientent le dimensionnement."
+    },
+    "applications": [
+      {
+        "en": "Temporary site power",
+        "fr": "Alimentation de chantier"
+      },
+      {
+        "en": "Planned shutdown support",
+        "fr": "Soutien aux arrêts planifiés"
+      },
+      {
+        "en": "Remote work areas",
+        "fr": "Zones de travail éloignées"
+      }
+    ],
+    "selection": {
+      "en": "List voltage, phase and each running and starting load. Include operating hours, cable distances and fuel-service needs; connections require appropriate technical review.",
+      "fr": "Indiquez tension, phases et charges de fonctionnement et de démarrage. Ajoutez les heures, les distances de câbles et les besoins de carburant; les raccordements nécessitent une évaluation technique."
+    },
+    "specificationFields": [
+      {
+        "en": "Electrical output",
+        "fr": "Puissance électrique"
+      },
+      {
+        "en": "Voltage and phase",
+        "fr": "Tension et phases"
+      },
+      {
+        "en": "Connection configuration",
+        "fr": "Configuration des raccordements"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "compressor": {
+    "subcategoryId": "power-air",
+    "slug": {
+      "en": "compressor",
+      "fr": "compresseurs"
+    },
+    "overview": {
+      "en": "Compressors supply air for tools and industrial processes. Required flow, operating pressure and air quality should be specified together rather than selecting by machine size.",
+      "fr": "Les compresseurs alimentent les outils et procédés industriels en air. Le débit, la pression et la qualité de l’air doivent être précisés ensemble."
+    },
+    "applications": [
+      {
+        "en": "Pneumatic tools",
+        "fr": "Outils pneumatiques"
+      },
+      {
+        "en": "Maintenance shutdowns",
+        "fr": "Arrêts d’entretien"
+      },
+      {
+        "en": "Process air support",
+        "fr": "Soutien en air de procédé"
+      }
+    ],
+    "selection": {
+      "en": "List tools or processes operating simultaneously and the required pressure. Include hose distances, moisture limits and any oil-free air requirement.",
+      "fr": "Énumérez les outils ou procédés simultanés et leur pression. Précisez les distances de tuyaux, les limites d’humidité et tout besoin d’air exempt d’huile."
+    },
+    "specificationFields": [
+      {
+        "en": "Air flow",
+        "fr": "Débit d’air"
+      },
+      {
+        "en": "Operating pressure",
+        "fr": "Pression de service"
+      },
+      {
+        "en": "Air treatment",
+        "fr": "Traitement de l’air"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "pump": {
+    "subcategoryId": "water-climate",
+    "slug": {
+      "en": "pump",
+      "fr": "pompes"
+    },
+    "overview": {
+      "en": "Temporary pumps move water between locations or manage accumulation around a work area. Fluid characteristics and the complete hose route are needed to assess a suitable arrangement.",
+      "fr": "Les pompes temporaires déplacent l’eau ou gèrent son accumulation près des travaux. Le liquide et le parcours complet des tuyaux sont nécessaires à l’évaluation."
+    },
+    "applications": [
+      {
+        "en": "Dewatering",
+        "fr": "Assèchement"
+      },
+      {
+        "en": "Water transfer",
+        "fr": "Transfert d’eau"
+      },
+      {
+        "en": "Maintenance bypass planning",
+        "fr": "Planification de dérivations d’entretien"
+      }
+    ],
+    "selection": {
+      "en": "Describe the liquid, solids, required flow and elevation change. Include suction conditions, hose length and the approved discharge location.",
+      "fr": "Décrivez le liquide, les solides, le débit et la différence d’élévation. Précisez l’aspiration, la longueur de tuyau et le lieu de rejet autorisé."
+    },
+    "specificationFields": [
+      {
+        "en": "Flow at required head",
+        "fr": "Débit à la hauteur requise"
+      },
+      {
+        "en": "Solids handling",
+        "fr": "Passage des solides"
+      },
+      {
+        "en": "Hose connections",
+        "fr": "Raccords de tuyaux"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "light-tower": {
+    "subcategoryId": "power-air",
+    "slug": {
+      "en": "light-tower",
+      "fr": "tours-eclairage"
+    },
+    "overview": {
+      "en": "Light towers provide temporary illumination for outdoor work zones and staging areas. Coverage and positioning should be planned around the task and surrounding properties.",
+      "fr": "Les tours d’éclairage illuminent temporairement les zones de travail extérieures. La couverture et le positionnement se planifient selon la tâche et les propriétés voisines."
+    },
+    "applications": [
+      {
+        "en": "Night work areas",
+        "fr": "Travaux de nuit"
+      },
+      {
+        "en": "Site entrances",
+        "fr": "Entrées de chantier"
+      },
+      {
+        "en": "Temporary staging zones",
+        "fr": "Aires temporaires de préparation"
+      }
+    ],
+    "selection": {
+      "en": "Share the area layout, operating hours and required light distribution. Consider glare, placement access and fuel or electrical supply when preparing the request.",
+      "fr": "Transmettez le plan, les heures et la répartition lumineuse recherchée. Considérez l’éblouissement, l’accès et l’alimentation électrique ou en carburant."
+    },
+    "specificationFields": [
+      {
+        "en": "Mast height",
+        "fr": "Hauteur du mât"
+      },
+      {
+        "en": "Lighting arrangement",
+        "fr": "Disposition de l’éclairage"
+      },
+      {
+        "en": "Power source",
+        "fr": "Source d’énergie"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "climate": {
+    "subcategoryId": "water-climate",
+    "slug": {
+      "en": "climate",
+      "fr": "chauffage-climatisation"
+    },
+    "overview": {
+      "en": "Temporary heating and cooling help manage conditions in workspaces and facilities. The application, building envelope and ventilation arrangements influence the equipment selection.",
+      "fr": "Le chauffage et la climatisation temporaires aident à gérer les conditions des bâtiments et espaces de travail. L’usage, l’enveloppe et la ventilation influencent le choix."
+    },
+    "applications": [
+      {
+        "en": "Temporary workspaces",
+        "fr": "Espaces de travail temporaires"
+      },
+      {
+        "en": "Facility maintenance",
+        "fr": "Entretien de bâtiments"
+      },
+      {
+        "en": "Temperature-sensitive work",
+        "fr": "Travaux sensibles à la température"
+      }
+    ],
+    "selection": {
+      "en": "Provide dimensions, target conditions and available services. Describe occupancy, duct routes and ventilation so heating or cooling options can be reviewed appropriately.",
+      "fr": "Fournissez dimensions, conditions visées et services disponibles. Décrivez l’occupation, les conduits et la ventilation pour permettre une évaluation appropriée."
+    },
+    "specificationFields": [
+      {
+        "en": "Heating or cooling duty",
+        "fr": "Besoin de chauffage ou de refroidissement"
+      },
+      {
+        "en": "Air distribution",
+        "fr": "Distribution d’air"
+      },
+      {
+        "en": "Energy supply",
+        "fr": "Alimentation énergétique"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "air-mover": {
+    "subcategoryId": "water-climate",
+    "slug": {
+      "en": "air-mover",
+      "fr": "ventilateurs-sechage"
+    },
+    "overview": {
+      "en": "Air movers circulate air across work areas and surfaces as part of a drying plan. They complement moisture-control equipment rather than independently determining when a space is dry.",
+      "fr": "Les ventilateurs de séchage font circuler l’air sur les surfaces dans le cadre d’un plan d’assèchement. Ils complètent le contrôle d’humidité sans déterminer seuls la fin du séchage."
+    },
+    "applications": [
+      {
+        "en": "Surface drying",
+        "fr": "Séchage de surfaces"
+      },
+      {
+        "en": "Restoration support",
+        "fr": "Soutien à la restauration"
+      },
+      {
+        "en": "Localized air circulation",
+        "fr": "Circulation d’air localisée"
+      }
+    ],
+    "selection": {
+      "en": "Describe room layout, affected surfaces and available circuits. Identify contamination concerns for professional assessment before moving air through the area.",
+      "fr": "Décrivez les pièces, les surfaces touchées et les circuits disponibles. Signalez la contamination pour évaluation professionnelle avant de faire circuler l’air."
+    },
+    "specificationFields": [
+      {
+        "en": "Airflow configuration",
+        "fr": "Configuration du débit d’air"
+      },
+      {
+        "en": "Electrical demand",
+        "fr": "Demande électrique"
+      },
+      {
+        "en": "Placement footprint",
+        "fr": "Emprise au sol"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "electric-heater": {
+    "subcategoryId": "water-climate",
+    "slug": {
+      "en": "electric-heater",
+      "fr": "chauffages-electriques"
+    },
+    "overview": {
+      "en": "Electric heaters offer temporary heat where the electrical service can support the required load. Suitability depends on the space, heat loss and the available connection.",
+      "fr": "Les chauffages électriques fournissent de la chaleur temporaire lorsque l’installation électrique supporte la charge. Le choix dépend du local, des pertes et du raccordement."
+    },
+    "applications": [
+      {
+        "en": "Interior fit-out",
+        "fr": "Aménagement intérieur"
+      },
+      {
+        "en": "Temporary offices",
+        "fr": "Bureaux temporaires"
+      },
+      {
+        "en": "Localized facility heating",
+        "fr": "Chauffage localisé de bâtiments"
+      }
+    ],
+    "selection": {
+      "en": "Provide room dimensions, insulation conditions and target temperature. Confirm supply voltage, phase and circuit capacity before choosing a heater configuration.",
+      "fr": "Indiquez les dimensions, l’isolation et la température visée. Confirmez tension, phases et capacité du circuit avant de choisir une configuration."
+    },
+    "specificationFields": [
+      {
+        "en": "Heat output",
+        "fr": "Puissance thermique"
+      },
+      {
+        "en": "Voltage and phase",
+        "fr": "Tension et phases"
+      },
+      {
+        "en": "Connection type",
+        "fr": "Type de raccordement"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "office": {
+    "subcategoryId": "workspaces",
+    "slug": {
+      "en": "office",
+      "fr": "roulottes-chantier"
+    },
+    "overview": {
+      "en": "Office trailers create temporary administrative space near the work. Layout and services need to accommodate the team and the site rather than just fit an available footprint.",
+      "fr": "Les roulottes de chantier créent un espace administratif temporaire. L’aménagement et les services doivent répondre aux besoins de l’équipe et du site."
+    },
+    "applications": [
+      {
+        "en": "Site administration",
+        "fr": "Administration de chantier"
+      },
+      {
+        "en": "Temporary meeting rooms",
+        "fr": "Salles de réunion temporaires"
+      },
+      {
+        "en": "Project coordination",
+        "fr": "Coordination de projets"
+      }
+    ],
+    "selection": {
+      "en": "Specify headcount, layout, utilities and access requirements. Provide a placement plan and allow for setup, service connections and removal in the schedule.",
+      "fr": "Précisez effectif, aménagement, services et accès. Fournissez un plan d’implantation et prévoyez montage, raccordements et retrait dans l’échéancier."
+    },
+    "specificationFields": [
+      {
+        "en": "Interior layout",
+        "fr": "Aménagement intérieur"
+      },
+      {
+        "en": "Overall dimensions",
+        "fr": "Dimensions hors tout"
+      },
+      {
+        "en": "Utility requirements",
+        "fr": "Besoins en services"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "container": {
+    "subcategoryId": "workspaces",
+    "slug": {
+      "en": "container",
+      "fr": "conteneurs-entreposage"
+    },
+    "overview": {
+      "en": "Storage containers provide enclosed temporary space for tools, materials and supplies. Door access, placement and the stored contents should guide the request.",
+      "fr": "Les conteneurs d’entreposage offrent un espace fermé temporaire pour outils, matériaux et fournitures. Les portes, l’emplacement et le contenu orientent la demande."
+    },
+    "applications": [
+      {
+        "en": "Tool storage",
+        "fr": "Entreposage d’outils"
+      },
+      {
+        "en": "Material staging",
+        "fr": "Préparation de matériaux"
+      },
+      {
+        "en": "Renovation storage",
+        "fr": "Entreposage durant rénovation"
+      }
+    ],
+    "selection": {
+      "en": "Describe contents, required access and usable space. Check delivery approach and ground support, and identify any ventilation or special storage needs.",
+      "fr": "Décrivez contenu, accès et volume utile. Vérifiez l’approche de livraison et la portance, puis indiquez les besoins de ventilation ou d’entreposage particulier."
+    },
+    "specificationFields": [
+      {
+        "en": "Usable dimensions",
+        "fr": "Dimensions utiles"
+      },
+      {
+        "en": "Door opening",
+        "fr": "Ouverture des portes"
+      },
+      {
+        "en": "Placement clearance",
+        "fr": "Dégagement d’installation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "toilet": {
+    "subcategoryId": "site-services",
+    "slug": {
+      "en": "toilet",
+      "fr": "toilettes-mobiles"
+    },
+    "overview": {
+      "en": "Portable toilets support temporary sites where permanent sanitary facilities do not meet the project’s needs. Headcount, duration and servicing access shape the arrangement.",
+      "fr": "Les toilettes mobiles desservent les sites dont les installations permanentes ne répondent pas aux besoins. L’effectif, la durée et l’accès d’entretien orientent l’organisation."
+    },
+    "applications": [
+      {
+        "en": "Construction sites",
+        "fr": "Chantiers"
+      },
+      {
+        "en": "Temporary work areas",
+        "fr": "Zones de travail temporaires"
+      },
+      {
+        "en": "Outdoor commercial gatherings",
+        "fr": "Rassemblements commerciaux extérieurs"
+      }
+    ],
+    "selection": {
+      "en": "Provide expected users, shifts and rental dates. Identify accessible-unit needs, placement restrictions and a route for scheduled servicing vehicles.",
+      "fr": "Indiquez utilisateurs, quarts et dates. Précisez les besoins d’unités accessibles, les restrictions de placement et l’accès des véhicules d’entretien."
+    },
+    "specificationFields": [
+      {
+        "en": "Unit configuration",
+        "fr": "Configuration de l’unité"
+      },
+      {
+        "en": "Accessibility requirements",
+        "fr": "Besoins d’accessibilité"
+      },
+      {
+        "en": "Service frequency",
+        "fr": "Fréquence d’entretien"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "wash": {
+    "subcategoryId": "site-services",
+    "slug": {
+      "en": "wash",
+      "fr": "stations-lavage-mains"
+    },
+    "overview": {
+      "en": "Handwashing stations add temporary washing points near work or gathering areas. Water supply, wastewater handling and replenishment should be planned with the location.",
+      "fr": "Les stations de lavage ajoutent des points de lavage temporaires près des travaux ou rassemblements. L’eau, les eaux usées et le réapprovisionnement se planifient selon le lieu."
+    },
+    "applications": [
+      {
+        "en": "Site welfare areas",
+        "fr": "Installations de bien-être"
+      },
+      {
+        "en": "Outdoor workplaces",
+        "fr": "Lieux de travail extérieurs"
+      },
+      {
+        "en": "Temporary wash points",
+        "fr": "Points de lavage temporaires"
+      }
+    ],
+    "selection": {
+      "en": "Specify expected use, number of positions and whether connections are available. Include replenishment, wastewater handling and seasonal operating conditions.",
+      "fr": "Précisez l’usage, le nombre de postes et les raccordements disponibles. Incluez le réapprovisionnement, les eaux usées et les conditions saisonnières."
+    },
+    "specificationFields": [
+      {
+        "en": "Number of wash positions",
+        "fr": "Nombre de postes"
+      },
+      {
+        "en": "Water arrangement",
+        "fr": "Alimentation en eau"
+      },
+      {
+        "en": "Servicing requirements",
+        "fr": "Besoins d’entretien"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "fence": {
+    "subcategoryId": "site-services",
+    "slug": {
+      "en": "fence",
+      "fr": "clotures-temporaires"
+    },
+    "overview": {
+      "en": "Temporary fencing defines site boundaries and separates work areas. The perimeter, gates and ground conditions determine the layout and installation requirements.",
+      "fr": "Les clôtures temporaires délimitent les sites et séparent les zones de travail. Le périmètre, les portails et le sol déterminent l’installation."
+    },
+    "applications": [
+      {
+        "en": "Construction boundaries",
+        "fr": "Périmètres de chantier"
+      },
+      {
+        "en": "Restricted work areas",
+        "fr": "Zones à accès restreint"
+      },
+      {
+        "en": "Temporary compounds",
+        "fr": "Enceintes temporaires"
+      }
+    ],
+    "selection": {
+      "en": "Provide perimeter length, gate positions and surface type. Identify screening needs and exposure so the support arrangement can be assessed for the site.",
+      "fr": "Fournissez le périmètre, les portails et la surface. Précisez les besoins d’occultation et l’exposition pour évaluer les supports adaptés au site."
+    },
+    "specificationFields": [
+      {
+        "en": "Panel dimensions",
+        "fr": "Dimensions des panneaux"
+      },
+      {
+        "en": "Gate configuration",
+        "fr": "Configuration des portails"
+      },
+      {
+        "en": "Base and support arrangement",
+        "fr": "Bases et supports"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "shelter": {
+    "subcategoryId": "workspaces",
+    "slug": {
+      "en": "shelter",
+      "fr": "abris"
+    },
+    "overview": {
+      "en": "Temporary shelters cover designated work or storage areas. Their suitability depends on the activity, site exposure and the installation arrangement.",
+      "fr": "Les abris temporaires couvrent certaines zones de travail ou d’entreposage. Leur pertinence dépend de l’activité, de l’exposition et de l’installation."
+    },
+    "applications": [
+      {
+        "en": "Covered work zones",
+        "fr": "Zones de travail couvertes"
+      },
+      {
+        "en": "Material protection",
+        "fr": "Protection de matériaux"
+      },
+      {
+        "en": "Temporary break areas",
+        "fr": "Aires de pause temporaires"
+      }
+    ],
+    "selection": {
+      "en": "Describe the covered activity, footprint and required openings. Supply surface and exposure details for anchoring and weather planning review.",
+      "fr": "Décrivez l’activité, l’emprise et les ouvertures requises. Précisez la surface et l’exposition pour évaluer l’ancrage et la planification météo."
+    },
+    "specificationFields": [
+      {
+        "en": "Covered dimensions",
+        "fr": "Dimensions couvertes"
+      },
+      {
+        "en": "Clear height",
+        "fr": "Hauteur libre"
+      },
+      {
+        "en": "Anchoring arrangement",
+        "fr": "Mode d’ancrage"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "box-truck": {
+    "subcategoryId": "transport",
+    "slug": {
+      "en": "box-truck",
+      "fr": "camions-fourgons"
+    },
+    "overview": {
+      "en": "Box trucks carry enclosed commercial loads between facilities and project sites. Cargo dimensions, loading method and route restrictions determine the configuration to request.",
+      "fr": "Les camions fourgons transportent des chargements commerciaux fermés entre bâtiments et chantiers. Les dimensions, le chargement et le trajet déterminent la configuration."
+    },
+    "applications": [
+      {
+        "en": "Business moves",
+        "fr": "Déménagements commerciaux"
+      },
+      {
+        "en": "Equipment deliveries",
+        "fr": "Livraisons d’équipement"
+      },
+      {
+        "en": "Inventory transfers",
+        "fr": "Transferts de stocks"
+      }
+    ],
+    "selection": {
+      "en": "Provide cargo size and weight, loading dock height and route. Identify liftgate needs and discuss driver eligibility, mileage and permitted use in the rental terms.",
+      "fr": "Indiquez taille et poids du chargement, quai et trajet. Précisez le hayon et discutez admissibilité du conducteur, kilométrage et usage permis."
+    },
+    "specificationFields": [
+      {
+        "en": "Cargo dimensions",
+        "fr": "Dimensions de chargement"
+      },
+      {
+        "en": "Payload",
+        "fr": "Charge utile"
+      },
+      {
+        "en": "Loading arrangement",
+        "fr": "Mode de chargement"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "van": {
+    "subcategoryId": "transport",
+    "slug": {
+      "en": "van",
+      "fr": "fourgonnettes-utilitaires"
+    },
+    "overview": {
+      "en": "Cargo vans support smaller enclosed deliveries and business transport. Internal dimensions and access to the load are often as important as the vehicle’s exterior size.",
+      "fr": "Les fourgonnettes utilitaires servent aux livraisons fermées de moindre volume. Les dimensions intérieures et l’accès au chargement comptent autant que le gabarit extérieur."
+    },
+    "applications": [
+      {
+        "en": "Service visits",
+        "fr": "Visites de service"
+      },
+      {
+        "en": "Small equipment moves",
+        "fr": "Transport de petit équipement"
+      },
+      {
+        "en": "Retail transfers",
+        "fr": "Transferts commerciaux"
+      }
+    ],
+    "selection": {
+      "en": "Measure the largest item and total load. Provide parking restrictions, travel distance and any need for side-door access or load restraint features.",
+      "fr": "Mesurez le plus gros article et la charge totale. Précisez stationnement, distance et besoins d’accès latéral ou de dispositifs d’arrimage."
+    },
+    "specificationFields": [
+      {
+        "en": "Cargo space",
+        "fr": "Espace de chargement"
+      },
+      {
+        "en": "Door opening",
+        "fr": "Ouverture des portes"
+      },
+      {
+        "en": "Payload limit",
+        "fr": "Charge utile maximale"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "reefer": {
+    "subcategoryId": "transport",
+    "slug": {
+      "en": "reefer",
+      "fr": "vehicules-refrigeres"
+    },
+    "overview": {
+      "en": "Refrigerated vehicles support transport requiring controlled cargo temperatures. The product, target range and loading pattern must be reviewed together.",
+      "fr": "Les véhicules réfrigérés servent au transport à température contrôlée. Le produit, la plage visée et les méthodes de chargement doivent être évalués ensemble."
+    },
+    "applications": [
+      {
+        "en": "Temperature-controlled transfers",
+        "fr": "Transferts à température contrôlée"
+      },
+      {
+        "en": "Commercial catering logistics",
+        "fr": "Logistique alimentaire commerciale"
+      },
+      {
+        "en": "Temporary distribution",
+        "fr": "Distribution temporaire"
+      }
+    ],
+    "selection": {
+      "en": "Describe the cargo and required temperature range, trip duration and door-opening frequency. Clarify monitoring needs and how the load is prepared before loading.",
+      "fr": "Décrivez le produit, la plage requise, la durée et les ouvertures de portes. Précisez la surveillance et la préparation du chargement avant embarquement."
+    },
+    "specificationFields": [
+      {
+        "en": "Cargo temperature requirements",
+        "fr": "Température requise"
+      },
+      {
+        "en": "Usable volume",
+        "fr": "Volume utile"
+      },
+      {
+        "en": "Refrigeration power arrangement",
+        "fr": "Alimentation de la réfrigération"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "flatbed": {
+    "subcategoryId": "transport",
+    "slug": {
+      "en": "flatbed",
+      "fr": "camions-plateau"
+    },
+    "overview": {
+      "en": "Flatbed trucks accommodate loads that need open-deck access. Load dimensions, lifting arrangements and securement requirements should be defined before selecting a vehicle.",
+      "fr": "Les camions à plateau accueillent les charges nécessitant un accès ouvert. Dimensions, moyens de levage et arrimage doivent être définis avant le choix."
+    },
+    "applications": [
+      {
+        "en": "Building materials",
+        "fr": "Matériaux de construction"
+      },
+      {
+        "en": "Palletized cargo",
+        "fr": "Palettes"
+      },
+      {
+        "en": "Bulky equipment moves",
+        "fr": "Transport d’équipement encombrant"
+      }
+    ],
+    "selection": {
+      "en": "Provide load dimensions, weight and loading method at both ends. Identify route constraints and responsibility for lifting and securing the cargo.",
+      "fr": "Fournissez dimensions, poids et moyens de chargement aux deux extrémités. Indiquez les contraintes de trajet et les responsabilités de levage et d’arrimage."
+    },
+    "specificationFields": [
+      {
+        "en": "Deck dimensions",
+        "fr": "Dimensions du plateau"
+      },
+      {
+        "en": "Payload",
+        "fr": "Charge utile"
+      },
+      {
+        "en": "Load access",
+        "fr": "Accès au chargement"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "trailer": {
+    "subcategoryId": "trailers",
+    "slug": {
+      "en": "trailer",
+      "fr": "remorques"
+    },
+    "overview": {
+      "en": "Commercial trailers extend transport options for equipment and materials. The towing vehicle, load and route must be considered as a complete combination.",
+      "fr": "Les remorques commerciales offrent des options de transport pour équipement et matériaux. Le véhicule tracteur, la charge et le trajet forment un ensemble à évaluer."
+    },
+    "applications": [
+      {
+        "en": "Equipment transport",
+        "fr": "Transport d’équipement"
+      },
+      {
+        "en": "Material hauling",
+        "fr": "Transport de matériaux"
+      },
+      {
+        "en": "Temporary cargo capacity",
+        "fr": "Capacité temporaire de chargement"
+      }
+    ],
+    "selection": {
+      "en": "Specify the trailer style, cargo weight and dimensions. Provide towing vehicle details, hitch and brake connections, and loading-ramp requirements.",
+      "fr": "Précisez le type, le poids et les dimensions. Fournissez les détails du véhicule tracteur, l’attelage, les raccordements de freinage et les rampes nécessaires."
+    },
+    "specificationFields": [
+      {
+        "en": "Deck or interior size",
+        "fr": "Dimensions utiles"
+      },
+      {
+        "en": "Payload",
+        "fr": "Charge utile"
+      },
+      {
+        "en": "Tow connection",
+        "fr": "Raccordement de remorquage"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "tablet": {
+    "subcategoryId": "devices",
+    "slug": {
+      "en": "tablet",
+      "fr": "tablettes"
+    },
+    "overview": {
+      "en": "Tablets equip temporary teams with portable interfaces for registration, training or field information. Software compatibility and device management should be planned before distribution.",
+      "fr": "Les tablettes offrent des interfaces portatives pour inscription, formation ou information terrain. La compatibilité logicielle et la gestion des appareils se planifient avant distribution."
+    },
+    "applications": [
+      {
+        "en": "Training sessions",
+        "fr": "Formations"
+      },
+      {
+        "en": "Registration desks",
+        "fr": "Comptoirs d’inscription"
+      },
+      {
+        "en": "Field data collection",
+        "fr": "Collecte de données terrain"
+      }
+    ],
+    "selection": {
+      "en": "List device count, applications and network needs. Clarify cases, charging arrangements, account setup and the process for removing business data at return.",
+      "fr": "Indiquez quantité, applications et réseau. Précisez étuis, recharge, comptes et méthode de retrait des données d’entreprise au retour."
+    },
+    "specificationFields": [
+      {
+        "en": "Operating system",
+        "fr": "Système d’exploitation"
+      },
+      {
+        "en": "Connectivity",
+        "fr": "Connectivité"
+      },
+      {
+        "en": "Charging accessories",
+        "fr": "Accessoires de recharge"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "laptop": {
+    "subcategoryId": "devices",
+    "slug": {
+      "en": "laptop",
+      "fr": "ordinateurs-portables"
+    },
+    "overview": {
+      "en": "Laptops provide temporary computing capacity for projects, training and business continuity. Workload and software requirements are more useful than a generic performance label.",
+      "fr": "Les ordinateurs portables offrent une capacité temporaire pour projets, formation et continuité. Les tâches et logiciels requis sont plus utiles qu’une mention générale de performance."
+    },
+    "applications": [
+      {
+        "en": "Project teams",
+        "fr": "Équipes de projet"
+      },
+      {
+        "en": "Classroom training",
+        "fr": "Formation en classe"
+      },
+      {
+        "en": "Temporary workstations",
+        "fr": "Postes temporaires"
+      }
+    ],
+    "selection": {
+      "en": "Provide software requirements, memory needs and required peripherals. Define licensing, user access and data-removal arrangements before the rental starts.",
+      "fr": "Précisez logiciels, mémoire et périphériques. Définissez licences, accès utilisateur et retrait des données avant le début de la location."
+    },
+    "specificationFields": [
+      {
+        "en": "Operating system",
+        "fr": "Système d’exploitation"
+      },
+      {
+        "en": "Memory and storage needs",
+        "fr": "Besoins de mémoire et stockage"
+      },
+      {
+        "en": "Ports and peripherals",
+        "fr": "Ports et périphériques"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "kiosk": {
+    "subcategoryId": "displays",
+    "slug": {
+      "en": "kiosk",
+      "fr": "bornes-interactives"
+    },
+    "overview": {
+      "en": "Interactive kiosks support self-service information and registration in temporary commercial spaces. Screen placement, interaction method and the installed application need to work together.",
+      "fr": "Les bornes interactives servent à l’information et à l’inscription dans les espaces commerciaux temporaires. Écran, interaction et application doivent être compatibles."
+    },
+    "applications": [
+      {
+        "en": "Visitor registration",
+        "fr": "Inscription des visiteurs"
+      },
+      {
+        "en": "Information points",
+        "fr": "Points d’information"
+      },
+      {
+        "en": "Trade-show interaction",
+        "fr": "Interaction en salon"
+      }
+    ],
+    "selection": {
+      "en": "Describe the application, screen orientation and accessibility requirements. Include floor space, network access and who supplies and manages the content.",
+      "fr": "Décrivez l’application, l’orientation et l’accessibilité. Indiquez l’emprise, le réseau et la responsabilité de fournir et gérer le contenu."
+    },
+    "specificationFields": [
+      {
+        "en": "Display format",
+        "fr": "Format d’affichage"
+      },
+      {
+        "en": "Touch interface",
+        "fr": "Interface tactile"
+      },
+      {
+        "en": "Mounting footprint",
+        "fr": "Emprise du support"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "signage": {
+    "subcategoryId": "displays",
+    "slug": {
+      "en": "signage",
+      "fr": "affichage-numerique"
+    },
+    "overview": {
+      "en": "Digital signage presents scheduled information in retail, workplace and temporary public-facing spaces. Content format and viewing conditions determine the display arrangement.",
+      "fr": "L’affichage numérique présente l’information dans les commerces, lieux de travail et espaces temporaires. Le contenu et les conditions de visionnement déterminent l’installation."
+    },
+    "applications": [
+      {
+        "en": "Wayfinding",
+        "fr": "Orientation"
+      },
+      {
+        "en": "Retail messaging",
+        "fr": "Messages commerciaux"
+      },
+      {
+        "en": "Workplace notices",
+        "fr": "Avis aux équipes"
+      }
+    ],
+    "selection": {
+      "en": "Provide viewing distance, ambient light and content format. Clarify playback hardware, update responsibility and mounting access rather than assuming these are included.",
+      "fr": "Indiquez distance, lumière ambiante et format du contenu. Précisez lecteur, mises à jour et montage sans présumer qu’ils sont inclus."
+    },
+    "specificationFields": [
+      {
+        "en": "Screen size",
+        "fr": "Taille d’écran"
+      },
+      {
+        "en": "Orientation",
+        "fr": "Orientation"
+      },
+      {
+        "en": "Playback connections",
+        "fr": "Raccordements de lecture"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "screen": {
+    "subcategoryId": "displays",
+    "slug": {
+      "en": "screen",
+      "fr": "ecrans"
+    },
+    "overview": {
+      "en": "Display screens support meetings, presentations and temporary information points. The audience distance and source device guide screen size and connection requirements.",
+      "fr": "Les écrans servent aux réunions, présentations et points d’information. La distance du public et l’appareil source orientent le format et les raccordements."
+    },
+    "applications": [
+      {
+        "en": "Meeting rooms",
+        "fr": "Salles de réunion"
+      },
+      {
+        "en": "Training presentations",
+        "fr": "Présentations de formation"
+      },
+      {
+        "en": "Information displays",
+        "fr": "Affichage d’information"
+      }
+    ],
+    "selection": {
+      "en": "Share room dimensions, audience position and source connections. Include stand or mounting needs, audio expectations and setup timing.",
+      "fr": "Précisez dimensions, position du public et raccordements. Incluez support ou montage, besoins audio et horaire d’installation."
+    },
+    "specificationFields": [
+      {
+        "en": "Display dimensions",
+        "fr": "Dimensions d’affichage"
+      },
+      {
+        "en": "Input connections",
+        "fr": "Entrées"
+      },
+      {
+        "en": "Stand configuration",
+        "fr": "Configuration du support"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "event-tech": {
+    "subcategoryId": "displays",
+    "slug": {
+      "en": "event-tech",
+      "fr": "technologie-evenementielle"
+    },
+    "overview": {
+      "en": "Business events can combine presentation displays, audio and registration devices. Define the programme and spaces first so the equipment request reflects the actual flow of the event.",
+      "fr": "Les événements d’affaires combinent parfois affichage, audio et inscription. Définissez d’abord le programme et les espaces pour adapter l’équipement au déroulement."
+    },
+    "applications": [
+      {
+        "en": "Business presentations",
+        "fr": "Présentations d’affaires"
+      },
+      {
+        "en": "Conference registration",
+        "fr": "Inscription de congrès"
+      },
+      {
+        "en": "Hybrid meeting support",
+        "fr": "Soutien aux réunions hybrides"
+      }
+    ],
+    "selection": {
+      "en": "Provide room layout, presenters, sources and network needs. Identify setup, rehearsal and technical-support requirements separately from equipment quantities.",
+      "fr": "Fournissez plan, présentateurs, sources et réseau. Distinguez montage, répétition et soutien technique des quantités d’équipement."
+    },
+    "specificationFields": [
+      {
+        "en": "Signal sources",
+        "fr": "Sources de signal"
+      },
+      {
+        "en": "Audience coverage",
+        "fr": "Couverture du public"
+      },
+      {
+        "en": "Network requirements",
+        "fr": "Besoins réseau"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "scrubber": {
+    "subcategoryId": "floor-care",
+    "slug": {
+      "en": "scrubber",
+      "fr": "autorecureuses"
+    },
+    "overview": {
+      "en": "Floor scrubbers wash suitable hard floors and recover cleaning solution. The floor finish, congestion and working time shape the size and configuration to consider.",
+      "fr": "Les autorécureuses lavent les sols durs adaptés et récupèrent la solution. Le revêtement, l’encombrement et la période de travail orientent le format."
+    },
+    "applications": [
+      {
+        "en": "Warehouse floors",
+        "fr": "Planchers d’entrepôt"
+      },
+      {
+        "en": "Retail maintenance",
+        "fr": "Entretien commercial"
+      },
+      {
+        "en": "Post-construction hard-floor cleaning",
+        "fr": "Nettoyage après construction"
+      }
+    ],
+    "selection": {
+      "en": "Identify floor material, area and aisle width. Specify walk-behind or ride-on access needs, charging access and solution disposal arrangements.",
+      "fr": "Indiquez revêtement, superficie et allées. Précisez l’accès pour appareil poussé ou autoporté, la recharge et l’élimination de la solution."
+    },
+    "specificationFields": [
+      {
+        "en": "Cleaning path",
+        "fr": "Largeur de nettoyage"
+      },
+      {
+        "en": "Tank arrangement",
+        "fr": "Réservoirs"
+      },
+      {
+        "en": "Power supply",
+        "fr": "Alimentation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "sweeper": {
+    "subcategoryId": "floor-care",
+    "slug": {
+      "en": "sweeper",
+      "fr": "balayeuses"
+    },
+    "overview": {
+      "en": "Sweepers collect loose debris from suitable indoor or outdoor surfaces. The debris type and dust-control needs should guide the equipment request.",
+      "fr": "Les balayeuses ramassent les débris libres sur les surfaces appropriées. Le type de débris et le contrôle des poussières orientent la demande."
+    },
+    "applications": [
+      {
+        "en": "Parking areas",
+        "fr": "Stationnements"
+      },
+      {
+        "en": "Warehouse aisles",
+        "fr": "Allées d’entrepôt"
+      },
+      {
+        "en": "Commercial grounds",
+        "fr": "Terrains commerciaux"
+      }
+    ],
+    "selection": {
+      "en": "Describe surface condition, debris and area size. Include door widths, gradients and disposal access, and flag any hazardous dust for separate assessment.",
+      "fr": "Décrivez surface, débris et superficie. Indiquez portes, pentes et accès d’élimination; signalez toute poussière dangereuse pour évaluation distincte."
+    },
+    "specificationFields": [
+      {
+        "en": "Sweeping width",
+        "fr": "Largeur de balayage"
+      },
+      {
+        "en": "Debris capacity",
+        "fr": "Capacité de collecte"
+      },
+      {
+        "en": "Dust-control arrangement",
+        "fr": "Gestion des poussières"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "extractor": {
+    "subcategoryId": "restoration",
+    "slug": {
+      "en": "extractor",
+      "fr": "extracteurs"
+    },
+    "overview": {
+      "en": "Extraction equipment removes liquid and cleaning solution from compatible surfaces. The affected material and the nature of the liquid determine the appropriate equipment and accessories.",
+      "fr": "Les extracteurs retirent liquides et solutions des surfaces compatibles. Le matériau touché et la nature du liquide déterminent le matériel et les accessoires."
+    },
+    "applications": [
+      {
+        "en": "Carpet cleaning",
+        "fr": "Nettoyage de tapis"
+      },
+      {
+        "en": "Upholstery work",
+        "fr": "Entretien de mobilier textile"
+      },
+      {
+        "en": "Liquid recovery",
+        "fr": "Récupération de liquide"
+      }
+    ],
+    "selection": {
+      "en": "Describe carpet or surface type, liquid conditions and work area. Include hose reach, electrical access and disposal requirements for the recovered liquid.",
+      "fr": "Décrivez tapis ou surface, liquide et zone. Précisez portée du tuyau, alimentation et élimination du liquide récupéré."
+    },
+    "specificationFields": [
+      {
+        "en": "Recovery capacity",
+        "fr": "Capacité de récupération"
+      },
+      {
+        "en": "Hose reach",
+        "fr": "Portée du tuyau"
+      },
+      {
+        "en": "Cleaning attachment",
+        "fr": "Accessoire de nettoyage"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "vacuum": {
+    "subcategoryId": "floor-care",
+    "slug": {
+      "en": "vacuum",
+      "fr": "aspirateurs-commerciaux"
+    },
+    "overview": {
+      "en": "Commercial vacuums collect debris for routine maintenance and task-specific cleaning. Filtration and collection arrangements must match the material rather than relying on motor power alone.",
+      "fr": "Les aspirateurs commerciaux recueillent les débris d’entretien et de travaux particuliers. La filtration et la collecte doivent correspondre au matériau, pas seulement à la puissance."
+    },
+    "applications": [
+      {
+        "en": "Facility cleaning",
+        "fr": "Nettoyage de bâtiments"
+      },
+      {
+        "en": "Workshop cleanup",
+        "fr": "Entretien d’ateliers"
+      },
+      {
+        "en": "Renovation cleanup",
+        "fr": "Nettoyage de rénovation"
+      }
+    ],
+    "selection": {
+      "en": "Identify dry or wet collection and the material involved. Hazardous dust needs a qualified assessment and an appropriately specified collection system.",
+      "fr": "Précisez collecte sèche ou humide et matériau. Les poussières dangereuses exigent une évaluation qualifiée et un système de collecte spécifié pour l’usage."
+    },
+    "specificationFields": [
+      {
+        "en": "Collection method",
+        "fr": "Mode de collecte"
+      },
+      {
+        "en": "Filtration requirement",
+        "fr": "Filtration requise"
+      },
+      {
+        "en": "Hose and tool compatibility",
+        "fr": "Compatibilité des tuyaux et outils"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "dehumidifier": {
+    "subcategoryId": "restoration",
+    "slug": {
+      "en": "dehumidifier",
+      "fr": "deshumidificateurs"
+    },
+    "overview": {
+      "en": "Dehumidifiers remove moisture from the air during restoration and environmental control work. Capacity depends on operating conditions and the drying plan for the space.",
+      "fr": "Les déshumidificateurs retirent l’humidité de l’air lors de la restauration ou du contrôle ambiant. La capacité dépend des conditions et du plan d’assèchement."
+    },
+    "applications": [
+      {
+        "en": "Building drying",
+        "fr": "Assèchement de bâtiments"
+      },
+      {
+        "en": "Humidity control",
+        "fr": "Contrôle d’humidité"
+      },
+      {
+        "en": "Restoration projects",
+        "fr": "Projets de restauration"
+      }
+    ],
+    "selection": {
+      "en": "Provide room volume, temperature and humidity conditions. Identify drainage, power and monitoring arrangements and how the area will be isolated during drying.",
+      "fr": "Indiquez volume, température et humidité. Précisez drainage, alimentation, suivi et isolation de la zone pendant l’assèchement."
+    },
+    "specificationFields": [
+      {
+        "en": "Moisture removal at stated conditions",
+        "fr": "Extraction selon les conditions"
+      },
+      {
+        "en": "Electrical demand",
+        "fr": "Demande électrique"
+      },
+      {
+        "en": "Drainage connection",
+        "fr": "Raccordement de drainage"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "mower": {
+    "subcategoryId": "grounds",
+    "slug": {
+      "en": "mower",
+      "fr": "tondeuses"
+    },
+    "overview": {
+      "en": "Commercial mowing equipment supports property maintenance across different terrain and access conditions. Cutting width should be balanced against obstacles, slopes and collection needs.",
+      "fr": "Les tondeuses commerciales servent à l’entretien de terrains variés. La largeur de coupe doit tenir compte des obstacles, des pentes et de la collecte."
+    },
+    "applications": [
+      {
+        "en": "Commercial lawns",
+        "fr": "Pelouses commerciales"
+      },
+      {
+        "en": "Seasonal grounds work",
+        "fr": "Travaux saisonniers"
+      },
+      {
+        "en": "Property maintenance",
+        "fr": "Entretien de propriétés"
+      }
+    ],
+    "selection": {
+      "en": "Describe grass condition, site area, slopes and gate widths. Identify collection or discharge preferences and any restrictions around occupied spaces.",
+      "fr": "Décrivez pelouse, superficie, pentes et portails. Précisez collecte ou éjection et restrictions près des espaces occupés."
+    },
+    "specificationFields": [
+      {
+        "en": "Cutting width",
+        "fr": "Largeur de coupe"
+      },
+      {
+        "en": "Terrain suitability",
+        "fr": "Compatibilité avec le terrain"
+      },
+      {
+        "en": "Clipping arrangement",
+        "fr": "Gestion de l’herbe coupée"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "aerator": {
+    "subcategoryId": "grounds",
+    "slug": {
+      "en": "aerator",
+      "fr": "aerateurs"
+    },
+    "overview": {
+      "en": "Lawn aerators support turf maintenance by creating openings in the soil. Machine choice depends on the lawn area, access and the desired aeration method.",
+      "fr": "Les aérateurs de pelouse créent des ouvertures dans le sol pour l’entretien du gazon. Le choix dépend de la superficie, des accès et de la méthode."
+    },
+    "applications": [
+      {
+        "en": "Turf maintenance",
+        "fr": "Entretien de gazon"
+      },
+      {
+        "en": "Seasonal lawn care",
+        "fr": "Soins saisonniers"
+      },
+      {
+        "en": "Compacted lawn treatment",
+        "fr": "Traitement de pelouses compactées"
+      }
+    ],
+    "selection": {
+      "en": "Provide the area, terrain and gate access. Identify irrigation components and other obstacles, and plan timing around soil and weather conditions.",
+      "fr": "Indiquez superficie, terrain et portails. Repérez l’irrigation et les obstacles, puis planifiez selon le sol et la météo."
+    },
+    "specificationFields": [
+      {
+        "en": "Aeration method",
+        "fr": "Méthode d’aération"
+      },
+      {
+        "en": "Working width",
+        "fr": "Largeur de travail"
+      },
+      {
+        "en": "Machine dimensions",
+        "fr": "Dimensions"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "chipper": {
+    "subcategoryId": "vegetation",
+    "slug": {
+      "en": "chipper",
+      "fr": "dechiqueteuses-bois"
+    },
+    "overview": {
+      "en": "Wood chippers reduce suitable branches and woody material for handling or disposal. Branch size and material condition determine the configuration to review.",
+      "fr": "Les déchiqueteuses réduisent les branches et matières ligneuses compatibles pour manutention ou élimination. Le diamètre et l’état du matériau orientent le choix."
+    },
+    "applications": [
+      {
+        "en": "Tree-maintenance debris",
+        "fr": "Débris d’entretien arboricole"
+      },
+      {
+        "en": "Grounds cleanup",
+        "fr": "Nettoyage de terrains"
+      },
+      {
+        "en": "Brush processing",
+        "fr": "Traitement de broussailles"
+      }
+    ],
+    "selection": {
+      "en": "Specify maximum branch diameter, material type and estimated volume. Include towing arrangements, feeding access and where processed material will be directed.",
+      "fr": "Précisez diamètre maximal, matière et volume. Incluez remorquage, accès d’alimentation et destination des copeaux."
+    },
+    "specificationFields": [
+      {
+        "en": "Material capacity",
+        "fr": "Capacité de traitement"
+      },
+      {
+        "en": "Feed opening",
+        "fr": "Ouverture d’alimentation"
+      },
+      {
+        "en": "Discharge arrangement",
+        "fr": "Disposition de décharge"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "stump": {
+    "subcategoryId": "vegetation",
+    "slug": {
+      "en": "stump",
+      "fr": "dessoucheuses"
+    },
+    "overview": {
+      "en": "Stump grinders reduce remaining tree stumps within a defined work area. Stump dimensions, access and the intended restoration depth guide the equipment request.",
+      "fr": "Les dessoucheuses réduisent les souches dans une zone définie. Dimensions, accès et profondeur de remise en état orientent la demande."
+    },
+    "applications": [
+      {
+        "en": "Stump removal projects",
+        "fr": "Enlèvement de souches"
+      },
+      {
+        "en": "Landscape renewal",
+        "fr": "Renouvellement paysager"
+      },
+      {
+        "en": "Property cleanup",
+        "fr": "Nettoyage de propriétés"
+      }
+    ],
+    "selection": {
+      "en": "Provide stump diameter, desired depth and gate width. Identify nearby structures and underground services, and plan how grindings will be managed.",
+      "fr": "Indiquez diamètre, profondeur visée et portail. Repérez structures et services souterrains, puis planifiez la gestion des résidus."
+    },
+    "specificationFields": [
+      {
+        "en": "Cutting reach",
+        "fr": "Portée de coupe"
+      },
+      {
+        "en": "Below-grade capability",
+        "fr": "Capacité sous le niveau du sol"
+      },
+      {
+        "en": "Access width",
+        "fr": "Largeur d’accès"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "barricade": {
+    "subcategoryId": "traffic",
+    "slug": {
+      "en": "barricade",
+      "fr": "barricades"
+    },
+    "overview": {
+      "en": "Barricades delineate temporary work zones and guide movement according to a site plan. Different layouts require different visibility, stability and access arrangements.",
+      "fr": "Les barricades délimitent les travaux et guident les déplacements selon un plan. Visibilité, stabilité et accès varient selon la configuration."
+    },
+    "applications": [
+      {
+        "en": "Work-zone boundaries",
+        "fr": "Limites de travaux"
+      },
+      {
+        "en": "Temporary closures",
+        "fr": "Fermetures temporaires"
+      },
+      {
+        "en": "Pedestrian redirection",
+        "fr": "Déviation piétonne"
+      }
+    ],
+    "selection": {
+      "en": "Share the approved layout, quantities and installation window. Identify the road authority or site specification; a barricade request does not establish a traffic plan.",
+      "fr": "Transmettez plan approuvé, quantités et horaire. Indiquez les exigences routières ou du site; la demande de barricades ne constitue pas un plan de circulation."
+    },
+    "specificationFields": [
+      {
+        "en": "Barricade configuration",
+        "fr": "Configuration"
+      },
+      {
+        "en": "Visibility requirements",
+        "fr": "Visibilité requise"
+      },
+      {
+        "en": "Placement arrangement",
+        "fr": "Disposition"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "cone": {
+    "subcategoryId": "traffic",
+    "slug": {
+      "en": "cone",
+      "fr": "cones-signalisation"
+    },
+    "overview": {
+      "en": "Traffic cones mark temporary routes and localized work areas. Size, visibility and placement should correspond to the governing site or traffic-control plan.",
+      "fr": "Les cônes indiquent les parcours temporaires et zones localisées. Format, visibilité et emplacement doivent correspondre au plan du site ou de circulation."
+    },
+    "applications": [
+      {
+        "en": "Site route marking",
+        "fr": "Marquage de parcours"
+      },
+      {
+        "en": "Maintenance zones",
+        "fr": "Zones d’entretien"
+      },
+      {
+        "en": "Temporary lane guidance",
+        "fr": "Guidage temporaire de voies"
+      }
+    ],
+    "selection": {
+      "en": "Specify quantities, use environment and required visibility class from the project plan. Include storage, deployment and retrieval arrangements.",
+      "fr": "Précisez quantités, environnement et classe de visibilité prévue au plan. Incluez entreposage, installation et récupération."
+    },
+    "specificationFields": [
+      {
+        "en": "Cone dimensions",
+        "fr": "Dimensions"
+      },
+      {
+        "en": "Reflective arrangement",
+        "fr": "Éléments réfléchissants"
+      },
+      {
+        "en": "Base configuration",
+        "fr": "Configuration de la base"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "sign": {
+    "subcategoryId": "traffic",
+    "slug": {
+      "en": "sign",
+      "fr": "panneaux-signalisation"
+    },
+    "overview": {
+      "en": "Temporary signs communicate instructions around works and changing routes. Sign content, dimensions and supports must suit the approved plan and intended viewers.",
+      "fr": "Les panneaux temporaires communiquent les consignes près des travaux. Message, dimensions et supports doivent convenir au plan et aux personnes visées."
+    },
+    "applications": [
+      {
+        "en": "Work-zone notices",
+        "fr": "Avis de travaux"
+      },
+      {
+        "en": "Temporary directions",
+        "fr": "Directions temporaires"
+      },
+      {
+        "en": "Site access instructions",
+        "fr": "Consignes d’accès"
+      }
+    ],
+    "selection": {
+      "en": "Provide exact messages or sign identifiers, quantities and mounting conditions. Confirm the required language and applicable authority specifications for the location.",
+      "fr": "Fournissez messages ou identifiants, quantités et montage. Confirmez langue et exigences de l’autorité compétente pour le lieu."
+    },
+    "specificationFields": [
+      {
+        "en": "Sign face",
+        "fr": "Face du panneau"
+      },
+      {
+        "en": "Support type",
+        "fr": "Type de support"
+      },
+      {
+        "en": "Visibility specification",
+        "fr": "Exigence de visibilité"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "message": {
+    "subcategoryId": "traffic",
+    "slug": {
+      "en": "message",
+      "fr": "panneaux-messages-variables"
+    },
+    "overview": {
+      "en": "Variable message boards display changeable information near work zones and access routes. Message format, viewing approach and deployment conditions guide the request.",
+      "fr": "Les panneaux à messages variables affichent de l’information modifiable près des travaux. Format, approche des lecteurs et conditions d’installation orientent la demande."
+    },
+    "applications": [
+      {
+        "en": "Advance work notices",
+        "fr": "Avis de travaux"
+      },
+      {
+        "en": "Access updates",
+        "fr": "Mises à jour d’accès"
+      },
+      {
+        "en": "Temporary route information",
+        "fr": "Information sur parcours temporaires"
+      }
+    ],
+    "selection": {
+      "en": "Provide planned messages, placement and operating duration. Clarify programming responsibility, power arrangements and traffic-authority requirements.",
+      "fr": "Précisez messages, emplacement et durée. Clarifiez programmation, alimentation et exigences de l’autorité routière."
+    },
+    "specificationFields": [
+      {
+        "en": "Display configuration",
+        "fr": "Configuration d’affichage"
+      },
+      {
+        "en": "Message control",
+        "fr": "Commande des messages"
+      },
+      {
+        "en": "Power arrangement",
+        "fr": "Alimentation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "plate": {
+    "subcategoryId": "crossings",
+    "slug": {
+      "en": "plate",
+      "fr": "plaques-chaussee"
+    },
+    "overview": {
+      "en": "Road plates bridge designated openings as part of an assessed temporary crossing arrangement. Dimensions and load requirements must be reviewed for the specific opening and support conditions.",
+      "fr": "Les plaques de chaussée couvrent certaines ouvertures dans un dispositif de franchissement évalué. Dimensions et charges doivent être examinées selon l’ouverture et les appuis."
+    },
+    "applications": [
+      {
+        "en": "Temporary crossings",
+        "fr": "Franchissements temporaires"
+      },
+      {
+        "en": "Excavation access",
+        "fr": "Accès d’excavation"
+      },
+      {
+        "en": "Utility-work passages",
+        "fr": "Passages de travaux de services"
+      }
+    ],
+    "selection": {
+      "en": "Provide opening dimensions, expected loads and bearing details. Obtain appropriate design review for support, securing and transitions; dimensions alone do not establish load capacity.",
+      "fr": "Fournissez dimensions, charges et appuis. Faites évaluer support, fixation et transitions; les dimensions seules n’établissent pas la capacité."
+    },
+    "specificationFields": [
+      {
+        "en": "Plate dimensions",
+        "fr": "Dimensions"
+      },
+      {
+        "en": "Required load assessment",
+        "fr": "Évaluation de charge requise"
+      },
+      {
+        "en": "Handling arrangement",
+        "fr": "Manutention"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "floor-grinder": {
+    "subcategoryId": "surface-tools",
+    "slug": {
+      "en": "floor-grinder",
+      "fr": "rectifieuses-plancher"
+    },
+    "overview": {
+      "en": "Floor grinders prepare compatible concrete surfaces for repair or subsequent finishes. The coating, surface condition and desired outcome guide tooling and dust-collection requirements.",
+      "fr": "Les rectifieuses préparent les surfaces de béton compatibles avant réparation ou finition. Revêtement, état et résultat recherché orientent les outils et la collecte des poussières."
+    },
+    "applications": [
+      {
+        "en": "Coating preparation",
+        "fr": "Préparation de revêtements"
+      },
+      {
+        "en": "Concrete surface correction",
+        "fr": "Correction de surface"
+      },
+      {
+        "en": "Floor refurbishment",
+        "fr": "Réfection de planchers"
+      }
+    ],
+    "selection": {
+      "en": "Describe existing coatings, area and finish target. Specify power access and a compatible dust-control system; identify hazardous materials before surface disturbance.",
+      "fr": "Décrivez revêtements, superficie et fini visé. Précisez alimentation et captation compatible; identifiez les matières dangereuses avant de travailler la surface."
+    },
+    "specificationFields": [
+      {
+        "en": "Working width",
+        "fr": "Largeur de travail"
+      },
+      {
+        "en": "Tooling compatibility",
+        "fr": "Compatibilité des outils"
+      },
+      {
+        "en": "Dust extraction connection",
+        "fr": "Raccord d’aspiration"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "core-drill": {
+    "subcategoryId": "surface-tools",
+    "slug": {
+      "en": "core-drill",
+      "fr": "carotteuses"
+    },
+    "overview": {
+      "en": "Core drills form circular openings through compatible construction materials. Diameter, depth and work orientation affect the rig, bit and mounting arrangement.",
+      "fr": "Les carotteuses réalisent des ouvertures circulaires dans les matériaux compatibles. Diamètre, profondeur et orientation influencent support, foret et fixation."
+    },
+    "applications": [
+      {
+        "en": "Service penetrations",
+        "fr": "Passages de services"
+      },
+      {
+        "en": "Mechanical installation",
+        "fr": "Installation mécanique"
+      },
+      {
+        "en": "Concrete sampling",
+        "fr": "Échantillonnage de béton"
+      }
+    ],
+    "selection": {
+      "en": "Provide material, hole diameter and depth. Identify reinforcement, concealed services and the approved mounting method, with water or dust management appropriate to the task.",
+      "fr": "Précisez matériau, diamètre et profondeur. Repérez armature et services cachés, puis indiquez fixation approuvée et gestion de l’eau ou des poussières."
+    },
+    "specificationFields": [
+      {
+        "en": "Core diameter",
+        "fr": "Diamètre de carottage"
+      },
+      {
+        "en": "Drilling depth",
+        "fr": "Profondeur"
+      },
+      {
+        "en": "Mounting configuration",
+        "fr": "Configuration de fixation"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "pipe-threader": {
+    "subcategoryId": "trade-tools",
+    "slug": {
+      "en": "pipe-threader",
+      "fr": "fileteuses-tuyaux"
+    },
+    "overview": {
+      "en": "Pipe threading machines prepare compatible pipe ends for threaded connections. Pipe material, size and thread form are necessary to identify suitable dies and tooling.",
+      "fr": "Les fileteuses préparent les extrémités de tuyaux compatibles pour raccords filetés. Matériau, diamètre et type de filet permettent de choisir filières et outils."
+    },
+    "applications": [
+      {
+        "en": "Mechanical installations",
+        "fr": "Installations mécaniques"
+      },
+      {
+        "en": "Pipe fabrication",
+        "fr": "Fabrication de tuyauterie"
+      },
+      {
+        "en": "Maintenance repairs",
+        "fr": "Réparations d’entretien"
+      }
+    ],
+    "selection": {
+      "en": "Specify pipe material, diameter range and required thread standard. Include cutting and reaming needs, stand space and handling arrangements for long lengths.",
+      "fr": "Précisez matériau, diamètres et norme de filetage. Incluez coupe, alésage, espace du support et manutention des grandes longueurs."
+    },
+    "specificationFields": [
+      {
+        "en": "Pipe-size range",
+        "fr": "Plage de diamètres"
+      },
+      {
+        "en": "Die and thread compatibility",
+        "fr": "Compatibilité des filières"
+      },
+      {
+        "en": "Power connection",
+        "fr": "Raccordement électrique"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "hydraulic-jack": {
+    "subcategoryId": "trade-tools",
+    "slug": {
+      "en": "hydraulic-jack",
+      "fr": "verins-hydrauliques"
+    },
+    "overview": {
+      "en": "Hydraulic jacks support planned lifting and positioning tasks for equipment maintenance. Load distribution, stroke and support arrangements require application-specific review.",
+      "fr": "Les vérins hydrauliques servent au levage et au positionnement planifiés pour l’entretien. Répartition des charges, course et supports nécessitent une évaluation de l’usage."
+    },
+    "applications": [
+      {
+        "en": "Machinery positioning",
+        "fr": "Positionnement de machines"
+      },
+      {
+        "en": "Maintenance lifting",
+        "fr": "Levage d’entretien"
+      },
+      {
+        "en": "Controlled alignment",
+        "fr": "Alignement contrôlé"
+      }
+    ],
+    "selection": {
+      "en": "Provide load, required movement and available clearance. A qualified lifting plan must address support and stability; a jack is not a substitute for permanent load support.",
+      "fr": "Fournissez charge, déplacement et dégagement. Un plan qualifié doit traiter supports et stabilité; le vérin ne remplace pas un support permanent."
+    },
+    "specificationFields": [
+      {
+        "en": "Required capacity",
+        "fr": "Capacité requise"
+      },
+      {
+        "en": "Stroke",
+        "fr": "Course"
+      },
+      {
+        "en": "Closed height",
+        "fr": "Hauteur fermée"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "inspection-camera": {
+    "subcategoryId": "trade-tools",
+    "slug": {
+      "en": "inspection-camera",
+      "fr": "cameras-inspection"
+    },
+    "overview": {
+      "en": "Inspection cameras help view otherwise difficult-to-access spaces during investigation and maintenance. Access opening, travel distance and recording needs determine the configuration.",
+      "fr": "Les caméras d’inspection permettent d’observer les espaces difficiles d’accès. Ouverture, distance et besoins d’enregistrement déterminent la configuration."
+    },
+    "applications": [
+      {
+        "en": "Drain inspection",
+        "fr": "Inspection de conduites"
+      },
+      {
+        "en": "Cavity observation",
+        "fr": "Observation de cavités"
+      },
+      {
+        "en": "Maintenance investigation",
+        "fr": "Investigation d’entretien"
+      }
+    ],
+    "selection": {
+      "en": "Describe the opening, route and environment. Include bends, expected moisture and recording needs, and confirm compatibility with the material or process being inspected.",
+      "fr": "Décrivez ouverture, parcours et environnement. Incluez coudes, humidité et enregistrement, puis confirmez la compatibilité avec le matériau ou procédé inspecté."
+    },
+    "specificationFields": [
+      {
+        "en": "Camera-head dimensions",
+        "fr": "Dimensions de la tête"
+      },
+      {
+        "en": "Cable reach",
+        "fr": "Portée du câble"
+      },
+      {
+        "en": "Recording format",
+        "fr": "Format d’enregistrement"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "stanchion": {
+    "subcategoryId": "crowd",
+    "slug": {
+      "en": "stanchion",
+      "fr": "poteaux-guidage"
+    },
+    "overview": {
+      "en": "Stanchions organize indoor queues and defined visitor routes. Layout, throughput and access requirements guide the number of posts and connecting spans.",
+      "fr": "Les poteaux de guidage organisent les files et parcours intérieurs. Plan, achalandage et accès déterminent le nombre de poteaux et de liaisons."
+    },
+    "applications": [
+      {
+        "en": "Reception queues",
+        "fr": "Files de réception"
+      },
+      {
+        "en": "Registration lines",
+        "fr": "Inscription"
+      },
+      {
+        "en": "Retail circulation",
+        "fr": "Circulation commerciale"
+      }
+    ],
+    "selection": {
+      "en": "Share the queue layout and desired belt or rope style. Keep accessible routes and exits in the plan and identify any floor-protection requirements.",
+      "fr": "Transmettez le plan et le type de sangle ou corde. Maintenez parcours accessibles et sorties dans le plan et précisez la protection du sol."
+    },
+    "specificationFields": [
+      {
+        "en": "Post configuration",
+        "fr": "Configuration du poteau"
+      },
+      {
+        "en": "Span length",
+        "fr": "Longueur de liaison"
+      },
+      {
+        "en": "Base footprint",
+        "fr": "Emprise de la base"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "barrier": {
+    "subcategoryId": "crowd",
+    "slug": {
+      "en": "barrier",
+      "fr": "barrieres-foule"
+    },
+    "overview": {
+      "en": "Crowd barriers define pedestrian boundaries around commercial gatherings and temporary sites. Their arrangement must fit access, circulation and emergency planning.",
+      "fr": "Les barrières de foule définissent les limites piétonnes des rassemblements et sites temporaires. Leur disposition doit respecter accès, circulation et planification d’urgence."
+    },
+    "applications": [
+      {
+        "en": "Pedestrian boundaries",
+        "fr": "Limites piétonnes"
+      },
+      {
+        "en": "Event perimeters",
+        "fr": "Périmètres d’événements"
+      },
+      {
+        "en": "Controlled entrances",
+        "fr": "Entrées contrôlées"
+      }
+    ],
+    "selection": {
+      "en": "Provide layout, estimated attendance and gate positions. Identify surface conditions and staffing arrangements; equipment does not replace a crowd-management plan.",
+      "fr": "Fournissez plan, achalandage et portails. Indiquez surface et personnel; l’équipement ne remplace pas un plan de gestion des foules."
+    },
+    "specificationFields": [
+      {
+        "en": "Barrier dimensions",
+        "fr": "Dimensions"
+      },
+      {
+        "en": "Connection type",
+        "fr": "Type de liaison"
+      },
+      {
+        "en": "Base arrangement",
+        "fr": "Disposition des bases"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "turf": {
+    "subcategoryId": "surfaces-furnishings",
+    "slug": {
+      "en": "turf",
+      "fr": "gazon-synthetique"
+    },
+    "overview": {
+      "en": "Temporary turf provides a finished surface for selected commercial spaces. The underlying surface, expected traffic and installation method determine suitability.",
+      "fr": "Le gazon synthétique temporaire offre une surface finie dans certains espaces commerciaux. Le support, la circulation et l’installation déterminent sa pertinence."
+    },
+    "applications": [
+      {
+        "en": "Exhibition spaces",
+        "fr": "Espaces d’exposition"
+      },
+      {
+        "en": "Commercial activations",
+        "fr": "Activations commerciales"
+      },
+      {
+        "en": "Temporary presentation areas",
+        "fr": "Aires temporaires de présentation"
+      }
+    ],
+    "selection": {
+      "en": "Provide dimensions, substrate and indoor or outdoor use. Clarify edge transitions, fixing methods and removal requirements to protect the existing surface.",
+      "fr": "Précisez dimensions, support et usage intérieur ou extérieur. Clarifiez transitions, fixation et retrait pour protéger la surface existante."
+    },
+    "specificationFields": [
+      {
+        "en": "Coverage area",
+        "fr": "Superficie"
+      },
+      {
+        "en": "Backing and surface type",
+        "fr": "Type de support et surface"
+      },
+      {
+        "en": "Edge treatment",
+        "fr": "Traitement des bordures"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "tent": {
+    "subcategoryId": "surfaces-furnishings",
+    "slug": {
+      "en": "tent",
+      "fr": "tentes"
+    },
+    "overview": {
+      "en": "Commercial tents create temporary covered areas for workplace and business gatherings. Footprint, occupancy and site exposure need to be planned with installation requirements.",
+      "fr": "Les tentes commerciales créent des espaces couverts temporaires pour les rassemblements d’affaires. Emprise, occupation et exposition doivent être planifiées avec l’installation."
+    },
+    "applications": [
+      {
+        "en": "Business gatherings",
+        "fr": "Rassemblements d’affaires"
+      },
+      {
+        "en": "Covered reception",
+        "fr": "Réception couverte"
+      },
+      {
+        "en": "Temporary hospitality areas",
+        "fr": "Accueil temporaire"
+      }
+    ],
+    "selection": {
+      "en": "Supply a site plan, surface type and intended use. Address anchoring, utilities, access and weather planning through the site-specific review and applicable approvals.",
+      "fr": "Fournissez plan, surface et usage. Traitez ancrage, services, accès et météo lors de l’évaluation du site et des autorisations applicables."
+    },
+    "specificationFields": [
+      {
+        "en": "Covered footprint",
+        "fr": "Emprise couverte"
+      },
+      {
+        "en": "Clearance",
+        "fr": "Dégagement"
+      },
+      {
+        "en": "Anchoring requirements",
+        "fr": "Exigences d’ancrage"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "furniture": {
+    "subcategoryId": "surfaces-furnishings",
+    "slug": {
+      "en": "furniture",
+      "fr": "mobilier"
+    },
+    "overview": {
+      "en": "Temporary furniture equips meeting, training and reception areas. Quantities should follow the room layout, activity and circulation needs rather than attendance alone.",
+      "fr": "Le mobilier temporaire équipe les zones de réunion, formation et réception. Les quantités dépendent du plan, de l’activité et de la circulation, pas seulement de l’effectif."
+    },
+    "applications": [
+      {
+        "en": "Training rooms",
+        "fr": "Salles de formation"
+      },
+      {
+        "en": "Temporary break areas",
+        "fr": "Aires de pause"
+      },
+      {
+        "en": "Business receptions",
+        "fr": "Réceptions d’affaires"
+      }
+    ],
+    "selection": {
+      "en": "Specify table and seating styles, counts and room dimensions. Include accessible layouts, delivery access and whether placement and collection services are required.",
+      "fr": "Précisez styles, quantités et dimensions. Incluez aménagement accessible, accès et besoins de mise en place et de ramassage."
+    },
+    "specificationFields": [
+      {
+        "en": "Furniture dimensions",
+        "fr": "Dimensions"
+      },
+      {
+        "en": "Configuration",
+        "fr": "Configuration"
+      },
+      {
+        "en": "Quantity by type",
+        "fr": "Quantité par type"
+      }
+    ],
+    "published": true,
+    "images": {}
+  },
+  "flooring": {
+    "subcategoryId": "surfaces-furnishings",
+    "slug": {
+      "en": "flooring",
+      "fr": "revetements-sol"
+    },
+    "overview": {
+      "en": "Temporary flooring creates defined walking or activity surfaces in commercial settings. The base, expected loads and edge transitions need assessment before installation.",
+      "fr": "Les revêtements temporaires créent des surfaces de circulation ou d’activité. Le support, les charges et les transitions doivent être évalués avant installation."
+    },
+    "applications": [
+      {
+        "en": "Temporary walkways",
+        "fr": "Passages temporaires"
+      },
+      {
+        "en": "Exhibition floors",
+        "fr": "Planchers d’exposition"
+      },
+      {
+        "en": "Covered activity spaces",
+        "fr": "Espaces d’activité couverts"
+      }
+    ],
+    "selection": {
+      "en": "Describe the base surface, area and expected traffic. Include moisture, levelling, load requirements and accessible transitions in the request.",
+      "fr": "Décrivez support, superficie et circulation. Incluez humidité, nivellement, charges et transitions accessibles dans la demande."
+    },
+    "specificationFields": [
+      {
+        "en": "Panel or roll format",
+        "fr": "Format en panneaux ou rouleaux"
+      },
+      {
+        "en": "Support requirements",
+        "fr": "Supports requis"
+      },
+      {
+        "en": "Edge transitions",
+        "fr": "Transitions de bordure"
+      }
+    ],
+    "published": true,
+    "images": {}
+  }
+}

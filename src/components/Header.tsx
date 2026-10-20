@@ -6,7 +6,12 @@ import { usePathname } from "next/navigation";
 import { categories } from "@/lib/catalog";
 import { type Locale, site } from "@/lib/config";
 import { copy } from "@/lib/copy";
-import { pages, pathFor, resolveRoute } from "@/lib/routes";
+import {
+  pages,
+  pathFor,
+  resolveRoute,
+  equipmentInquiryHref,
+} from "@/lib/routes";
 export function Header({ locale }: { locale: Locale }) {
   const [mobile, setMobile] = useState(false),
     [mega, setMega] = useState(false);
@@ -59,7 +64,11 @@ export function Header({ locale }: { locale: Locale }) {
       <div className="utility">
         <div className="container">
           <span>{copy.top[locale]}</span>
-          <a href={site.phoneHref}>{site.phone}</a>
+          {site.phoneVerified ? (
+            <a href={site.phoneHref}>{site.phone}</a>
+          ) : (
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          )}
         </div>
       </div>
       <div className="container header-row">
@@ -117,7 +126,14 @@ export function Header({ locale }: { locale: Locale }) {
             onClick={(event) => {
               const source = new URLSearchParams(window.location.search);
               const query = new URLSearchParams();
-              for (const key of ["category", "equipment"]) {
+              for (const key of [
+                "category",
+                "equipment",
+                "source",
+                "q",
+                "subcategory",
+                "industry",
+              ]) {
                 const value = source.get(key);
                 if (value) query.set(key, value);
               }
@@ -135,7 +151,13 @@ export function Header({ locale }: { locale: Locale }) {
           </a>
           <Link
             className="button small"
-            href={`${pathFor(locale, "contact")}#quote`}
+            href={
+              route?.kind === "equipment"
+                ? equipmentInquiryHref(locale, route.id)
+                : pathFor(locale, "contact") +
+                  (route?.kind === "category" ? "?category=" + route.id : "") +
+                  "#quote"
+            }
             onClick={close}
           >
             {copy.quote[locale]} <span aria-hidden="true">↗</span>

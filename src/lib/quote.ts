@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { getEquipment } from "./equipment";
 import { categories } from "./catalog";
 import { regions } from "./locations";
 import { b } from "./config";
@@ -19,6 +20,11 @@ export const quoteSchema = z
       .refine((value) => value.replace(/\D/g, "").length >= 7),
     category: z.string().refine((v) => categories.some((c) => c.id === v)),
     equipment: short,
+    sourceEquipment: z
+      .string()
+      .max(100)
+      .default("")
+      .refine((v) => !v || !!getEquipment(v)),
     quantity: z.coerce.number().int().min(1).max(10000),
     startDate: z.iso.date(),
     endDate: z.iso.date(),
@@ -30,6 +36,15 @@ export const quoteSchema = z
     website: z.string().max(0),
   })
   .superRefine((v, ctx) => {
+    if (
+      v.sourceEquipment &&
+      getEquipment(v.sourceEquipment)?.categoryId !== v.category
+    )
+      ctx.addIssue({
+        code: "custom",
+        path: ["sourceEquipment"],
+        message: "invalid",
+      });
     if (v.endDate < v.startDate)
       ctx.addIssue({ code: "custom", path: ["endDate"], message: "dateOrder" });
     // Business dates use the configured Canadian operating timezone, not UTC midnight.

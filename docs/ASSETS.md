@@ -27,3 +27,8 @@ Both images were generated with the built-in image tool, visually reviewed, and 
 See `asset-audit-prior.json` for the exact accessible-local image count, unreadable files, exact matches and near-duplicate candidates. The comparison covers accessible image files in the local ChatGPT projects directory, excluding dependencies, build output and browser-test output. It does not establish uniqueness against inaccessible remote-only inventories or every site ever built. No such portfolio-wide claim is made. Perceptual hashes detect candidates, not definitive semantic identity; candidates must be visually reviewed.
 
 Final audit: 18 registered assets compared with 1,346 accessible prior images; zero exact matches and zero unreadable files. One perceptual candidate is the English/French social-card pair (distance 4); visual review confirms separate localized text compositions with shared brand identity and template, not reused photography. Scope remains limited to accessible local inventories.
+
+Phase 1B preserves all existing content-image placements. Equipment profile images
+are locale-specific optional records, with no category-photo fallback. Empty slots
+render selection guidance rather than an image. Any future product image must include
+its source, alt text and distinct placement; the audit includes published profile images.
