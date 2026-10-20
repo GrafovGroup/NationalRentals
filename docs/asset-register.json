@@ -150,7 +150,7 @@
       "placement": "homepage social card only",
       "source": "Original bilingual social card; scripts/prepare-images.mjs",
       "website": "nationalrentals.ca",
-      "sha256": "ddfd0dbbc09541a80d2b9ffa3b3b95fd9584e8c1558d3ac5ad281bb68099aa00",
+      "sha256": "0ba40c9df37c1f13f65d17917dc2d2cfd77c5fc69c21c868d15b8f27794314df",
       "dhash": "7131314666585252"
     },
     {
@@ -159,7 +159,7 @@
       "placement": "homepage social card only",
       "source": "Original bilingual social card; scripts/prepare-images.mjs",
       "website": "nationalrentals.ca",
-      "sha256": "ef9c2bfc013bbb98888a1f073912609dd46bbb6a3162609fd0dcf629159b9280",
+      "sha256": "928f7b7b04bdfc289bb88565a0eb300ad916258aaadde3b567b4da77beb10417",
       "dhash": "7131310272585252"
     }
   ],

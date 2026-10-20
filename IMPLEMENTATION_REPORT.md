@@ -66,12 +66,14 @@ background. Removed the previous orange N monogram and CSS wordmark.
 The favicon, public logo alias and bilingual homepage social cards derive from
 the same source through scripts/prepare-images.mjs.
 
-Fidelity: the supplied SVG is used unchanged. It is a provisional text-based
-recreation, not an exact trace; system font availability affects letter shapes.
-The approved reference raster is not present in the repository. A faithful
-outlined vector trace, followed by final edge alignment, letter spacing and
-small-size favicon review, remains outstanding for final brand signoff.
-No inverted reinterpretation was introduced before that source is available.
+Fidelity update: corrected the provisional SVG by replacing live text and
+textLength stretching with fixed glyph outlines. Both rows use the same glyph
+scale, 124-unit flat cap height and 12-degree forward lean. Visible left/right
+bounds match; the shorter word uses wider spacing rather than wider letters.
+The speed line retains its tapered right tip. The result no longer depends on
+installed fonts. Source outlines were derived locally from Arial Black; the
+font file is not redistributed. This remains a reconstruction of the written
+direction, not a verified trace of the approved raster (absent from the repo).
 
 Validation: lint, typecheck, 17 unit/API tests, production build and all six
 browser tests pass (including all 46 routes, mobile navigation and automated
@@ -80,3 +82,7 @@ Visually reviewed both wordmark placements and bilingual social cards.
 The asset audit compared 18 assets with 1,346 accessible local prior images:
 no exact duplicates; one reviewed candidate is the localized social-card pair.
 The local preview is available at http://127.0.0.1:3000/en/.
+
+Logo correction validation: repeated lint, typecheck, all 17 unit/API tests,
+production build, desktop navigation, mobile overflow/menu and WCAG browser
+checks. Refreshed desktop/mobile captures have no page errors.
