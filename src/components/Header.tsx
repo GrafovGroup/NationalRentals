@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { usePathname } from "next/navigation";
 import { categories } from "@/lib/catalog";
 import { type Locale, site } from "@/lib/config";
@@ -68,15 +69,7 @@ export function Header({ locale }: { locale: Locale }) {
           onClick={close}
           aria-label="National Rentals"
         >
-          <span className="brand-mark" aria-hidden="true">
-            N
-          </span>
-          <span>
-            NATIONAL
-            <span>
-              RENTALS<span className="brand-ca">.CA</span>
-            </span>
-          </span>
+          <Logo />
         </Link>
         <button
           ref={menuButton}

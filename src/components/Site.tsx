@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { site, type Locale } from "@/lib/config";
 import { copy } from "@/lib/copy";
 import { categories } from "@/lib/catalog";
@@ -179,12 +180,7 @@ export function Footer({ locale }: { locale: Locale }) {
               href={pathFor(locale, "home")}
               aria-label="National Rentals"
             >
-              <span className="brand-mark" aria-hidden="true">
-                N
-              </span>
-              <span>
-                NATIONAL<span>RENTALS.CA</span>
-              </span>
+              <Logo />
             </Link>
             <p>{copy.footerText[locale]}</p>
             <p className="muted">{copy.operated[locale]}</p>

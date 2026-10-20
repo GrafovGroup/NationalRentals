@@ -8,7 +8,7 @@ Scope: `PHASE_1A_CODEX_MASTER_PROMPT.md`, with the user's current website instru
 - 46 English/French pages: home, equipment overview, 11 primary categories, About, Contact, Industries, regional overview, three substantive location pages, Corporate Rentals, Privacy and Terms in each language. Full paths: `docs/ROUTES.md`.
 - All 11 requested categories and their equipment types in typed, extensible bilingual data. Category-specific descriptions and planning guidance cover applications, access, load, power, delivery and operating constraints.
 - Canadian region data for ten provinces and three territories, major cities, three metros and surrounding municipalities, including the GTA and Québec names. Only Toronto/GTA, Montréal and Vancouver have detailed location pages; there are no mass-generated thin city pages or invented branches.
-- Premium navy/orange visual system, original vector identity/favicon, separate English/French photographic heroes, original equipment illustrations, responsive layouts, uppercase menus/buttons and reduced-motion support.
+- Premium navy/orange visual system, approved red two-line wordmark/favicon, separate English/French photographic heroes, original equipment illustrations, responsive layouts, uppercase menus/buttons and reduced-motion support.
 - Homepage category discovery, featured equipment, industries, process, regional planning, corporate programs and full quote form. English/French navigation preserves the page and selected quote equipment.
 - Bilingual forms, errors, confirmations, metadata, document language, canonical URLs, hreflang, sitemap, robots, breadcrumb and organization schema. Schema includes supplied identity/email facts, without invented ratings, inventory, branches or prices.
 - Original content imagery has one placement per asset, including across languages. The internal asset register records source, website, page, placement and hashes. Separate French text layouts avoid repeating English illustrations.
@@ -55,3 +55,28 @@ Browser test coverage includes all 46 routes, bilingual metadata, desktop/mobile
 No cart, payments, customer accounts, live availability, bookings, supplier directory, reviews or testimonials were added. Image auditing can compare accessible local inventories only; remote-only or otherwise inaccessible prior-site assets are outside verification. No portfolio-wide uniqueness certification is claimed. Generated scenes do not assert completed company work; provenance and prompts are internal in `docs/ASSETS.md`.
 
 The initial full-disk condition was resolved with the user's explicit permission by deleting regenerable browser/update caches and older Playwright browser caches. Personal files and project source were not removed.
+
+
+## Approved logo implementation — October 19, 2026
+
+Integrated the brand standard and supplied SVG from GitHub main (23a1c4a).
+The shared Logo component now renders the red NATIONAL / RENTALS wordmark in
+all English and French headers and footers, with responsive sizing and a white
+background. Removed the previous orange N monogram and CSS wordmark.
+The favicon, public logo alias and bilingual homepage social cards derive from
+the same source through scripts/prepare-images.mjs.
+
+Fidelity: the supplied SVG is used unchanged. It is a provisional text-based
+recreation, not an exact trace; system font availability affects letter shapes.
+The approved reference raster is not present in the repository. A faithful
+outlined vector trace, followed by final edge alignment, letter spacing and
+small-size favicon review, remains outstanding for final brand signoff.
+No inverted reinterpretation was introduced before that source is available.
+
+Validation: lint, typecheck, 17 unit/API tests, production build and all six
+browser tests pass (including all 46 routes, mobile navigation and automated
+WCAG checks). Updated desktop/mobile QA captures report no page errors.
+Visually reviewed both wordmark placements and bilingual social cards.
+The asset audit compared 18 assets with 1,346 accessible local prior images:
+no exact duplicates; one reviewed candidate is the localized social-card pair.
+The local preview is available at http://127.0.0.1:3000/en/.

@@ -254,22 +254,14 @@ ul {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
-  color: var(--navy);
-  font-size: 1.13rem;
-  font-weight: 900;
-  line-height: 1.13;
-  letter-spacing: 0.02em;
   flex-shrink: 0;
+  background: white;
+  padding: 8px;
 }
-.brand > span > span {
+.brand-logo {
   display: block;
-  font-size: 1.01rem;
-  letter-spacing: 0.11em;
-}
-.brand-ca {
-  font-size: 0.68em;
-  letter-spacing: 0;
+  width: 210px;
+  height: auto;
 }
 .navigation {
   display: flex;
@@ -994,15 +986,9 @@ textarea[aria-invalid="true"] {
   .nav-link {
     font-size: 0.62rem;
   }
-  .brand {
-    font-size: 1rem;
-  }
-  .brand > span > span {
-    font-size: 0.9rem;
-  }
-  .brand img {
-    width: 38px;
-    height: 38px;
+  .brand-logo {
+    width: 175px;
+    height: auto;
   }
   .header-row {
     gap: 15px;
@@ -1209,15 +1195,9 @@ textarea[aria-invalid="true"] {
   .header-row {
     height: 75px;
   }
-  .brand img {
-    width: 35px;
-    height: 35px;
-  }
-  .brand {
-    font-size: 0.93rem;
-  }
-  .brand > span > span {
-    font-size: 0.83rem;
+  .brand-logo {
+    width: 175px;
+    height: auto;
   }
   .menu-toggle {
     font-size: 0.6rem;
@@ -1589,38 +1569,6 @@ textarea[aria-invalid="true"] {
   *:after {
     transition: none !important;
     animation: none !important;
-  }
-}
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  background: var(--navy);
-  color: var(--orange);
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: -0.12em;
-  padding-right: 4px;
-  line-height: 1;
-  border-radius: 3px;
-}
-.brand-mark:after {
-  content: "";
-  width: 24px;
-  border-bottom: 2px solid var(--orange);
-  position: absolute;
-  transform: translateY(17px);
-}
-@media (max-width: 650px) {
-  .brand-mark {
-    width: 36px;
-    height: 36px;
-    font-size: 27px;
-  }
-  .brand-mark:after {
-    width: 21px;
-    transform: translateY(14px);
   }
 }
 .category-brief {

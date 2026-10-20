@@ -141,7 +141,7 @@ async function main() {
       {
         assets: current,
         identity:
-          "Logo/favicon and CSS wordmark are identity UI, not reused content imagery.",
+          "Approved red wordmark: public/brand/national-rentals-logo.svg; shared Logo component in all EN/FR headers and footers, generated logo/favicon aliases and homepage social cards. Identity UI is not content imagery.",
       },
       null,
       2,

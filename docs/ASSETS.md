@@ -2,7 +2,7 @@
 
 Authoritative placement register: `asset-register.json`. Each content image has exactly one page placement. The French homepage uses a separately generated scene; French category and featured-equipment sections use text rather than copies of English imagery. The two original social cards belong only to their respective homepages. No shared photo fallback exists.
 
-Original vector equipment illustrations are authored in `scripts/create-vectors.py` and checked in as SVG. The English homepage featured illustrations and the category-page illustrations are separate compositions, not crops or recolours. The logo/favicon are identity UI. Header and footer branding is CSS typography, not a reused content image.
+Original vector equipment illustrations are authored in `scripts/create-vectors.py` and checked in as SVG. The English homepage featured illustrations and the category-page illustrations are separate compositions, not crops or recolours. The approved red wordmark in public/brand/national-rentals-logo.svg is identity UI, rendered by src/components/Logo.tsx in both language headers and footers on a white background. scripts/prepare-images.mjs derives favicon/logo aliases and embeds the same source in social cards. The supplied SVG is provisional and uses system fonts; a faithful outlined trace of the approved raster remains outstanding, as documented in BRAND_LOGO_STANDARD.md.
 
 ## Built-in image-generation outputs
 
@@ -26,4 +26,4 @@ Both images were generated with the built-in image tool, visually reviewed, and 
 
 See `asset-audit-prior.json` for the exact accessible-local image count, unreadable files, exact matches and near-duplicate candidates. The comparison covers accessible image files in the local ChatGPT projects directory, excluding dependencies, build output and browser-test output. It does not establish uniqueness against inaccessible remote-only inventories or every site ever built. No such portfolio-wide claim is made. Perceptual hashes detect candidates, not definitive semantic identity; candidates must be visually reviewed.
 
-Final audit: 18 registered assets compared with 1,346 accessible prior images; zero exact matches, zero perceptual near-duplicate candidates, and zero unreadable files. Scope remains limited to accessible local inventories.
+Final audit: 18 registered assets compared with 1,346 accessible prior images; zero exact matches and zero unreadable files. One perceptual candidate is the English/French social-card pair (distance 4); visual review confirms separate localized text compositions with shared brand identity and template, not reused photography. Scope remains limited to accessible local inventories.
