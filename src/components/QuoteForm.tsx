@@ -1,4 +1,7 @@
 "use client";
+import { publishedIndustries } from "@/lib/industries";
+import { publishedEquipment } from "@/lib/equipment";
+
 import { measure } from "@/lib/measurement";
 import {
   readDraft,
@@ -21,6 +24,8 @@ export function QuoteForm({
   initialCategory = "",
   initialEquipment = "",
   sourceEquipment = "",
+  initialIndustry = "",
+  initialProducts,
   city = "",
   province = "",
 }: {
@@ -28,6 +33,8 @@ export function QuoteForm({
   initialCategory?: string;
   initialEquipment?: string;
   sourceEquipment?: string;
+  initialIndustry?: string;
+  initialProducts?: string[];
   city?: string;
   province?: string;
 }) {
@@ -48,11 +55,18 @@ export function QuoteForm({
   const f = locale;
   useEffect(() => {
     const draft = readDraft(locale);
-    if (!draft || !form.current) return;
+    if (!form.current) return;
+    if (!draft) {
+      if (initialIndustry || initialProducts?.length)
+        saveDraft(form.current, "", "", "");
+      return;
+    }
     const fields = { ...draft.fields };
     // Explicit equipment/location choices override only their own fields; entered contact/project details survive.
     if (initialCategory) fields.category = initialCategory;
     if (initialEquipment) fields.equipment = initialEquipment;
+    if (initialIndustry) fields.industry = initialIndustry;
+    if (initialProducts?.length) fields.products = initialProducts.join(",");
     if (city) fields.city = city;
     if (province) fields.province = province;
     queueMicrotask(() => {
@@ -60,6 +74,12 @@ export function QuoteForm({
       setSource(sourceEquipment || fields.sourceEquipment || "");
       for (const [name, value] of Object.entries(fields)) {
         const input = form.current?.elements.namedItem(name);
+        if (input instanceof HTMLSelectElement && input.multiple) {
+          const selected = String(value).split(",");
+          for (const option of input.options)
+            option.selected = selected.includes(option.value);
+          continue;
+        }
         if (
           input instanceof HTMLInputElement ||
           input instanceof HTMLTextAreaElement ||
@@ -75,6 +95,8 @@ export function QuoteForm({
   }, [
     locale,
     initialCategory,
+    initialIndustry,
+    initialProducts,
     initialEquipment,
     city,
     province,
@@ -119,6 +141,7 @@ export function QuoteForm({
     const data = new FormData(event.currentTarget);
     const fields = {
       ...Object.fromEntries(data),
+      products: data.getAll("products"),
       privacy: data.get("privacy") === "on",
       locale,
       sourcePath: sourcePath.current || window.location.pathname,
@@ -303,6 +326,54 @@ export function QuoteForm({
             {input("company", "text", "organization")}
             {input("email", "email", "email")}
             {input("phone", "tel", "tel")}
+            <label className="field">
+              {t.industry[f]}
+              <select
+                name="industry"
+                id="industry"
+                defaultValue={initialIndustry}
+                aria-invalid={!!errors.industry}
+                aria-describedby={
+                  errors.industry ? "industry-error" : undefined
+                }
+              >
+                <option value="">{t.choose[f]}</option>
+                {publishedIndustries.map((i) => (
+                  <option key={i.id} value={i.id}>
+                    {i.title[f]}
+                  </option>
+                ))}
+              </select>
+              {errorFor("industry")}
+            </label>
+            <label className="field">
+              {t.products[f]}
+              <select
+                name="products"
+                id="products"
+                multiple
+                size={4}
+                defaultValue={initialProducts || []}
+                aria-invalid={!!errors.products}
+                aria-describedby={
+                  errors.products
+                    ? "products-help products-error"
+                    : "products-help"
+                }
+              >
+                {publishedEquipment.map((i) => (
+                  <option key={i.id} value={i.id}>
+                    {i.name[f]}
+                  </option>
+                ))}
+              </select>
+              <span id="products-help" className="fine-print">
+                {f === "fr"
+                  ? "Sur ordinateur, maintenez Ctrl ou Commande pour plusieurs choix. Précisez les quantités par article et par site dans les détails du projet."
+                  : "On desktop, hold Ctrl or Command to select multiple items. List quantities per item and per site in the project details."}
+              </span>
+              {errorFor("products")}
+            </label>
             <label className="field">
               {t.category[f]} *
               <select

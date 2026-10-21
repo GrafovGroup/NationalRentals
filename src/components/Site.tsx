@@ -107,6 +107,8 @@ export function QuoteSection({
   category = "",
   equipment = "",
   sourceEquipment = "",
+  industry = "",
+  products = [],
   city = "",
   province = "",
 }: {
@@ -114,6 +116,8 @@ export function QuoteSection({
   category?: string;
   equipment?: string;
   sourceEquipment?: string;
+  industry?: string;
+  products?: string[];
   city?: string;
   province?: string;
 }) {
@@ -142,6 +146,8 @@ export function QuoteSection({
           initialCategory={category}
           initialEquipment={equipment}
           sourceEquipment={sourceEquipment}
+          initialIndustry={industry}
+          initialProducts={products}
           city={city}
           province={province}
         />

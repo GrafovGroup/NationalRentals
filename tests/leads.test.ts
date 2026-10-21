@@ -36,6 +36,8 @@ const sample = () =>
     phone: "4165550123",
     category: "construction",
     equipment: "Excavatrice",
+    industry: "construction",
+    products: ["excavator", "generator"],
     quantity: 1,
     startDate: "",
     endDate: "",
@@ -73,6 +75,11 @@ test("secure persistence precedes notification; duplicate retries send only once
   const ops = leadOperations();
   try {
     assert.equal(ops.export(q.requestId).request.city, "Gatineau");
+    assert.equal(ops.export(q.requestId).request.industry, "construction");
+    assert.deepEqual(ops.export(q.requestId).request.products, [
+      "excavator",
+      "generator",
+    ]);
     assert.equal(ops.list().length, 1);
   } finally {
     ops.close();

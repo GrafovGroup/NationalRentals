@@ -5,7 +5,7 @@ import { categories } from "../src/lib/catalog";
 import { regions, locations } from "../src/lib/locations";
 import { locales } from "../src/lib/config";
 test("all bilingual routes resolve and switch to their matching context", () => {
-  assert.equal(allRoutes().length, 218);
+  assert.equal(allRoutes().length, 238);
   for (const { locale, route } of allRoutes()) {
     assert.equal(
       resolveRoute(locale, route.path.split("/").filter(Boolean))?.id,

@@ -1,6 +1,6 @@
-# National Rentals — Phases 1A–1D
+# National Rentals — Phases 1A–2A
 
-Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md`, `PHASE_1B_CODEX_MASTER_PROMPT.md`, `PHASE_1C_CODEX_MASTER_PROMPT.md` and `PHASE_1D_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
+Bilingual Canadian commercial rental coordination website operated by Grafov Group Inc. This repository implements the scopes in `PHASE_1A_CODEX_MASTER_PROMPT.md`, `PHASE_1B_CODEX_MASTER_PROMPT.md`, `PHASE_1C_CODEX_MASTER_PROMPT.md`, `PHASE_1D_CODEX_MASTER_PROMPT.md` and `PHASE_2A_CODEX_MASTER_PROMPT.md`: quote inquiries, not bookings or checkout.
 
 ## Run locally
 
@@ -26,7 +26,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e
 ```
 
-Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests cover all 218 pages, desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
+Browser tests start a production server on port 3000 if one is not already running. Use `PLAYWRIGHT_EXECUTABLE_PATH` to use an existing compatible Chromium executable. Build before browser tests. Tests inspect the actual server HTML of all 238 pages with HTTP requests and parse5, plus browser checks for desktop/mobile navigation, language context, selected equipment, form validation, provider failure/success UI, sitemap and automated accessibility.
 
 ## Production operation
 
@@ -95,7 +95,7 @@ Phase 1C geographic expansion and Phase 1D measurement/logo updates are document
 
 ## Phase 1C geographic discovery
 
-The national hub links all 13 province/territory pages and searchable city/municipality entries. Twelve substantive metro guides are available in English and French; all previous 1A/1B paths remain stable. There are 218 content routes in total. Geographic and equipment selections carry into quote forms, including correct province selection for Ottawa–Gatineau municipalities.
+The national hub links all 13 province/territory pages and searchable city/municipality entries. Twelve substantive metro guides are available in English and French; all previous 1A/1B paths remain stable. Phase 1C brought the site to 218 content routes; Phase 2A extends this to 238. Geographic and equipment selections carry into quote forms, including correct province selection for Ottawa–Gatineau municipalities.
 
 See `docs/GEOGRAPHY.md` for data ownership, publication rules, cross-border handling, reserved category/location architecture and coverage limits. No category/location combinations or discovery-only city pages are indexed. The approved wordmark is preserved; interface accents use red and charcoal.
 
@@ -104,3 +104,10 @@ See `docs/GEOGRAPHY.md` for data ownership, publication rules, cross-border hand
 Inquiries are accepted only after durable encrypted SQLite persistence. Email notification status is separate and recoverable. Hosting requires a private persistent volume on a long-lived Node host; an ephemeral serverless filesystem is unsupported. Configure `LEAD_DB_PATH` outside the repository and a unique `LEAD_ENCRYPTION_KEY`, then configure Resend and rate limiting. See [inquiry operations](docs/INQUIRY_OPERATIONS.md) for exact setup, private export/retry/deletion commands, backup/retention requirements, consent-based analytics and the live end-to-end blocker.
 
 The form preserves tab-local drafts for 30 minutes and accepts unknown rental dates. Measurement is opt-in and off by default. No public admin interface or customer accounts were added. The stacked wordmark now uses clean original outlined geometry with identical line bounds and cap heights; see `docs/logo-geometry.json`.
+
+
+## Phase 2A industry guides
+
+Ten bilingual industry guides add 20 substantial pages for construction, logistics, manufacturing, facilities, public procurement, retail, healthcare, film, events and restoration. Each includes sector scenarios, planning notes, curated catalog links, regional links and an FAQ. The equipment checklist uses the existing secure inquiry form with private industry attribution and up to eight selected products. English/French switching and drafts retain project context.
+
+The English hub is `/en/industries/`; `/fr/industries/` redirects to the preserved French canonical `/fr/secteurs/`. There are now 238 content routes. See [industry architecture and authoring](docs/INDUSTRIES.md). No additional production credentials are introduced; Phase 1D storage/email setup still applies.

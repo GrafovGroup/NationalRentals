@@ -1,3 +1,5 @@
+import { getIndustry } from "@/lib/industries";
+import { IndustryGrid, IndustryPage } from "@/components/Industries";
 import {
   GeographicPage,
   LocationDiscovery,
@@ -21,7 +23,7 @@ import { CatalogBrowser } from "@/components/CatalogBrowser";
 import { EquipmentPage } from "@/components/EquipmentPage";
 import { categories } from "@/lib/catalog";
 import { locations, regions } from "@/lib/locations";
-import { copy, industries } from "@/lib/copy";
+import { copy } from "@/lib/copy";
 import { isLocale, site, type Locale } from "@/lib/config";
 import { legal } from "@/lib/legal";
 import {
@@ -44,6 +46,8 @@ export function generateStaticParams() {
 }
 export const dynamicParams = true;
 function description(locale: Locale, route: Route) {
+  if (route.kind === "industry")
+    return getIndustry(route.id)!.seo.description[locale];
   if (route.kind === "region")
     return regions.find((r) => r.code === route.id)!.description[locale];
   if (route.kind === "equipment")
@@ -81,13 +85,15 @@ export async function generateMetadata({
       robots: { index: false, follow: false },
     };
   const title =
-    route.kind === "equipment"
-      ? getEquipment(route.id)!.seo.title[locale] + " | National Rentals"
-      : route.id === "home"
-        ? locale === "en"
-          ? "Commercial Equipment Rentals Across Canada | National Rentals"
-          : "Location d’équipement commercial au Canada | National Rentals"
-        : `${route.kind === "location" || route.kind === "region" ? (locale === "fr" ? "Location d’équipement — " : "Equipment rentals — ") : ""}${route.name[locale]} | National Rentals`;
+    route.kind === "industry"
+      ? getIndustry(route.id)!.seo.title[locale] + " | National Rentals"
+      : route.kind === "equipment"
+        ? getEquipment(route.id)!.seo.title[locale] + " | National Rentals"
+        : route.id === "home"
+          ? locale === "en"
+            ? "Commercial Equipment Rentals Across Canada | National Rentals"
+            : "Location d’équipement commercial au Canada | National Rentals"
+          : `${route.kind === "location" || route.kind === "region" ? (locale === "fr" ? "Location d’équipement — " : "Equipment rentals — ") : ""}${route.name[locale]} | National Rentals`;
   const desc = description(locale, route).slice(0, 195);
   const query =
     route.id === "rentals" ||
@@ -146,25 +152,7 @@ export async function generateMetadata({
     },
   };
 }
-function IndustryGrid({ locale }: { locale: Locale }) {
-  return (
-    <div className="industry-grid">
-      {industries.map((item, i) => (
-        <Link
-          href={pathFor(locale, item.category, "category")}
-          key={item.category}
-          id={item.category}
-        >
-          <span className="eyebrow">0{i + 1}</span>
-          <h3>
-            {item.title[locale]} <span aria-hidden="true">↗</span>
-          </h3>
-          <p>{item.text[locale]}</p>
-        </Link>
-      ))}
-    </div>
-  );
-}
+
 function Coverage({ locale }: { locale: Locale }) {
   return (
     <section className="section coverage">
@@ -357,7 +345,15 @@ export default async function Page({ params, searchParams }: Props) {
     subcategory: scalar("subcategory"),
     industry: scalar("industry"),
   };
-  if (route.kind === "equipment") {
+  if (route.kind === "industry") {
+    content = (
+      <IndustryPage
+        locale={locale}
+        route={route}
+        item={getIndustry(route.id)!}
+      />
+    );
+  } else if (route.kind === "equipment") {
     content = (
       <EquipmentPage
         locale={locale}
@@ -525,6 +521,8 @@ export default async function Page({ params, searchParams }: Props) {
               category={prefill.category}
               equipment={prefill.equipment}
               sourceEquipment={prefill.sourceEquipment}
+              industry={prefill.industry}
+              products={prefill.products}
               city={prefill.city}
               province={prefill.province}
             />

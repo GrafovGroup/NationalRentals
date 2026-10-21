@@ -1,3 +1,4 @@
+import { publishedIndustries, getIndustry } from "./industries";
 import { b, locales, type Locale, type Localized } from "./config";
 import { categories } from "./catalog";
 import { publishedEquipment, getEquipment } from "./equipment";
@@ -30,7 +31,7 @@ export const pages = {
 };
 export type PageKey = keyof typeof pages;
 export type Route = {
-  kind: "page" | "category" | "location" | "equipment" | "region";
+  kind: "page" | "category" | "location" | "equipment" | "region" | "industry";
   id: string;
   path: string;
   name: Localized;
@@ -42,6 +43,12 @@ export function routes(locale: Locale): Route[] {
       id,
       path: p.slug[locale],
       name: p.name,
+    })),
+    ...publishedIndustries.map((i) => ({
+      kind: "industry" as const,
+      id: i.id,
+      path: `${pages.industries.slug[locale]}/${i.slug[locale]}`,
+      name: i.title,
     })),
     ...categories.map((c) => ({
       kind: "category" as const,
@@ -104,10 +111,23 @@ export function inquiryPrefill(
   const equipment = category?.equipment.find((e) => e.id === query.equipment);
   const source =
     typeof query.source === "string" ? getEquipment(query.source) : undefined;
+  const industry =
+    typeof query.industry === "string"
+      ? getIndustry(query.industry)
+      : undefined;
+  const productValues = Array.isArray(query.products)
+    ? query.products
+    : (query.products || "").split(",");
+  const products = [...new Set(productValues)]
+    .filter((id) => !!getEquipment(id))
+    .slice(0, 8);
+  const first = products.length ? getEquipment(products[0]) : undefined;
   return {
+    industry: industry?.id || "",
+    products,
     ...geographicPrefill(locale, query),
-    category: category?.id,
-    equipment: equipment?.name[locale],
+    category: category?.id || first?.categoryId,
+    equipment: equipment?.name[locale] || first?.name[locale],
     sourceEquipment:
       source &&
       source.id === equipment?.id &&
@@ -122,9 +142,11 @@ export function breadcrumbItems(locale: Locale, route: Route) {
   ];
   if (route.kind !== "page") {
     const parent =
-      route.kind === "location" || route.kind === "region"
-        ? "locations"
-        : "rentals";
+      route.kind === "industry"
+        ? "industries"
+        : route.kind === "location" || route.kind === "region"
+          ? "locations"
+          : "rentals";
     result.push({
       name: pages[parent].name[locale],
       path: pathFor(locale, parent),
@@ -152,4 +174,9 @@ export function breadcrumbItems(locale: Locale, route: Route) {
       path: pathFor(locale, route.id, route.kind),
     });
   return result;
+}
+
+export function industryInquiryHref(locale: Locale, id: string) {
+  if (!getIndustry(id)) throw Error("Unknown industry");
+  return pathFor(locale, "contact") + "?industry=" + id + "#quote";
 }

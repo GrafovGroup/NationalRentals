@@ -1,3 +1,4 @@
+import { getIndustry } from "./industries";
 import { categories } from "./catalog";
 import { b, type Locale, type Localized } from "./config";
 import content from "./equipment-content.json";
@@ -307,8 +308,16 @@ export function filterEquipment(
     if (filters.category && item.categoryId !== filters.category) return false;
     if (filters.subcategory && item.subcategoryId !== filters.subcategory)
       return false;
-    if (filters.industry && !item.industryIds.includes(filters.industry))
-      return false;
+    if (filters.industry) {
+      const industry = getIndustry(filters.industry);
+      if (
+        industry
+          ? !industry.equipmentIds.includes(item.id) &&
+            !industry.categoryIds.includes(item.categoryId)
+          : !item.industryIds.includes(filters.industry)
+      )
+        return false;
+    }
     const text = normalizeSearch(
       [
         item.name[locale],

@@ -1,28 +1,50 @@
+import { parse } from "parse5";
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { allRoutes, pathFor } from "../../src/lib/routes";
-test("all 218 pages respond, identify their language, and expose canonical metadata", async ({
-  page,
+type HtmlNode = {
+  nodeName: string;
+  attrs?: { name: string; value: string }[];
+  childNodes?: HtmlNode[];
+};
+function elements(node: HtmlNode, tag: string): HtmlNode[] {
+  return [
+    ...(node.nodeName === tag ? [node] : []),
+    ...(node.childNodes || []).flatMap((child) => elements(child, tag)),
+  ];
+}
+const attribute = (node: HtmlNode, name: string) =>
+  node.attrs?.find((a) => a.name === name)?.value;
+test("all 238 server-rendered pages respond, identify their language, and expose canonical metadata", async ({
+  request,
 }) => {
   test.setTimeout(480000);
+  // Inspect the actual server HTML. The focused browser journeys below cover hydration, interactions and visual accessibility.
   const imagePlacements = new Set<string>();
   for (const { locale, route } of allRoutes()) {
     const path = pathFor(locale, route.id, route.kind);
-    const response = await page.goto(path, { waitUntil: "domcontentloaded" });
-    expect(response?.status(), path).toBe(200);
-    await expect(page.locator("html")).toHaveAttribute("lang", `${locale}-CA`);
-    await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
-      "href",
-      `https://nationalrentals.ca${path}`,
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(200);
+    const document = parse(await response.text());
+    expect(attribute(elements(document, "html")[0], "lang"), path).toBe(
+      `${locale}-CA`,
     );
-    await expect(page.locator('link[hreflang="fr-CA"]')).toHaveCount(1);
-    for (const src of await page
-      .locator("main img")
-      .evaluateAll((images) =>
-        images.map((image) => (image as HTMLImageElement).src),
-      )) {
-      const url = new URL(src);
+    expect(elements(document, "h1"), path).toHaveLength(1);
+    const links = elements(document, "link");
+    expect(
+      links
+        .filter((link) => attribute(link, "rel") === "canonical")
+        .map((link) => attribute(link, "href")),
+      path,
+    ).toEqual([`https://nationalrentals.ca${path}`]);
+    expect(
+      links.filter((link) => attribute(link, "hreflang") === "fr-CA"),
+      path,
+    ).toHaveLength(1);
+    const main = elements(document, "main");
+    expect(main, path).toHaveLength(1);
+    for (const img of elements(main[0], "img")) {
+      const url = new URL(attribute(img, "src")!, "http://127.0.0.1:3000");
       const asset = url.searchParams.get("url") || url.pathname;
       expect(
         imagePlacements.has(asset),
@@ -30,6 +52,7 @@ test("all 218 pages respond, identify their language, and expose canonical metad
       ).toBe(false);
       imagePlacements.add(asset);
     }
+    await response.dispose();
   }
 });
 test("desktop navigation, language context and equipment prefill work", async ({

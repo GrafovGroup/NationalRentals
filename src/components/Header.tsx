@@ -134,11 +134,15 @@ export function Header({ locale }: { locale: Locale }) {
                 "q",
                 "subcategory",
                 "industry",
+                "products",
                 "province",
                 "market",
                 "location",
               ]) {
-                const value = source.get(key);
+                const value =
+                  key === "products"
+                    ? source.getAll(key).join(",")
+                    : source.get(key);
                 if (value) query.set(key, value);
               }
               event.currentTarget.href =
@@ -159,13 +163,15 @@ export function Header({ locale }: { locale: Locale }) {
               route?.kind === "equipment"
                 ? equipmentInquiryHref(locale, route.id)
                 : pathFor(locale, "contact") +
-                  (route?.kind === "category"
-                    ? "?category=" + route.id
-                    : route?.kind === "region"
-                      ? "?province=" + route.id
-                      : route?.kind === "location"
-                        ? "?location=" + route.id
-                        : "") +
+                  (route?.kind === "industry"
+                    ? "?industry=" + route.id
+                    : route?.kind === "category"
+                      ? "?category=" + route.id
+                      : route?.kind === "region"
+                        ? "?province=" + route.id
+                        : route?.kind === "location"
+                          ? "?location=" + route.id
+                          : "") +
                   "#quote"
             }
             onClick={(event) => {
@@ -173,6 +179,8 @@ export function Header({ locale }: { locale: Locale }) {
               if (
                 route?.kind !== "equipment" &&
                 [
+                  "industry",
+                  "products",
                   "equipment",
                   "category",
                   "market",
@@ -183,6 +191,8 @@ export function Header({ locale }: { locale: Locale }) {
                 event.preventDefault();
                 const target = new URL(event.currentTarget.href);
                 for (const key of [
+                  "industry",
+                  "products",
                   "equipment",
                   "category",
                   "source",
@@ -190,7 +200,10 @@ export function Header({ locale }: { locale: Locale }) {
                   "location",
                   "province",
                 ]) {
-                  const value = context.get(key);
+                  const value =
+                    key === "products"
+                      ? context.getAll(key).join(",")
+                      : context.get(key);
                   if (value && !target.searchParams.has(key))
                     target.searchParams.set(key, value);
                 }

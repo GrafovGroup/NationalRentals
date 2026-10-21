@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { categories } from "@/lib/catalog";
-import { industries } from "@/lib/copy";
+import { publishedIndustries as industries } from "@/lib/industries";
 import {
   filterEquipment,
   subcategories,
@@ -124,7 +124,7 @@ export function CatalogBrowser({
                 {fr ? "Tous les secteurs" : "All industries"}
               </option>
               {industries.map((i) => (
-                <option key={i.category} value={i.category}>
+                <option key={i.id} value={i.id}>
                   {i.title[locale]}
                 </option>
               ))}

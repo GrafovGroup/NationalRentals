@@ -13,7 +13,7 @@ This implementation uses Node's built-in SQLite driver (Node **22.16+**, tested 
 
 ## Acceptance and notification are different
 
-The server validates a bounded JSON request, checks origin/honeypot/rate limit and inserts an encrypted record before attempting email. Records include an inquiry ID, creation timestamp, language, canonical source path, equipment/category, delivery city/province, quantities, optional dates, contact/project data, consent acknowledgment and private campaign attribution. Operator export includes the full canonical source URL and a basic multiple-link spam indicator; the honeypot rejects obvious automated submissions before acceptance.
+The server validates a bounded JSON request, checks origin/honeypot/rate limit and inserts an encrypted record before attempting email. Records include an inquiry ID, creation timestamp, language, canonical source path, equipment/category, delivery city/province, quantities, optional dates, contact/project data, optional validated industry and up to eight catalog product IDs, consent acknowledgment and private campaign attribution. Operator export includes the full canonical source URL and a basic multiple-link spam indicator; the honeypot rejects obvious automated submissions before acceptance.
 
 Personal request data and attribution are AES-256-GCM encrypted with a fresh nonce. IDs, timestamps, notification status, attempt counts, provider IDs and a keyed fingerprint are operational metadata in the database. SQL statements use bound parameters. Provider messages are plain text, not interpolated HTML. Neither HTTP responses nor logs contain contact/project data. A successful HTTP response means durable acceptance, not a booking or a promise that notification succeeded.
 

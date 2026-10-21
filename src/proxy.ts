@@ -7,6 +7,13 @@ import { resolveRoute } from "./lib/routes";
 // without JavaScript; a dynamic root layout otherwise uses Next's error shell.
 export function proxy(request: NextRequest) {
   const [locale, ...slug] = request.nextUrl.pathname.split("/").filter(Boolean);
+  if (locale === "fr" && slug[0] === "industries") {
+    const target = request.nextUrl.clone();
+    target.pathname =
+      "/fr/secteurs/" +
+      (slug.slice(1).length ? slug.slice(1).join("/") + "/" : "");
+    return NextResponse.redirect(target, 308);
+  }
   if (!isLocale(locale) || resolveRoute(locale, slug))
     return NextResponse.next();
   const fr = locale === "fr";

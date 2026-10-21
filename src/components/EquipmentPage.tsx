@@ -1,8 +1,9 @@
+import { publishedIndustries } from "@/lib/industries";
 import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "./Site";
 import { categories } from "@/lib/catalog";
-import { industries, copy } from "@/lib/copy";
+import { copy } from "@/lib/copy";
 import {
   getEquipment,
   subcategories,
@@ -126,13 +127,14 @@ export function EquipmentPage({
               : "Include access constraints and industry requirements in your request. Review regional planning notes when preparing transport details."}
           </p>
           <div className="tags">
-            {industries
-              .filter((i) => item.industryIds.includes(i.category))
+            {publishedIndustries
+              .filter(
+                (i) =>
+                  i.equipmentIds.includes(item.id) ||
+                  i.categoryIds.includes(item.categoryId),
+              )
               .map((i) => (
-                <Link
-                  key={i.category}
-                  href={pathFor(locale, "industries") + "#" + i.category}
-                >
+                <Link key={i.id} href={pathFor(locale, i.id, "industry")}>
                   {i.title[locale]}
                 </Link>
               ))}

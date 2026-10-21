@@ -1,3 +1,4 @@
+import { getIndustry, publishedIndustries } from "@/lib/industries";
 import Link from "next/link";
 import {
   regions,
@@ -14,6 +15,15 @@ import { PageIntro } from "./Site";
 type Query = Record<string, string | string[] | undefined>;
 export function geographicContext(query: Query) {
   const context = new URLSearchParams();
+  if (typeof query.industry === "string" && getIndustry(query.industry))
+    context.set("industry", query.industry);
+  const requested = Array.isArray(query.products)
+    ? query.products
+    : (query.products || "").split(",");
+  const products = [...new Set(requested)]
+    .filter((id) => !!getEquipment(id))
+    .slice(0, 8);
+  if (products.length) context.set("products", products.join(","));
   const item =
     typeof query.equipment === "string"
       ? getEquipment(query.equipment)
@@ -203,6 +213,27 @@ export function GeographicPage({
         >
           {copy.quote[locale]} ↗
         </Link>
+        <section className="section container">
+          <h2>
+            {fr ? "Planifier selon votre secteur" : "Plan around your industry"}
+          </h2>
+          <div className="related">
+            {publishedIndustries
+              .filter((i) =>
+                i.categoryIds.some((id) => region.categoryIds.includes(id)),
+              )
+              .slice(0, 5)
+              .map((i) => (
+                <Link
+                  key={i.id}
+                  className="text-link"
+                  href={pathFor(locale, i.id, "industry")}
+                >
+                  {i.title[locale]} ↗
+                </Link>
+              ))}
+          </div>
+        </section>
         {!metro && (
           <a className="text-link" href="#markets">
             {fr ? "CHOISIR UNE VILLE" : "CHOOSE A CITY"} ↓
@@ -340,6 +371,27 @@ export function GeographicPage({
               );
             })}
           </div>
+        </div>
+      </section>
+      <section className="section container">
+        <h2>
+          {fr ? "Planifier selon votre secteur" : "Plan around your industry"}
+        </h2>
+        <div className="related">
+          {publishedIndustries
+            .filter((i) =>
+              i.categoryIds.some((id) => region.categoryIds.includes(id)),
+            )
+            .slice(0, 5)
+            .map((i) => (
+              <Link
+                key={i.id}
+                className="text-link"
+                href={pathFor(locale, i.id, "industry")}
+              >
+                {i.title[locale]} ↗
+              </Link>
+            ))}
         </div>
       </section>
       {!metro && (

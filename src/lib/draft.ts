@@ -37,6 +37,7 @@ export function saveDraft(
   try {
     expireAfter(draftLifetime);
     const fields = Object.fromEntries(new FormData(form));
+    fields.products = new FormData(form).getAll("products").join(",");
     delete fields.privacy;
     delete fields.website;
     sessionStorage.setItem(

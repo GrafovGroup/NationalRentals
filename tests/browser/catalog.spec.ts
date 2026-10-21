@@ -52,7 +52,7 @@ test("combined filters, localized item metadata and quote context survive the fu
     .selectOption("handling");
   await page
     .getByRole("combobox", { name: "Industry", exact: true })
-    .selectOption("vehicles");
+    .selectOption("logistics");
   await page.getByRole("button", { name: "Search equipment" }).click();
   await expect(page.locator(".equipment-card")).toHaveCount(3);
   await page

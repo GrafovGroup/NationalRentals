@@ -1,3 +1,4 @@
+import { getIndustry } from "./industries";
 import { z } from "zod";
 import { getEquipment } from "./equipment";
 import { categories } from "./catalog";
@@ -32,6 +33,21 @@ export const quoteSchema = z
       .max(100)
       .default("")
       .refine((v) => !v || !!getEquipment(v)),
+    industry: z
+      .string()
+      .max(80)
+      .default("")
+      .refine((v) => !v || !!getIndustry(v)),
+    products: z
+      .array(
+        z
+          .string()
+          .max(100)
+          .refine((v) => !!getEquipment(v)),
+      )
+      .max(8)
+      .default([])
+      .refine((v) => new Set(v).size === v.length),
     quantity: z.coerce.number().int().min(1).max(10000),
     startDate: optionalDate,
     endDate: optionalDate,
@@ -94,6 +110,11 @@ export const quoteSchema = z
   });
 export type Quote = z.infer<typeof quoteSchema>;
 export const formCopy = {
+  industry: b("Industry (optional)", "Secteur (facultatif)"),
+  products: b(
+    "Additional equipment (up to 8 selections)",
+    "Équipement du projet (jusqu’à 8 choix)",
+  ),
   name: b("Full name", "Nom complet"),
   company: b("Company", "Entreprise"),
   email: b("Email", "Courriel"),

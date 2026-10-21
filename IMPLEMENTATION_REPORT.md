@@ -1,8 +1,27 @@
 # NationalRentals.ca — Implementation report
 
-Latest status: Phase 1D inquiry operations and the aligned outlined logo are implemented on `codex/phase-1`. Live end-to-end acceptance/email reception is **BLOCKED** by owner configuration; no public deployment is claimed.
+Latest status: Phase 2A industry guides and multi-equipment inquiry context are implemented on `codex/phase-1`. The completed Phases 1A–1D remain intact. Live acceptance/email reception still requires owner production configuration; no public deployment is claimed.
 
-Scope: Phases 1A–1D, with the user's current website instructions taking precedence. Implementation date: October 19, 2026 (America/Toronto). Earlier phase sections are historical; the Phase 1D section supersedes their inquiry-storage and logo descriptions.
+Scope: Phases 1A–2A, with the user's current instructions taking precedence. Earlier phase sections are historical; Phase 2A extends rather than replaces the inquiry operations described below.
+
+## Phase 2A delivered
+
+- Ten typed, published industry records cover construction/infrastructure, warehousing/logistics, manufacturing, facilities, municipalities/procurement, retail/multi-site operations, healthcare/institutions, film production, events and restoration. Each includes original bilingual hero/overview copy, three scenarios, three planning considerations, curated real catalog links, regional links and a specific FAQ.
+- Twenty new industry pages bring the site to **238 bilingual content routes**. The English hub is `/en/industries/`; the existing French canonical `/fr/secteurs/` is preserved. The requested `/fr/industries/` path redirects permanently to it. Shared route infrastructure supplies unique metadata, reciprocal hreflang, breadcrumbs, factual organization schema and sitemap inclusion. No industry/city doorway pages are published.
+- Homepage/hub cards, catalog industry filtering, equipment links and geographic links connect the guides to existing discovery. The Phase 1D outlined logo is unchanged. Distinct sector-specific text-led heroes use numbered project briefs; no stock photos or repeated image placements were introduced.
+- A native equipment checklist creates a project inquiry through the existing form. Server validation accepts a known industry and at most eight unique catalog product IDs. Contact/project fields, industry, products, geography and source context survive language switching and tab-draft recovery. Quantities and dates by item/site belong in project details; no shopping cart, booking or pricing was added.
+- Industry/product attribution is encrypted with the existing lead payload, exported through private operations and expanded into readable names in internal email. No personal or product payload is added to analytics, and no parallel form endpoint was created.
+- Procurement copy requests RFQ/document requirements without implying supplier registration or standing offers. Multi-site feasibility is assessed per location. Healthcare copy concerns non-clinical work; restoration copy does not claim emergency dispatch. No fleet, availability, contract or certification claims were invented.
+
+### Phase 2A validation
+
+Lint, TypeScript and the production build passed. All **36 unit/API tests**, **18 interactive/accessibility browser tests** and the **238-page HTTP/HTML metadata sweep** passed across the final verification runs. The sweep checks status, document language, one H1, canonical/hreflang and unique content-image placement URLs. `parse5` is a pinned test-only HTML parser; production dependencies are unchanged.
+
+An initial accessibility check caught low-contrast text in the dark project brief; the colors were corrected and the browser check passed. The broad browser run passed 17 checks; its old catalog selector was updated for the new industry taxonomy and passed on rerun. Its exhaustive route test exceeded the local browser time limit, and another attempt could not launch Chromium. Moving that SEO/placement check to real HTTP responses and HTML parsing retained its assertions and passed all 238 pages in 26 seconds. Interactive and visual assertions remain in the separate browser tests. Three refreshed industry screenshots reported no page errors and were visually reviewed. These are local results, not an unobserved GitHub CI result. Tests cover bilingual industry metadata, valid catalog/geography references, query validation, multi-product selection, language/location context and encrypted lead attribution. See `docs/INDUSTRIES.md` for architecture and editorial rules. No content imagery changed, so the existing placement register remains applicable; no new portfolio-wide image claim is made. The owner-authorized cleanup removed only the regenerable npm download cache when disk space fell below 1 GB.
+
+### Phase 2A owner-only items and deployment
+
+No new credentials are required by this phase. **Live acceptance and email reception remain BLOCKED** until the owner completes Phase 1D persistent-host storage, encryption secret, verified sender/domain DNS, rate-limit and public-origin configuration in `docs/INQUIRY_OPERATIONS.md`. Phone links remain hidden until verified. No public deployment, live mailbox reception or remote CI success is asserted. No Phase 2B work has started.
 
 ## Phase 1D delivered
 
@@ -13,7 +32,7 @@ Scope: Phases 1A–1D, with the user's current website instructions taking prece
 - Optional consent-gated measurement uses a strict event/canonical-path allowlist. No contact data, inquiry IDs, free text, campaign attributes or visitor headers are forwarded. UTM attribution remains private with the inquiry. Measurement is disabled by default.
 - Origin checks, bounded request streams, validated schemas, honeypot and existing rate limits protect the APIs. Payloads are AES-256-GCM encrypted; SQL is parameterized, logs are generic, exports are restricted and storage is excluded from source/build paths.
 - Rebuilt the wordmark with clean geometric outlines, equal cap heights and exactly matching visible left/right edges for both rows and the speed line. Shared SVG, favicon and localized social cards were regenerated. Geometry is recorded in `docs/logo-geometry.json`; there is no font dependency.
-- Preserved all 218 bilingual content routes, equipment search/filter, geography, metadata and contextual links. Phase 2A has not started.
+- Preserved all 218 bilingual content routes, equipment search/filter, geography, metadata and contextual links. Phase 1D did not include industry-guide work; Phase 2A additions are documented above.
 
 ### Phase 1D verification
 

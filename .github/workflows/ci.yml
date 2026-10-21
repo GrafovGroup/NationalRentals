@@ -1,4 +1,4 @@
-name: Validate Phases 1A–1D
+name: Validate Phases 1A–2A
 on:
   push:
   pull_request:

@@ -1,3 +1,5 @@
+import { getIndustry } from "./industries";
+import { getEquipment } from "./equipment";
 import { pathFor } from "./routes";
 import { site } from "./config";
 import { formCopy, type Quote } from "./quote";
@@ -18,6 +20,18 @@ export async function deliverQuote(quote: Quote): Promise<string> {
   void _privacy;
   const text = Object.entries(fields)
     .map(([k, v]) => {
+      if (k === "industry")
+        return (
+          "Industry: " +
+          (getIndustry(String(v))?.title[locale] || "Not specified")
+        );
+      if (k === "products")
+        return (
+          "Project equipment: " +
+          (Array.isArray(v)
+            ? v.map((id) => getEquipment(id)?.name[locale]).join("; ")
+            : "")
+        );
       if (k === "sourceEquipment")
         return v
           ? "Equipment page: " +
